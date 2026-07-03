@@ -1,0 +1,16 @@
+[build]
+  publish   = "."
+  functions = "netlify/functions"
+
+[functions."gemini"]
+  timeout = 30
+
+[[redirects]]
+  from   = "/api/gemini"
+  to     = "/.netlify/functions/gemini"
+  status = 200
+
+[[redirects]]
+  from   = "/api/blobs"
+  to     = "/.netlify/functions/blobs"
+  status = 200

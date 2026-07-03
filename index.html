@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Via Pública AI - Dashboard d'Arquitectura i Urbanisme</title>
+  <!-- Google Fonts: Outfit per a un disseny prèmium de dissenyador -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons per a iconografia vectoritzada excel·lent -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js per a gràfics interactius de gestió de projectes -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">
+          <i data-lucide="compass" class="logo-icon"></i>
+        </div>
+        <div class="brand-text">
+          <h1>ViaPública<span>AI</span></h1>
+          <p>Tècnic Arquitecte</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="#" class="nav-link active" data-tab="tab-dashboard">
+              <i data-lucide="layout-dashboard"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-tab="tab-normativa">
+              <i data-lucide="book-open"></i>
+              <span>Normativa</span>
+              <span class="badge">POUM</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-tab="tab-repositori">
+              <i data-lucide="folder-git-2"></i>
+              <span>Consulta Documentació</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-tab="tab-calculadora">
+              <i data-lucide="calculator"></i>
+              <span>Calculadora de Taxes</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-tab="tab-kanban">
+              <i data-lucide="kanban-square"></i>
+              <span>Kanban de Projectes</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- TEMPORITZADOR POMODORO INTEGRAT AL SIDEBAR -->
+      <div class="pomodoro-sidebar">
+        <div class="pomodoro-header">
+          <i data-lucide="timer"></i>
+          <span>Focus d'Obra</span>
+        </div>
+        <div class="pomodoro-timer" id="pomodoro-display">25:00</div>
+        <div class="pomodoro-controls">
+          <button id="btn-pomodoro-start" title="Comença"><i data-lucide="play"></i></button>
+          <button id="btn-pomodoro-pause" title="Pausa" class="hidden"><i data-lucide="pause"></i></button>
+          <button id="btn-pomodoro-reset" title="Reinicia"><i data-lucide="rotate-ccw"></i></button>
+        </div>
+        <p class="pomodoro-status" id="pomodoro-mode">Sessió de concentració</p>
+      </div>
+
+      <!-- PERFIL D'USUARI -->
+      <div class="user-profile">
+        <div class="avatar">
+          <i data-lucide="user"></i>
+        </div>
+        <div class="user-info">
+          <h4>Jordi M.</h4>
+          <p>Tècnic de Via Pública</p>
+        </div>
+        <button class="logout-btn" title="Configuració">
+          <i data-lucide="settings"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main class="main-content">
+      <!-- BARRA SUPERIOR (HEADER) -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h2 id="current-section-title">Tauler de Control</h2>
+          <p id="current-section-subtitle">Gestió integrada d'obres, inspeccions i normatives de l'espai públic.</p>
+        </div>
+        <div class="topbar-right">
+          <!-- WIDGET DE CLIMA I ESTAT (Molt rellevant per inspeccions) -->
+          <div class="weather-widget">
+            <i data-lucide="cloud-sun" class="weather-icon"></i>
+            <div class="weather-details">
+              <span class="temp">22°C</span>
+              <span class="desc">Apt per a inspecció exterior</span>
+            </div>
+          </div>
+          
+          <div class="date-widget">
+            <i data-lucide="calendar"></i>
+            <span id="date-display">Dissabte, 27 Juny 2026</span>
+          </div>
+
+          <div class="header-action">
+            <button class="btn btn-primary btn-icon-text" id="btn-notebooklm-shortcut">
+              <i data-lucide="external-link"></i>
+              <span>Obrir NotebookLM</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- PANELS DE SECCIÓ (TABS) -->
+      <div class="section-panels">
+        
+        <!-- PESTANYA 1: DASHBOARD -->
+        <section id="tab-dashboard" class="tab-panel active">
+          <!-- KPIs -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-icon blue"><i data-lucide="hard-hat"></i></div>
+              <div class="kpi-data">
+                <h3>5</h3>
+                <p>Obres Actives</p>
+              </div>
+              <div class="kpi-trend positive"><i data-lucide="arrow-up-right"></i> +1 aquest mes</div>
+            </div>
+            
+            <div class="kpi-card">
+              <div class="kpi-icon orange"><i data-lucide="clipboard-check"></i></div>
+              <div class="kpi-data">
+                <h3>3</h3>
+                <p>Inspeccions Urgents</p>
+              </div>
+              <div class="kpi-trend neutral">Avui de 10h a 13h</div>
+            </div>
+            
+            <div class="kpi-card">
+              <div class="kpi-icon green"><i data-lucide="euro"></i></div>
+              <div class="kpi-data">
+                <h3 id="kpi-tax-calc">1.840 €</h3>
+                <p>Taxes Simulades Avui</p>
+              </div>
+              <div class="kpi-trend positive"><i data-lucide="check"></i> Ocupació validada</div>
+            </div>
+            
+            <div class="kpi-card">
+              <div class="kpi-icon purple"><i data-lucide="file-text"></i></div>
+              <div class="kpi-data">
+                <h3>12</h3>
+                <p>Normatives al Repositori</p>
+              </div>
+              <div class="kpi-trend positive"><i data-lucide="copy"></i> Pre-formatades</div>
+            </div>
+          </div>
+
+          <!-- FILA 1: MAPA MOCK I AGENDA -->
+          <div class="grid-row-two-thirds">
+            <!-- MAPA D'OBRES -->
+            <div class="card map-card">
+              <div class="card-header">
+                <div>
+                  <h3>Mapa d'Obres actives i Punts d'Inspecció</h3>
+                  <p>Fes clic en els indicadors per consultar dades de via pública</p>
+                </div>
+                <div class="card-actions">
+                  <span class="legend-item"><span class="dot active"></span> Obra Activa</span>
+                  <span class="legend-item"><span class="dot urgent"></span> Inspecció Pendents</span>
+                </div>
+              </div>
+              <div class="card-body map-container">
+                <!-- MAPA SIMULAT (SVG Vectorial que simula carrers de la ciutat) -->
+                <svg id="city-map" viewBox="0 0 800 350" width="100%" height="100%">
+                  <!-- FONS DE CIUTAT - ILLES DE CASES -->
+                  <rect class="map-bg" width="800" height="350" />
+                  
+                  <!-- Carrers -->
+                  <path class="map-street" d="M 0,100 L 800,100" />
+                  <path class="map-street" d="M 0,250 L 800,250" />
+                  <path class="map-street" d="M 150,0 L 150,350" />
+                  <path class="map-street" d="M 400,0 L 400,350" />
+                  <path class="map-street" d="M 650,0 L 650,350" />
+                  
+                  <!-- Illes (Blocks) -->
+                  <rect class="map-block" x="20" y="20" width="110" height="60" />
+                  <rect class="map-block" x="170" y="20" width="210" height="60" />
+                  <rect class="map-block" x="420" y="20" width="210" height="60" />
+                  <rect class="map-block" x="670" y="20" width="110" height="60" />
+                  
+                  <rect class="map-block" x="20" y="120" width="110" height="110" />
+                  <rect class="map-block" x="170" y="120" width="210" height="110" />
+                  <rect class="map-block" x="420" y="120" width="210" height="110" />
+                  <rect class="map-block" x="670" y="120" width="110" height="110" />
+
+                  <rect class="map-block" x="20" y="270" width="110" height="60" />
+                  <rect class="map-block" x="170" y="270" width="210" height="60" />
+                  <rect class="map-block" x="420" y="270" width="210" height="60" />
+                  <rect class="map-block" x="670" y="270" width="110" height="60" />
+                  
+                  <!-- Parc municipal -->
+                  <rect class="map-park" x="175" y="125" width="200" height="100" />
+                  <text class="map-text" x="275" y="175" text-anchor="middle">Parc Central</text>
+                  
+                  <!-- Marcador d'obres - Pins interactius -->
+                  <!-- Obra 1: Av Diagonal / Balmes -->
+                  <g class="map-pin active-pin" id="pin-obra-1" transform="translate(150, 100)" data-project="1">
+                    <circle r="14" class="pin-pulse" />
+                    <circle r="7" class="pin-core" />
+                    <title>Pacificació del Carrer de Balmes (Tram Central)</title>
+                  </g>
+                  
+                  <!-- Obra 2: Plaça Major -->
+                  <g class="map-pin urgent-pin" id="pin-obra-2" transform="translate(400, 200)" data-project="2">
+                    <circle r="14" class="pin-pulse" />
+                    <circle r="7" class="pin-core" />
+                    <title>Renovació de Lloses de la Plaça Major</title>
+                  </g>
+                  
+                  <!-- Obra 3: Carrer Sardenya (Cala/Rasa) -->
+                  <g class="map-pin active-pin" id="pin-obra-3" transform="translate(650, 100)" data-project="3">
+                    <circle r="14" class="pin-pulse" />
+                    <circle r="7" class="pin-core" />
+                    <title>Cala per Escomesa Elèctrica - Sardenya</title>
+                  </g>
+
+                  <!-- Obra 4: Av Corts Catalanes (Bastides) -->
+                  <g class="map-pin active-pin" id="pin-obra-4" transform="translate(400, 100)" data-project="4">
+                    <circle r="14" class="pin-pulse" />
+                    <circle r="7" class="pin-core" />
+                    <title>Bastida en Façana - Av Corts Catalanes</title>
+                  </g>
+                </svg>
+                
+                <!-- Panell lateral del mapa que s'actualitza al prémer un pin -->
+                <div class="map-sidebar-details" id="map-details-panel">
+                  <h4>Selecciona una obra al mapa</h4>
+                  <p class="muted">Prem qualsevol dels indicadors intermitents per veure la informació tècnica del projecte actiu.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- AGENDA I VISITES D'OBRA -->
+            <div class="card agenda-card">
+              <div class="card-header">
+                <h3>Agenda de Visites d'Obra</h3>
+                <p>Inspeccions de via pública programades per avui</p>
+              </div>
+              <div class="card-body">
+                <div class="timeline">
+                  <div class="timeline-item urgent">
+                    <div class="time">10:00 h</div>
+                    <div class="content">
+                      <h4>Inspecció d'accessibilitat</h4>
+                      <p>Carrer de Balmes (Tram Central)</p>
+                      <span class="label-status">Pendent</span>
+                    </div>
+                  </div>
+                  
+                  <div class="timeline-item">
+                    <div class="time">11:30 h</div>
+                    <div class="content">
+                      <h4>Verificació de m² de tanca per bastida</h4>
+                      <p>Av Corts Catalanes, 442</p>
+                      <span class="label-status">Pendent</span>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="time">13:00 h</div>
+                    <div class="content">
+                      <h4>Control de cala / reposició de paviment</h4>
+                      <p>Carrer Sardenya, 120 (Rasa Endesa)</p>
+                      <span class="label-status">Pendent</span>
+                    </div>
+                  </div>
+                  
+                  <div class="timeline-item done">
+                    <div class="time">Ahir</div>
+                    <div class="content">
+                      <h4>Tancament d'expedient per grua mòbil</h4>
+                      <p>Plaça dels Àngels - Obra acabada</p>
+                      <span class="label-status green">Aprovat</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FILA 2: GRÀFICS I NOTES DE CAMP -->
+          <div class="grid-row-half">
+            <!-- GRÀFIC DE TEMPS I PRESSUPOST -->
+            <div class="card">
+              <div class="card-header">
+                <h3>Dedicació Semanal del Tècnic</h3>
+                <p>Distribució del temps de treball (Visites d'obra vs. Oficina)</p>
+              </div>
+              <div class="card-body chart-wrapper">
+                <canvas id="timeChart"></canvas>
+              </div>
+            </div>
+
+            <!-- BLOC DE NOTES DE CAMP (PERSISTENT EN LOCALSTORAGE) -->
+            <div class="card notes-card">
+              <div class="card-header">
+                <h3>Bloc de Notes de Camp</h3>
+                <p>Anotacions ràpides durant les visites o trucades (es guarden soles)</p>
+              </div>
+              <div class="card-body">
+                <textarea id="field-notes" placeholder="Escriu aquí les teves observacions directament en el terreny... ex: 'El constructor de Balmes ha corregit el pendent del 12% al 8% requerit per l'ordenança d'accessibilitat.'"></textarea>
+                <div class="notes-footer">
+                  <span id="save-status"><i data-lucide="cloud-lightning"></i> Guardat localment</span>
+                  <button class="btn btn-outline btn-sm" id="btn-copy-notes-notebooklm">
+                    <i data-lucide="copy"></i> Copia per a NotebookLM
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PESTANYA 2: REPOSITORI DE NORMATIVA -->
+        <section id="tab-normativa" class="tab-panel">
+          <div class="norm-biblioteca-layout">
+
+            <!-- ESQUERRA: Arbre de temes -->
+            <div class="norm-left">
+              <div class="norm-left-header">
+                <span class="norm-left-title"><i data-lucide="library"></i> Biblioteca</span>
+                <button id="norm-btn-add-topic" title="Nou tema"><i data-lucide="folder-plus"></i></button>
+              </div>
+              <div class="norm-search-bar">
+                <i data-lucide="search"></i>
+                <input type="text" id="norm-search" placeholder="Cerca documents...">
+              </div>
+              <div class="norm-topics-scroll" id="norm-topics-list"></div>
+            </div>
+
+            <!-- DRETA: Visor de document -->
+            <div class="norm-right">
+              <div class="norm-viewer-empty" id="norm-viewer-empty">
+                <i data-lucide="book-open"></i>
+                <p>Selecciona un document per visualitzar-lo</p>
+              </div>
+              <div id="norm-doc-viewer" style="display:none">
+                <div class="norm-doc-topbar">
+                  <div class="norm-doc-info">
+                    <span id="norm-doc-name" class="norm-doc-title"></span>
+                  </div>
+                  <div class="norm-doc-actions">
+                    <div class="norm-view-toggle">
+                      <button class="norm-view-btn active" id="norm-btn-view-articles">
+                        <i data-lucide="layout-grid"></i> Articles
+                      </button>
+                      <button class="norm-view-btn" id="norm-btn-view-pdf">
+                        <i data-lucide="file-text"></i> PDF
+                      </button>
+                    </div>
+                    <a id="norm-doc-open" target="_blank" rel="noopener" class="btn-icon-label">
+                      <i data-lucide="external-link"></i> Obrir
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Vista Articles -->
+                <div id="norm-view-articles" class="norm-articles-view">
+                  <div id="norm-articles-list"></div>
+                </div>
+
+                <!-- Vista PDF -->
+                <div id="norm-view-pdf" class="norm-doc-embed" style="display:none">
+                  <div id="norm-doc-embed"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- PESTANYA 3: CONSULTA DOCUMENTACIÓ -->
+        <section id="tab-repositori" class="tab-panel">
+          <div class="repositori-layout">
+
+            <!-- Columna Esquerra: Repositori + Consulta IA -->
+            <div class="repositori-files">
+              <div class="card">
+                <div class="card-header">
+                  <h3>Consulta Documentació</h3>
+                  <p>Consulta i gestiona els teus resultats</p>
+                </div>
+                <div class="card-body">
+                  <!-- Targeta de consulta IA gran -->
+                  <div class="query-card" id="query-card">
+                    <div class="query-card-header">
+                      <i data-lucide="sparkles"></i>
+                      <span>Consulta a la normativa</span>
+                    </div>
+                    <div class="query-card-body">
+                      <!-- Selector de font documental -->
+                      <div class="query-source-row">
+                        <div class="query-source-field">
+                          <label class="query-source-label">Tema</label>
+                          <select id="query-topic-select" class="query-source-select form-control">
+                            <option value="">— Tots els temes —</option>
+                          </select>
+                        </div>
+                        <div class="query-source-field">
+                          <label class="query-source-label">Document</label>
+                          <select id="query-doc-select" class="query-source-select form-control">
+                            <option value="">— Tots els documents —</option>
+                          </select>
+                        </div>
+                      </div>
+                      <textarea id="search-repo-files" class="query-textarea" placeholder="Escriu la teva consulta sobre normativa, ordenances, plecs o qualsevol regulació tècnica…" rows="4"></textarea>
+                      <div class="query-card-actions">
+                        <button class="btn btn-primary btn-search-ia" id="btn-search-ia">
+                          <i data-lucide="sparkles"></i> Consultar amb IA
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Panel de resultats de cerca IA -->
+                  <div class="search-ia-panel" id="search-ia-panel" style="display:none">
+                    <div class="search-ia-header">
+                      <i data-lucide="sparkles"></i>
+                      <span>Resposta de la IA</span>
+                      <button class="btn-close-search" id="btn-close-search" title="Tancar">
+                        <i data-lucide="x"></i>
+                      </button>
+                    </div>
+                    <div class="search-ia-body" id="search-ia-body">
+                      <span class="search-ia-loading"><i data-lucide="loader-2" class="spin"></i> Consultant la normativa...</span>
+                    </div>
+                    <div class="search-ia-footer">
+                      <button class="btn btn-save-consulta" id="btn-save-consulta" style="display:none">
+                        <i data-lucide="bookmark-plus"></i> Desa consulta
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Dreta: Consultes Desades -->
+            <div class="repositori-notebooklm">
+              <div class="card consultes-card">
+                <div class="card-header">
+                  <div class="card-title-icon">
+                    <i data-lucide="bookmark"></i>
+                    <h3>Consultes Desades</h3>
+                  </div>
+                  <button class="btn-clear-consultes" id="btn-clear-consultes" title="Esborra totes les consultes">
+                    <i data-lucide="trash-2"></i>
+                  </button>
+                </div>
+                <div class="card-body consultes-body">
+                  <div id="consultes-list"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- PESTANYA 4: CALCULADORA DE TAXES -->
+        <section id="tab-calculadora" class="tab-panel">
+          <div class="calculadora-layout">
+            
+            <!-- Formulari de càlcul -->
+            <div class="calc-form-card card">
+              <div class="card-header">
+                <h3>Estimat de Taxes per Ocupació de Via Pública</h3>
+                <p>Calculadora regulada segons Ordenança Fiscal Municipal</p>
+              </div>
+              <div class="card-body">
+                <form id="tax-form">
+                  <div class="form-group">
+                    <label for="calc-type">Concepte d'Ocupació</label>
+                    <select id="calc-type" class="form-control">
+                      <option value="tanca">Tanca, bastida o tancament d'obra (per m²)</option>
+                      <option value="grua">Grua mòbil o reserva d'espai (per metre lineal)</option>
+                      <option value="rasa">Cales, rases i calicantes en paviment (per m²)</option>
+                      <option value="terrassa">Terrassa / Vetlladors (per m²)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-row" style="grid-template-columns: 2fr 1fr;">
+                    <div class="form-group">
+                      <label for="calc-street-name">Carrer / Emplaçament</label>
+                      <input type="text" id="calc-street-name" class="form-control" placeholder="Escriu el carrer (ex: Balmes, Diagonal, Provença...)" list="streets-datalist" autocomplete="off" required>
+                      <datalist id="streets-datalist">
+                        <!-- S'omplirà dinàmicament des de JS -->
+                      </datalist>
+                    </div>
+                    <div class="form-group">
+                      <label for="calc-portal-number">Núm. portal</label>
+                      <input type="number" id="calc-portal-number" class="form-control" placeholder="Opcional" min="1">
+                      <span class="field-error hidden" id="portal-number-error"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="street-feedback" id="street-feedback-box" style="margin-top: -8px; margin-bottom: 16px; display: flex; gap: 15px; font-size: 0.8rem; padding: 4px 8px; background-color: var(--bg-tertiary); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                      <span style="color: var(--text-muted); font-weight: 500;">Categoria: <strong id="detected-category" style="color: var(--accent-blue); font-weight: 600;">-</strong></span>
+                      <span style="color: var(--text-muted); font-weight: 500;">Coeficient: <strong id="detected-coef" style="color: var(--accent-orange); font-weight: 600;">-</strong></span>
+                    </div>
+                  </div>
+
+                  <!-- Camps variables dinàmics -->
+                  <div class="form-row">
+                    <div class="form-group" id="group-param-1">
+                      <label id="label-param-1" for="calc-param-1">Superfície (m²)</label>
+                      <input type="number" id="calc-param-1" class="form-control" value="25" min="1">
+                    </div>
+                    
+                    <div class="form-group" id="group-param-2">
+                      <label id="label-param-2" for="calc-param-2">Durada (Dies)</label>
+                      <input type="number" id="calc-param-2" class="form-control" value="30" min="1">
+                    </div>
+                  </div>
+
+                  <div class="form-group hidden" id="group-terrassa-modalitat">
+                    <label>Línies d'autorització de terrassa <span style="color: var(--text-muted); font-weight: 400;">(una superfície independent per cada modalitat; es poden combinar, p. ex. una part anual i una extensió només d'estiu. Per a la modalitat "Eventual", els dies es marquen amb un calendari que assenyala els festius estatals, autonòmics i locals)</span></label>
+                    <div id="terrassa-lines-container" style="margin-top: 8px;"></div>
+                    <button type="button" class="btn btn-secondary" id="btn-add-terrassa-line" style="margin-top: 4px;">
+                      <i data-lucide="plus"></i> Afegir modalitat
+                    </button>
+                  </div>
+
+                  <button type="button" class="btn btn-primary btn-full-width" id="btn-calculate">
+                    <i data-lucide="calculator"></i> Calcular Taxa Estimada
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Resum de desglossament tècnic -->
+            <div class="calc-results-card card">
+              <div class="card-header">
+                <h3>Detall del Càlcul de Taxa</h3>
+                <p>Desglossament analític regulat per a l'expedient d'obres</p>
+              </div>
+              <div class="card-body">
+                <div class="technical-breakdown-box" style="background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; font-family: inherit;">
+                  <div class="breakdown-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 16px;">
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin: 0;">Informe Analític de Taxes</h4>
+                    <span class="badge badge-green" style="font-size: 0.7rem; margin: 0;">Pre-càlcul regulat</span>
+                  </div>
+                  
+                  <div class="breakdown-details" style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem;">
+                    <div style="display: flex; justify-content: space-between;">
+                      <span style="color: var(--text-muted);">Concepte:</span>
+                      <strong id="inv-concepte" style="color: var(--text-main);">Tanca o bastida d'obra</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                      <span style="color: var(--text-muted);">Carrer / Emplaçament:</span>
+                      <strong id="inv-street" style="color: var(--text-main);">-</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                      <span style="color: var(--text-muted);">Categoria Urbanística:</span>
+                      <strong id="inv-categoria" style="color: var(--text-main);">-</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                      <span style="color: var(--text-muted);">Mesures d'Ocupació:</span>
+                      <strong id="inv-parametres" style="color: var(--text-main);">25 m² x 30 dies</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                      <span style="color: var(--text-muted);">Tarifa base unitària:</span>
+                      <span id="inv-tarifa-base" style="color: var(--text-main);">1,20 € / m² / dia</span>
+                    </div>
+                    <div class="formula-box" style="margin-top: 12px; background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm);">
+                      <h5 style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; letter-spacing: 0.5px;">Equació de Liquidació Fiscal</h5>
+                      <p id="inv-formula" style="font-family: monospace; font-size: 0.8rem; color: var(--accent-orange); margin: 0; line-height: 1.4; white-space: pre-wrap; word-break: break-all;">Escull un carrer i prem 'Calcular Taxa Estimada' per obtenir el desglossament de l'ordenança.</p>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: 700; border-top: 1px dashed var(--border-color); padding-top: 12px; margin-top: 8px;">
+                      <span style="color: var(--text-main);">Total Taxes Liquidables:</span>
+                      <span id="inv-total" style="color: #fff; font-family: monospace;">0,00 €</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="invoice-actions" style="margin-top: 20px; display: flex; gap: 10px;">
+                  <button class="btn btn-outline" id="btn-copy-invoice-notebooklm" style="flex: 1; justify-content: center;">
+                    <i data-lucide="copy"></i> Copia Resum per a NotebookLM
+                  </button>
+                  <button class="btn btn-secondary" id="btn-add-notes-invoice" style="flex: 1; justify-content: center;">
+                    <i data-lucide="clipboard-copy"></i> Afegeix a Notes
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Historial de càlculs (Amplada completa a sota) -->
+          <div class="card calc-history-card" style="margin-top: 24px;">
+            <div class="card-header">
+              <h3>Historial de Càlculs realitzats en la sessió</h3>
+              <p>Registre tècnic d'ocupacions comparades per a informes de viabilitat</p>
+            </div>
+            <div class="card-body" style="padding: 0; overflow-x: auto;">
+              <table class="history-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem;">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--border-color); color: var(--text-muted); font-weight: 600;">
+                    <th style="padding: 12px 16px;">Data/Hora</th>
+                    <th style="padding: 12px 16px;">Carrer</th>
+                    <th style="padding: 12px 16px;">Concepte d'Ocupació</th>
+                    <th style="padding: 12px 16px;">Mesures i Categoria</th>
+                    <th style="padding: 12px 16px; text-align: right;">Total Taxa</th>
+                    <th style="padding: 12px 16px; text-align: center;">Accions</th>
+                  </tr>
+                </thead>
+                <tbody id="calc-history-rows" style="color: var(--text-main);">
+                  <!-- Dinàmic des de JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- PESTANYA 5: KANBAN DE TASQUES -->
+        <section id="tab-kanban" class="tab-panel">
+          <div class="kanban-wrapper">
+            
+            <div class="kanban-add-bar card">
+              <div class="card-body">
+                <form id="kanban-form">
+                  <div class="kanban-input-row">
+                    <input type="text" id="kanban-new-title" class="form-control" placeholder="Títol de la tasca d'obra (ex: 'Revisió vorera Provença')..." required>
+                    <select id="kanban-new-priority" class="form-control priority-select">
+                      <option value="baixa">Baixa</option>
+                      <option value="mitja" selected>Mitjana</option>
+                      <option value="alta">Alta</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary"><i data-lucide="plus"></i> Afegir Tasca</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="kanban-board">
+              <!-- Columna 1: Pendent -->
+              <div class="kanban-column" id="col-todo" data-status="todo">
+                <div class="column-header">
+                  <div class="column-title-left">
+                    <span class="column-dot todo"></span>
+                    <h3>Pendent</h3>
+                  </div>
+                  <span class="task-count" id="count-todo">0</span>
+                </div>
+                <div class="task-list-container" id="list-todo">
+                  <!-- Tasques dinàmiques -->
+                </div>
+              </div>
+
+              <!-- Columna 2: En Curs -->
+              <div class="kanban-column" id="col-progress" data-status="progress">
+                <div class="column-header">
+                  <div class="column-title-left">
+                    <span class="column-dot progress"></span>
+                    <h3>En Curs</h3>
+                  </div>
+                  <span class="task-count" id="count-progress">0</span>
+                </div>
+                <div class="task-list-container" id="list-progress">
+                  <!-- Tasques dinàmiques -->
+                </div>
+              </div>
+
+              <!-- Columna 3: Finalitzat -->
+              <div class="kanban-column" id="col-done" data-status="done">
+                <div class="column-header">
+                  <div class="column-title-left">
+                    <span class="column-dot done"></span>
+                    <h3>Finalitzat</h3>
+                  </div>
+                  <span class="task-count" id="count-done">0</span>
+                </div>
+                <div class="task-list-container" id="list-done">
+                  <!-- Tasques dinàmiques -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+  
+  <script src="app.js"></script>
+  <script>
+    // Inicialització de les icones de Lucide al carregar la pàgina
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
