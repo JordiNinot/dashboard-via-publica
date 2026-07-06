@@ -1,0 +1,116 @@
+NOM|TIPUS|CARRER|NUM|LAT|LNG
+Farmàcia Tres Creus|pharmacy|Carrer de Covadonga|310|41.5463688|2.1171732
+Farmàcia Segalas Carreras, M. Mercè|pharmacy|La Rambla|26|41.5454247|2.1094624
+Farmacia Ortopedia Ramón Llol|pharmacy|||41.5485884|2.0985248
+Farmàcia Pareja Cozcolluela, Josep Manel|pharmacy|Ronda de Zamenhof|145|41.5504459|2.1002161
+Farmàcia Capdevila Bassols, Anna M.|pharmacy|Carrer Sol i Padrís|116|41.5353796|2.1194049
+Farmàcia Morales|pharmacy|||41.5416509|2.1115527
+Farmàcia Corominas Riqué, Cristina|pharmacy|Ronda de Ponent|1|41.5448666|2.0996551
+Farmàcia Garriga Majo, Marta|pharmacy|Carrer de Sallarès i Pla|140|41.5424785|2.1139767
+Farmàcia Garrell Capdevila, Joan|pharmacy|Carrer de Borràs|8|41.5516125|2.1036518
+Farmàcia Bagan Tapioles, Montserrat|pharmacy|Carrer del Carme|10|41.5487159|2.1113324
+Farmàcia Gili Segura, Marta|pharmacy|Plaça de l'Àngel|12|41.5493204|2.1084196
+Farmàcia Mujal Viñals, Assumpció|pharmacy|Carrer de Viladomat|20|41.5400118|2.1049833
+Farmàcia Bofi Martinez, Patricia|pharmacy|Avinguda de Barberà|226|41.5350045|2.1145340
+Farmàcia Pons Samaranch, Isabel|pharmacy|Plaça de Marquilles|4|41.5460525|2.1056977
+Farmàcia Montané Bombardó, Glòria|pharmacy|Carretera de Barcelona|219|41.5386801|2.1077842
+Farmàcia Marcet Vicens, Jordi|pharmacy|Carretera de Barcelona|74|41.5418890|2.1043095
+Farmàcia Montserrat Marco, M. Antònia|pharmacy|Carrer de Brutau|187|41.5379091|2.1164587
+Farmàcia Anna Garriga Majó|pharmacy|Passeig de la Plaça Major|29|41.5475242|2.1084229
+Farmàcia Blanchart Tintó, Meritxell|pharmacy|Carrer de Cèsar Torras|132|41.5408286|2.0959904
+Farmàcia Esteban-Lopera|pharmacy|Ronda de Santa Maria|28|41.5318087|2.1212239
+Farmàcia Sala Alegre|pharmacy|Carrer de Balmes|83|41.5406821|2.1188733
+Farmàcia Fàbregas Martínez, Marta|pharmacy|Avinguda de Barberà|299|41.5321623|2.1161845
+Farmàcia Rosell Gras, Maria|pharmacy|Avinguda de Barberà|48|41.5382021|2.1129724
+Farmàcia Mercè Sora, Anabel|pharmacy|Carrer de Sant Cugat|95|41.5441024|2.1036801
+Farmàcia Crusafont Sabaté, Anna M.|pharmacy|Carrer de Colom|13|41.5469636|2.1054543
+Farmàcia Baqués Roviralta, Josep|pharmacy|Avinguda de l'Onze de Setembre|61|41.5530010|2.1048936
+Farmàcia Blanchart|pharmacy|Via de Massagué||41.5509538|2.1073542
+Restaurant Dual Mirallac|restaurant|||41.5505989|2.0976440
+Bar l'Embarcador|bar|||41.5514798|2.0975406
+Bar Quevedo|bar|||41.5506323|2.1149128
+Covadonga|bar|||41.5469761|2.1169740
+la cantonada|bar|||41.5461007|2.1177387
+Picuteig|restaurant|Carrer de l'Advocat Cirera|23|41.5457827|2.1071011
+Snooker|bar|Carrer de Vilarrubias|114|41.5532739|2.1110546
+IBar|bar|||41.5325792|2.0969905
+Fuuud|restaurant|||41.5451399|2.1095963
+Viena|fast_food|||41.5459144|2.1081019
+Santamasa|restaurant|Carrer de Gràcia||41.5470504|2.1077669
+Urbasa|restaurant|Passeig de Manresa||41.5485938|2.1082647
+Ibericus|restaurant|||41.5484236|2.1083311
+Restaurant Racó del Campanar|restaurant|Carrer de l'Església|3|41.5471878|2.1082329
+El Llit Bar|bar|Passeig de la Plaça Major|37|41.5476592|2.1084356
+Burger King|fast_food|||41.5325121|2.1070664
+Bar Restaurant Olimpic|bar|Carrer de Calderón|169|41.5461936|2.0999136
+La Sandvitxeria SBD|restaurant|Carrer del Doctor Puig|4|41.5485421|2.1093996
+McDonald's|fast_food|Avinguda de Francesc Macià|46|41.5534853|2.0982693
+Restaurant Suis|restaurant|Carrer de l'Estació|40|41.5478123|2.1146919
+L'artigiana|fast_food|||41.5459614|2.1078481
+Bon Día|cafe|Plaça de Sant Jaume|41|41.5462667|2.1039078
+Restaurant Rubión|restaurant|Carrer de Sant Jaume|27|41.5462346|2.1044683
+Nazar|restaurant|Passeig de la Plaça Major|43|41.5477867|2.1084492
+Sushi21|restaurant|Carrer de la Rosa|28|41.5471595|2.1078983
+El Suau|cafe|Travessia de l'Església|8|41.5471823|2.1084145
+Ca l'Àngel|restaurant|Carrer del Marquès de Comillas|139|41.5453195|2.1162312
+Bar Xipella|bar|||41.5349015|2.1021134
+Rostisseria Les Bessones|restaurant|||41.5353068|2.1159080
+Casa Fuster Centre|restaurant|Carrer de l'Advocat Cirera|12|41.5459404|2.1076676
+Musical Sabadell|bar|Carrer de l'Advocat Cirera|20|41.5459217|2.1074692
+Frankfurt del Passeig|fast_food|||41.5484809|2.1085971
+El Grazia|restaurant|Carrer de Gràcia|16|41.5474673|2.1075210
+Colón|bar|Carrer d'en Font|2|41.5469911|2.1055757
+La Granja Urpí|bar|Carrer de l'Escola Industrial|36|41.5472586|2.1058934
+Maximmus Pizzeria Napoletana|restaurant|Carrer de Sant Antoni Maria Claret|15|41.5465271|2.1096379
+Can Capablanca|restaurant|Carrer del Comte Jofre|30|41.5433567|2.1011793
+Massagué 62 La Piazza|restaurant|Via de Massagué|62|41.5514598|2.1068172
+Ofame|restaurant|Carrer de Gràcia|65|41.5480976|2.1067070
+UDON|restaurant|Carrer de Gràcia|49|41.5476905|2.1070810
+Aina Car|car_rental|||41.5467375|2.0966603
+La Teca Burger|restaurant|Carrer de Sant Cugat|8|41.5459029|2.1055216
+Beagle|cafe|Plaça de Sant Roc|16|41.5462631|2.1080005
+La Tete|cafe|Plaça del Gas|3|41.5457299|2.1061513
+Artbo|cafe|Ronda de Zamenhof|96|41.5508197|2.1006840
+Centenari|cafe|Ronda de Zamenhof|18|41.5519392|2.1054601
+L'Obrador|cafe|Carrer de Sant Antoni Maria Claret|10|41.5464390|2.1096225
+Canalla|restaurant|Carrer de l'Església|13|41.5469034|2.1083832
+El Toc al 2|restaurant|Carrer de Jovellanos|2|41.5473602|2.1058422
+Sandwichez|cafe|Carrer de Gràcia|1|41.5468080|2.1076919
+Goiko Grill|restaurant|Carrer de Sant Joan|23|41.5476551|2.1097395
+Restaurant Can Bigoti SBD|restaurant|Carrer de la Font Nova|31|41.5499234|2.1108836
+Youme|restaurant|Plaça de Catalunya|17|41.5493012|2.0982748
+Boheme|cafe|||41.5509596|2.0985397
+365|cafe|||41.5504187|2.0989429
+Km 0|cafe|Ronda de Zamenhof|147|41.5503330|2.0998391
+Nou Canaletes|restaurant|Carrer de Campmany|24|41.5492793|2.1071737
+Restaurant Viena Filadors|restaurant|Carrer dels Filadors|28|41.5537021|2.0989330
+Mercat Negre|restaurant|Carrer de Sant Jaume|19|41.5462089|2.1048576
+Tanins|restaurant|Carrer del Doctor Puig|2|41.5484843|2.1095136
+Cent 45|bar|Carrer d'Alfons Sala|145|41.5470092|2.1162524
+Popeyes|fast_food|||41.5516687|2.0984830
+Restaurant Les Voltes de la Borriana|restaurant|Carrer de la Borriana|34|41.5471527|2.1092090
+Restaurant La Cuina de l'Euterpe|restaurant|Carrer del Jardí|36|41.5454225|2.1114531
+Karmelitas|restaurant|||41.5463543|2.1064477
+La Pasti|restaurant|Carrer de la Rosa|3|41.5473393|2.1084213
+Restaurant Pizzeria Viena|restaurant|Avinguda de Francesc Macià|13|41.5535665|2.0972745
+Europcar|car_rental|||41.5474924|2.0951369
+Dual Mirallac|restaurant|Carrer d'en Prat de la Riba|91|41.5505740|2.0976441
+La República|bar|Plaça del Vallès|5|41.5460266|2.1024015
+foc de llenya|fast_food|Carrer de la Unió|183|41.5498540|2.1004623
+Centre d'Atenció Primària Sant Oleguer|clinic|||41.5385552|2.1179282
+Clínica Radiografia|clinic|Carrer de Gràcia|78|41.5490955|2.1058120
+EVOBanco|bank|Carrer d'Alfons XIII|28|41.5456964|2.1106161
+Banco Sabadell|bank|Plaça de Catalunya|1|41.5498118|2.0990316
+Centre Radiològic SBD|doctors|Carrer de Zurbano|3|41.5408150|2.1111115
+Asepeyo|clinic|||41.5447489|2.1002579
+BBVA|bank|||41.5392518|2.1129501
+Caixabank|bank|||41.5402395|2.1118585
+BBVA|bank|||41.5417091|2.1111933
+Caixabank|bank|||41.5444783|2.1004200
+Cruz Roja Sabadell|hospital|||41.5450226|2.1162827
+Caixabank|bank|||41.5460755|2.1094376
+Consulta Dra. Imma Viñolas|doctors|Carrer del Raval de Dins|17|41.5497711|2.1081885
+C.A.P. Sabadell Centre|clinic|||41.5444374|2.1077284
+C.A.P. Sant Fèlix|clinic|||41.5325822|2.1139605
+Banco Santander|bank|||41.5474066|2.1090661
+Banco Santander|bank|||41.5431919|2.1105014
