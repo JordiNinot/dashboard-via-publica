@@ -1,6 +1,5 @@
 CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORARI,FONT,BARRI,DISTRICTE,ADRECA,CCAE
 ,c. del Sol,102,3F CONSULTORES,activitat_econòmica,"Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal",41.5433,2.10952,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Sol, 102 Bxs","Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal"
-,c. de Garcilaso,111,5 PASSES,activitat_econòmica,Altres activitats d'educació ncaa,41.5491,2.10139,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Garcilaso, 111 Bxs 3a",Altres activitats d'educació ncaa
 ,pg. de la Plaça Major,51,A C I ASSOCIATS 93,activitat_econòmica,Activitats d'agents i corredors d'assegurances,41.5479,2.10845,,,,sabadellempresa.cat,EL CENTRE,1,"pg. de la Plaça Major, 51 1r",Activitats d'agents i corredors d'assegurances
 ,c. de Calderón,90,A COLORIS,activitat_econòmica,Educació relacionada amb la cultura,41.5473,2.10294,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Calderón, 90 Bxs",Educació relacionada amb la cultura
 ,c. de Capmany,22,A HIGUERAS DECORACIÓ,activitat_econòmica,"Comerç al detall de catifes, moquetes i revestiments de parets i terres en estab",41.5492,2.10719,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Capmany, 22 Bxs","Comerç al detall de catifes, moquetes i revestiments de parets i terres en establiments especialitzats"
@@ -582,7 +581,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,c. de Sant Antoni,19,LERELE,activitat_econòmica,Altres tipus de comerç al detall en establiments no especialitzats,41.5462,2.11893,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Sant Antoni, 19 Bxs",Altres tipus de comerç al detall en establiments no especialitzats
 ,c. de la República,18,LEX ADVOCATS,activitat_econòmica,Activitats jurídiques,41.5443,2.10389,,,,sabadellempresa.cat,EL CENTRE,1,"c. de la República, 18 4t",Activitats jurídiques
 ,c. de Calassanç Duran,229,LG SERVEI OFICIAL,activitat_econòmica,Reparació d'aparells electrodomèstics i d'estris per a la llar i el jardí,41.5485,2.10715,,,,sabadellempresa.cat,COVADONGA,1,"c. de Calassanç Duran, 229 Bxs Esq",Reparació d'aparells electrodomèstics i d'estris per a la llar i el jardí
-,c. de Sant Jaume,8,LIBRERIO DE LA PLATA,activitat_econòmica,Comerç al detall de llibres en establiments especialitzats,41.5472,2.10438,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Sant Jaume, 8 Bxs",Comerç al detall de llibres en establiments especialitzats
 ,Rambla,173,LILI UNGLES,activitat_econòmica,Perruqueria i altres tractaments de bellesa,41.5419,2.10469,,,,sabadellempresa.cat,EL CENTRE,1,"Rambla, 173 Bxs",Perruqueria i altres tractaments de bellesa
 ,c. de Turull,15,LLOBET BACH ASSOCIATS SLP,activitat_econòmica,Serveis tècnics d'arquitectura,41.5464,2.10944,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Turull, 15 Bxs",Serveis tècnics d'arquitectura
 ,c. del Sol,179,LLOCA DOS,activitat_econòmica,Promoció immobiliària,41.5459,2.10884,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Sol, 179A Bxs",Promoció immobiliària
@@ -858,20 +856,16 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,c. de les Paus,85,SENSE NOM COMERCIAL,activitat_econòmica,Altres serveis d'informació ncaa,41.5479,2.09487,,,,sabadellempresa.cat,EL CENTRE,1,"c. de les Paus, 85 Bxs 1a",Altres serveis d'informació ncaa
 ,c. del Pare Sallarès,2,SENSE NOM COMERCIAL,activitat_econòmica,Activitats de medicina especialitzada,41.546,2.11308,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Pare Sallarès, 2C Bxs 4a",Activitats de medicina especialitzada
 ,c. de Sant Joan,23,SENSE NOM COMERCIAL,activitat_econòmica,"Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal",41.544,2.10475,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Sant Joan, 23 1r 3a","Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal"
-,c. del Sol,16,SENSE NOM COMERCIAL,activitat_econòmica,"Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal",41.5423,2.10893,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Sol, 16 2n","Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal"
 ,pg. de Gaudí,29,SENSE NOM COMERCIAL,activitat_econòmica,Activitats de producció cinematogràfica i de vídeo,41.547,2.10763,,,,sabadellempresa.cat,COVADONGA,1,"pg. de Gaudí, 29 1r 3a",Activitats de producció cinematogràfica i de vídeo
 ,c. de la Salut,95,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5435,2.11068,,,,sabadellempresa.cat,EL CENTRE,1,"c. de la Salut, 95 Bxs",Activitats jurídiques
 ,c. de Borrell,2,SENSE NOM COMERCIAL,activitat_econòmica,Serveis tècnics d'arquitectura,41.5488,2.09848,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Borrell, 2B 1r 2a",Serveis tècnics d'arquitectura
 ,av. de Rafael Casanova,8,SENSE NOM COMERCIAL,activitat_econòmica,"Venda, manteniment i reparació de motocicletes, i dels seus recanvis i accessori",41.545,2.10996,,,,sabadellempresa.cat,HOSTAFRANCS,1,"av. de Rafael Casanova, 8 Bxs","Venda, manteniment i reparació de motocicletes, i dels seus recanvis i accessoris"
 ,c. de l' Illa,34,SENSE NOM COMERCIAL,activitat_econòmica,Comerç a l'engròs de tèxtils,41.5483,2.108,,,,sabadellempresa.cat,EL CENTRE,1,"c. de l' Illa, 34 Bxs 1a",Comerç a l'engròs de tèxtils
-,c. dels Sentmenat,150,SENSE NOM COMERCIAL,activitat_econòmica,"Fabricació d'altres productes de fusta; fabricació de productes de suro, cistell",41.5478,2.09486,,,,sabadellempresa.cat,COVADONGA,1,"c. dels Sentmenat, 150 Bxs","Fabricació d'altres productes de fusta; fabricació de productes de suro, cistelleria i esparteria"
 ,c. de Torras i Bages,17,SENSE NOM COMERCIAL,activitat_econòmica,Activitats afins al transport terrestre,41.5434,2.1137,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Torras i Bages, 17 Bxs 3a",Activitats afins al transport terrestre
 ,c. del Pare Sallarès,43,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5476,2.10912,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Pare Sallarès, 43 1r 2a",Activitats jurídiques
 ,c. de la Rosa,1,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5509,2.1026,,,,sabadellempresa.cat,EL CENTRE,1,"c. de la Rosa, 1 1r B",Activitats jurídiques
-,c. de les Valls,37,SENSE NOM COMERCIAL,activitat_econòmica,Activitats afins al transport terrestre,41.5454,2.11095,,,,sabadellempresa.cat,EL CENTRE,1,"c. de les Valls, 37 Bxs",Activitats afins al transport terrestre
 ,c. de Sant Josep,38,SENSE NOM COMERCIAL,activitat_econòmica,Altres treballs d'acabament d'edificis,41.5512,2.11315,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Sant Josep, 38 Bxs",Altres treballs d'acabament d'edificis
 ,c. de Riego,6,SENSE NOM COMERCIAL,activitat_econòmica,"Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal",41.5484,2.11161,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Riego, 6A Bxs","Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal"
-,c. de Portugal,55,SENSE NOM COMERCIAL,activitat_econòmica,Fabricació de panys i ferramentes,41.551,2.11354,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Portugal, 55 Bxs",Fabricació de panys i ferramentes
 ,c. de Borgonyó,1,SENSE NOM COMERCIAL,activitat_econòmica,Altres activitats d'educació ncaa,41.541,2.11143,,,,sabadellempresa.cat,HOSTAFRANCS,1,"c. de Borgonyó, 1 Bxs",Altres activitats d'educació ncaa
 ,c. d' Avellaneda,28,SENSE NOM COMERCIAL,activitat_econòmica,"Altres activitats professionals, científiques i tècniques ncaa",41.5398,2.10705,,,,sabadellempresa.cat,EL CENTRE,1,"c. d' Avellaneda, 28 Bxs","Altres activitats professionals, científiques i tècniques ncaa"
 ,c. de l' Espirall,17,SENSE NOM COMERCIAL,activitat_econòmica,Altres treballs d'acabament d'edificis,41.5494,2.10897,,,,sabadellempresa.cat,EL CENTRE,1,"c. de l' Espirall, 17 Bxs",Altres treballs d'acabament d'edificis
@@ -879,16 +873,10 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,c. de Prat de la Riba,15,SENSE NOM COMERCIAL,activitat_econòmica,"Altres activitats professionals, científiques i tècniques ncaa",41.5473,2.1055,,,,sabadellempresa.cat,HOSTAFRANCS,1,"c. de Prat de la Riba, 15 5è 1a","Altres activitats professionals, científiques i tècniques ncaa"
 ,c. de Sant Josep,31,SENSE NOM COMERCIAL,activitat_econòmica,"Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal",41.5421,2.12001,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Sant Josep, 31 Bxs","Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal"
 ,c. de la Borriana,31,SENSE NOM COMERCIAL,activitat_econòmica,Dipòsit i emmagatzematge,41.5409,2.11568,,,,sabadellempresa.cat,EL CENTRE,1,"c. de la Borriana, 31 Bxs",Dipòsit i emmagatzematge
-,c. de la República,11,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5508,2.10162,,,,sabadellempresa.cat,EL CENTRE,1,"c. de la República, 11 4t 1a",Activitats jurídiques
-,c. de Sant Pau,65,SENSE NOM COMERCIAL,activitat_econòmica,Activitats de traducció i d'interpretació,41.5402,2.11062,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Sant Pau, 65 Bxs",Activitats de traducció i d'interpretació
-,c. de Narcís Giralt,12,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5473,2.10968,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Narcís Giralt, 12 5è",Activitats jurídiques
 ,c. de la Fàbrica dels Nois Buxó,30,SENSE NOM COMERCIAL,activitat_econòmica,"Transport de mercaderies per carretera, excepte servei de mudances",41.5438,2.10239,,,,sabadellempresa.cat,COVADONGA,1,"c. de la Fàbrica dels Nois Buxó, 30 Bxs","Transport de mercaderies per carretera, excepte servei de mudances"
-,c. de la Salut,104,SENSE NOM COMERCIAL,activitat_econòmica,Serveis tècnics d'arquitectura,41.549,2.10917,,,,sabadellempresa.cat,EL CENTRE,1,"c. de la Salut, 104 Bxs",Serveis tècnics d'arquitectura
 ,pl. de la Sardana,1,SENSE NOM COMERCIAL,activitat_econòmica,Intermediaris del comerç de productes diversos,41.55,2.09757,,,,sabadellempresa.cat,COVADONGA,1,"pl. de la Sardana, 1 2n 4a",Intermediaris del comerç de productes diversos
-,c. de Lacy,18,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5409,2.11164,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Lacy, 18 2n 2a",Activitats jurídiques
 ,c. de Duran i Sors,49,SENSE NOM COMERCIAL,activitat_econòmica,Intermediaris del comerç de productes diversos,41.5455,2.10493,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Duran i Sors, 49 Bxs",Intermediaris del comerç de productes diversos
 ,c. de la Concepció,25,SENSE NOM COMERCIAL,activitat_econòmica,Promoció immobiliària,41.5467,2.11055,,,,sabadellempresa.cat,EL CENTRE,1,"c. de la Concepció, 25 1r",Promoció immobiliària
-,c. de Narcís Giralt,15,SENSE NOM COMERCIAL,activitat_econòmica,Serveis tècnics d'enginyeria i altres activitats relacionades amb l'assessoramen,41.5502,2.10809,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Narcís Giralt, 15 5è 1a",Serveis tècnics d'enginyeria i altres activitats relacionades amb l'assessorament tècnic
 ,c. de la República,8,SENSE NOM COMERCIAL,activitat_econòmica,Activitats de medicina especialitzada,41.5483,2.10687,,,,sabadellempresa.cat,EL CENTRE,1,"c. de la República, 8 3r 1a",Activitats de medicina especialitzada
 ,c. de Corominas,114,SENSE NOM COMERCIAL,activitat_econòmica,Activitats odontològiques,41.5448,2.1173,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Corominas, 114 2n 1a",Activitats odontològiques
 ,c. del Marquès de Comillas,13,SENSE NOM COMERCIAL,activitat_econòmica,Serveis tècnics d'arquitectura,41.5501,2.11924,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Marquès de Comillas, 13B Bxs",Serveis tècnics d'arquitectura
@@ -896,24 +884,12 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,pg. de Manresa,20,SENSE NOM COMERCIAL,activitat_econòmica,Activitats de medicina especialitzada,41.5428,2.1182,,,,sabadellempresa.cat,EL CENTRE,1,"pg. de Manresa, 20 Ent 1a",Activitats de medicina especialitzada
 ,c. de l' Estrella,191,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5473,2.09633,,,,sabadellempresa.cat,EL CENTRE,1,"c. de l' Estrella, 191 Bxs",Activitats jurídiques
 ,c. de Covadonga,559,SENSE NOM COMERCIAL,activitat_econòmica,Activitats afins al transport terrestre,41.5449,2.0989,,,,sabadellempresa.cat,COVADONGA,1,"c. de Covadonga, 559 Bxs",Activitats afins al transport terrestre
-,c. del Pare Sallarès,6,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5463,2.11274,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Pare Sallarès, 6 1r 1a",Activitats jurídiques
 ,c. de Gràcia,50,SENSE NOM COMERCIAL,activitat_econòmica,Activitats afins al transport terrestre,41.5461,2.09463,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Gràcia, 50 S01 1a",Activitats afins al transport terrestre
-,c. de Duran i Sors,29,SENSE NOM COMERCIAL,activitat_econòmica,Activitats afins al transport terrestre,41.5404,2.11079,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Duran i Sors, 29 Bxs",Activitats afins al transport terrestre
-,c. del Jardí,11,SENSE NOM COMERCIAL,activitat_econòmica,"Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal",41.5465,2.1064,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Jardí, 11 Bxs A","Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal"
-,c. de Galceran de Pinós,29,SENSE NOM COMERCIAL,activitat_econòmica,"Lampisteria, instal·lacions de calefacció i aire condicionat",41.5451,2.11249,,,,sabadellempresa.cat,COVADONGA,1,"c. de Galceran de Pinós, 29 Bxs","Lampisteria, instal·lacions de calefacció i aire condicionat"
 ,ptge. d' Avel·lí Artís,5,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5398,2.11218,,,,sabadellempresa.cat,EL CENTRE,1,"ptge. d' Avel·lí Artís, 5 7è 2a",Activitats jurídiques
-,c. de les Planes,35,SENSE NOM COMERCIAL,activitat_econòmica,Intermediaris del comerç de productes diversos,41.5485,2.10715,,,,sabadellempresa.cat,EL CENTRE,1,"c. de les Planes, 35 1r 1a",Intermediaris del comerç de productes diversos
-,c. de la Indústria,45,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5471,2.10921,,,,sabadellempresa.cat,EL CENTRE,1,"c. de la Indústria, 45 J Bxs 2a",Activitats jurídiques
 ,c. del Vallès,42,SENSE NOM COMERCIAL,activitat_econòmica,Intermediaris del comerç de productes diversos,41.5493,2.10717,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Vallès, 42B 1r 1a",Intermediaris del comerç de productes diversos
 ,c. de Josep Renom,115,SENSE NOM COMERCIAL,activitat_econòmica,Activitats de programació informàtica,41.5458,2.10713,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Josep Renom, 115 Bxs",Activitats de programació informàtica
-,c. de l' Illa,48,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5484,2.11148,,,,sabadellempresa.cat,EL CENTRE,1,"c. de l' Illa, 48 Bxs",Activitats jurídiques
-,c. del Pare Sallarès,69,SENSE NOM COMERCIAL,activitat_econòmica,Activitats de medicina especialitzada,41.5462,2.1133,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Pare Sallarès, 69 Bxs",Activitats de medicina especialitzada
 ,c. de Sallarès i Pla,161,SENSE NOM COMERCIAL,activitat_econòmica,Instal·lacions elèctriques,41.5478,2.11474,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Sallarès i Pla, 161 Bxs",Instal·lacions elèctriques
-,c. de Covadonga,308,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.543,2.11088,,,,sabadellempresa.cat,COVADONGA,1,"c. de Covadonga, 308 Bxs 1a",Activitats jurídiques
-,c. de Corominas,116,SENSE NOM COMERCIAL,activitat_econòmica,"Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal",41.5397,2.11224,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Corominas, 116 A 3r 2a","Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal"
 ,c. d' Arimon,2,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5506,2.10782,,,,sabadellempresa.cat,EL CENTRE,1,"c. d' Arimon, 2A 7è 2a",Activitats jurídiques
-,c. del Pare Sallarès,125,SENSE NOM COMERCIAL,activitat_econòmica,Activitats afins al transport terrestre,41.55,2.10758,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Pare Sallarès, 125 Bxs",Activitats afins al transport terrestre
-,c. d' Arimon,2,SENSE NOM COMERCIAL,activitat_econòmica,Activitats jurídiques,41.5465,2.10691,,,,sabadellempresa.cat,EL CENTRE,1,"c. d' Arimon, 2D 1 Bxs 3a",Activitats jurídiques
 ,c. de la Fàbrica dels Nois Buxó,30,SENSE NOM COMERCIAL - NAU 11,activitat_econòmica,Fabricació de paper i de cartó ondulats; fabricació d'envasos i embalatges de pa,41.5496,2.10842,,,,sabadellempresa.cat,COVADONGA,1,"c. de la Fàbrica dels Nois Buxó, 30 Bxs",Fabricació de paper i de cartó ondulats; fabricació d'envasos i embalatges de paper i de cartó
 ,c. de la Fàbrica dels Nois Buxó,30,SENSE NOM COMERCIAL - NAU 4,activitat_econòmica,Fabricació de paper i de cartó ondulats; fabricació d'envasos i embalatges de pa,41.5495,2.10691,,,,sabadellempresa.cat,COVADONGA,1,"c. de la Fàbrica dels Nois Buxó, 30 Bxs",Fabricació de paper i de cartó ondulats; fabricació d'envasos i embalatges de paper i de cartó
 ,pl. de Sant Jaume,3,SEROPARQUET,activitat_econòmica,Revestiments de terres i parets,41.5465,2.10422,,,,sabadellempresa.cat,EL CENTRE,1,"pl. de Sant Jaume, 3 Bxs 1a",Revestiments de terres i parets
@@ -990,7 +966,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,c. de les Tres Creus,236,THE ROOTSONS,activitat_econòmica,Agències de publicitat,41.54608848,2.11726125,,,,sabadellempresa.cat,COVADONGA,1,"c. de les Tres Creus, 236 Bxs",Agències de publicitat
 ,pl. de l' Àngel,4,THE WILD GEESE,activitat_econòmica,Establiments de begudes,41.54911632,2.10867829,,,,sabadellempresa.cat,EL CENTRE,1,"pl. de l' Àngel, 4 Bxs",Establiments de begudes
 ,c. de Josep Renom,51,THERMOMIX,activitat_econòmica,Comerç al detall d'electrodomèstics en establiments especialitzats,41.55076524,2.10406829,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Josep Renom, 51 Bxs 2a",Comerç al detall d'electrodomèstics en establiments especialitzats
-,rda. de Zamenhof,15,TISA,activitat_econòmica,Agents de la propietat immobiliària,41.55174084,2.10562245,,,,sabadellempresa.cat,EL CENTRE,1,"rda. de Zamenhof, 15 Bxs 1a",Agents de la propietat immobiliària
 ,c. de Gràcia,134,TOGA ROBA I PELL,activitat_econòmica,Reparació d'efectes personals i articles d'ús domèstic ncaa,41.55031643,2.10483663,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Gràcia, 134 Bxs",Reparació d'efectes personals i articles d'ús domèstic ncaa
 ,ctra. de Barcelona,97,TOLDOS GABI,activitat_econòmica,"Fabricació de teles no teixides i articles confeccionats amb aquestes teles, exc",41.54160646,2.10494776,,,,sabadellempresa.cat,EL CENTRE,1,"ctra. de Barcelona, 97 Bxs 1a","Fabricació de teles no teixides i articles confeccionats amb aquestes teles, excepte la roba de vestir"
 ,c. de Gràcia,45,TOMMY,activitat_econòmica,Comerç al detall de peces de vestir en establiments especialitzats,41.54763508,2.10713568,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Gràcia, 45 Bxs",Comerç al detall de peces de vestir en establiments especialitzats
@@ -1001,7 +976,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,c. del Marquès de Comillas,41,TRAÇ GRAFIC,activitat_econòmica,Altres activitats d'impressió i arts gràfiques,41.54086791,2.11568014,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Marquès de Comillas, 41 Bxs 2a",Altres activitats d'impressió i arts gràfiques
 ,c. de Sant Joan,23,TRAINING PARK CLUB,activitat_econòmica,Activitats dels gimnasos,41.54771005,2.10969775,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Sant Joan, 23 Bxs 2a",Activitats dels gimnasos
 ,Rambla,156,TRAMAS,activitat_econòmica,Comerç al detall de tèxtils en establiments especialitzats,41.54188593,2.11118299,,,,sabadellempresa.cat,EL CENTRE,1,"Rambla, 156 Bxs 1a",Comerç al detall de tèxtils en establiments especialitzats
-,c. de les Tres Creus,4,TRANS-OR,activitat_econòmica,Comerç a l'engròs de rellotges i joieria,41.54660539,2.11031342,,,,sabadellempresa.cat,EL CENTRE,1,"c. de les Tres Creus, 4 Bxs",Comerç a l'engròs de rellotges i joieria
 ,c. de Duran i Sors,7,TRASSERRA AMADO PERRUQUERS,activitat_econòmica,Perruqueria i altres tractaments de bellesa,41.54009909,2.11118981,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Duran i Sors, 7B Bxs",Perruqueria i altres tractaments de bellesa
 ,pl. de Joan Oliu,7,TRAUMA SALUT,activitat_econòmica,Activitats de medicina especialitzada,41.54460141,2.10735538,,,,sabadellempresa.cat,EL CENTRE,1,"pl. de Joan Oliu, 7 Bxs",Activitats de medicina especialitzada
 ,c. de Casanovas i Bosch,52,TRAUMATOLOGIA,activitat_econòmica,Activitats de medicina especialitzada,41.54690092,2.11420365,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Casanovas i Bosch, 52 Bxs 1a",Activitats de medicina especialitzada
@@ -1013,7 +987,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,c. de Zurbano,14,UTESA,activitat_econòmica,Activitats d'agents i corredors d'assegurances,41.54076462,2.11011701,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Zurbano, 14B Bxs 2a",Activitats d'agents i corredors d'assegurances
 ,c. de Zurbano,6,VALERO,activitat_econòmica,"Comerç al detall de pa i productes de fleca, confiteria i pastisseria en establi",41.54085651,2.11062932,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Zurbano, 6 Bxs DR","Comerç al detall de pa i productes de fleca, confiteria i pastisseria en establiments especialitzats"
 ,c. de la Indústria,2,VALERO FORN TRADICIONAL,activitat_econòmica,"Comerç al detall de pa i productes de fleca, confiteria i pastisseria en establi",41.54696266,2.11006551,,,,sabadellempresa.cat,EL CENTRE,1,"c. de la Indústria, 2 Bxs Esq","Comerç al detall de pa i productes de fleca, confiteria i pastisseria en establiments especialitzats"
-,Rambla,117,VALLES TOUR,activitat_econòmica,Activitats de les agències de viatges,41.54276753,2.11099112,,,,sabadellempresa.cat,EL CENTRE,1,"Rambla, 117 Bxs",Activitats de les agències de viatges
 ,c. de Capmany,8,VALLHONRAT MASSATGES,activitat_econòmica,Altres activitats de serveis personals ncaa,41.54897088,2.10731447,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Capmany, 8 Bxs",Altres activitats de serveis personals ncaa
 ,c. de Montserrat,1,VASCULAR VALLES,activitat_econòmica,Activitats de medicina especialitzada,41.54322479,2.11037592,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Montserrat, 1 Bxs",Activitats de medicina especialitzada
 ,c. de les Tres Creus,104,VEA -RESINO ARQUITECTES ASSOCIATS,activitat_econòmica,Serveis tècnics d'arquitectura,41.54601658,2.11308253,,,,sabadellempresa.cat,EL CENTRE,1,"c. de les Tres Creus, 104 4t 2a",Serveis tècnics d'arquitectura
@@ -1045,22 +1018,18 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,c. de Sant Oleguer,41,WORKSHOP,activitat_econòmica,Manteniment i reparació de vehicles de motor,41.54300862,2.11194626,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Sant Oleguer, 41 Bxs",Manteniment i reparació de vehicles de motor
 ,rda. de Ponent,81,WORLDELI,activitat_econòmica,Restaurants i establiments de menjars,41.54699536,2.09903415,,,,sabadellempresa.cat,HOSTAFRANCS,1,"rda. de Ponent, 81 Bxs",Restaurants i establiments de menjars
 ,c. de Latorre,52,XALUCA TOURS,activitat_econòmica,Activitats de les agències de viatges,41.53916213,2.11104745,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Latorre, 52 Bxs",Activitats de les agències de viatges
-,c. d'en Font,22,XERCAVINS JOIERS,activitat_econòmica,Comerç a l'engròs de rellotges i joieria,41.54665629,2.10564148,,,,sabadellempresa.cat,EL CENTRE,1,"c. d'en Font, 22 Bxs",Comerç a l'engròs de rellotges i joieria
 ,pg. de Manresa,32,XEVIOT,activitat_econòmica,Comerç al detall de peces de vestir en establiments especialitzats,41.54890506,2.10834523,,,,sabadellempresa.cat,EL CENTRE,1,"pg. de Manresa, 32 Bxs 1a",Comerç al detall de peces de vestir en establiments especialitzats
 ,rda. de Ponent,17,YAK 2000 SL,activitat_econòmica,Agents de la propietat immobiliària,41.54489539,2.09964526,,,,sabadellempresa.cat,HOSTAFRANCS,1,"rda. de Ponent, 17 Bxs 1a",Agents de la propietat immobiliària
 ,pl. del Vallès,2,YANTRA ESPAI DE COCREACIO CONSCIENT,activitat_econòmica,Activitats dels gimnasos,41.54596655,2.1025653,,,,sabadellempresa.cat,EL CENTRE,1,"pl. del Vallès, 2 Bxs",Activitats dels gimnasos
 ,pl. de Sant Roc,25,YERSE,activitat_econòmica,Comerç al detall de peces de vestir en establiments especialitzats,41.54603329,2.10867103,,,,sabadellempresa.cat,EL CENTRE,1,"pl. de Sant Roc, 25 Bxs",Comerç al detall de peces de vestir en establiments especialitzats
 ,c. de Calderón,190,YOGA ONE,activitat_econòmica,Educació relacionada amb l'esport i les activitats recreatives,41.54652501,2.10039477,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Calderón, 190 Bxs 1a",Educació relacionada amb l'esport i les activitats recreatives
 ,Rambla,178,YOIGO,activitat_econòmica,Comerç al detall d'equips de telecomunicacions en establiments especialitzats,41.54092541,2.11164253,,,,sabadellempresa.cat,EL CENTRE,1,"Rambla, 178 Bxs 3a",Comerç al detall d'equips de telecomunicacions en establiments especialitzats
-,pl. de Catalunya,17,YOUME,activitat_econòmica,Restaurants i establiments de menjars,41.54948881,2.09817602,,,,sabadellempresa.cat,HOSTAFRANCS,1,"pl. de Catalunya, 17 Bxs 1a",Restaurants i establiments de menjars
 ,Rambla,38,YVES ROCHER,activitat_econòmica,Comerç al detall de productes cosmètics i higiènics en establiments especialitza,41.54512929,2.10959396,,,,sabadellempresa.cat,EL CENTRE,1,"Rambla, 38 Bxs 1a",Comerç al detall de productes cosmètics i higiènics en establiments especialitzats
 ,rda. de Zamenhof,145,ZAMENHOF EL TEU ATELIER,activitat_econòmica,Comerç al detall d'altres tipus d'articles nous en establiments especialitzats,41.5504394,2.10022077,,,,sabadellempresa.cat,EL CENTRE,1,"rda. de Zamenhof, 145 Bxs 2a",Comerç al detall d'altres tipus d'articles nous en establiments especialitzats
 ,Rambla,2,ZARA,activitat_econòmica,Comerç al detall de peces de vestir en establiments especialitzats,41.54611375,2.10907746,,,,sabadellempresa.cat,EL CENTRE,1,"Rambla, 2 Bxs",Comerç al detall de peces de vestir en establiments especialitzats
-,c. del Sol,1,ZARA,activitat_econòmica,Dipòsit i emmagatzematge,41.54590405,2.10884032,,,,sabadellempresa.cat,EL CENTRE,1,"c. del Sol, 1 1r 3a",Dipòsit i emmagatzematge
 ,rda. de Zamenhof,75,ZEEMAN,activitat_econòmica,Comerç al detall de peces de vestir en establiments especialitzats,41.55112542,2.10308906,,,,sabadellempresa.cat,EL CENTRE,1,"rda. de Zamenhof, 75 Bxs 2a",Comerç al detall de peces de vestir en establiments especialitzats
 ,c. de les Valls,35,ZERO DAY,activitat_econòmica,Comerç al detall d'altres tipus d'articles nous en establiments especialitzats,41.54829444,2.10721997,,,,sabadellempresa.cat,EL CENTRE,1,"c. de les Valls, 35 Bxs",Comerç al detall d'altres tipus d'articles nous en establiments especialitzats
 ,c. de les Planes,9,ZIG ZAG,activitat_econòmica,Perruqueria i altres tractaments de bellesa,41.54387194,2.10962677,,,,sabadellempresa.cat,EL CENTRE,1,"c. de les Planes, 9 Bxs",Perruqueria i altres tractaments de bellesa
-,c. de Corominas,35,ZIVING,activitat_econòmica,Activitats odontològiques,41.54742822,2.1042699,,,,sabadellempresa.cat,EL CENTRE,1,"c. de Corominas, 35 Bxs",Activitats odontològiques
 765,c. del Portal de la Floresta,25,Farmacia Planas-Codinach,pharmacy,equipament,41.5760979,2.0862118,,+34937167574,"Mo-Sa 09:00-13:30,16:30-20:30",OSM,,DISTRICTE 1,"c. del Portal de la Floresta, 25",
 469,c. de Viladomat,201,Repsol,fuel,equipament,41.538,2.098306,,,Mo-Su 06:00-22:00,OSM,,DISTRICTE 1,"c. de Viladomat, 201",
 1348,c. de Domènech i Montaner,96,Repsol,fuel,equipament,41.530222,2.103361,,,Mo-Su 06:00-22:00,OSM,,DISTRICTE 1,"c. de Domènech i Montaner, 96",
@@ -1109,7 +1078,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 1458,c. de Castellar del Vallès,222,C.A.P. Creu Alta,clinic,equipament,41.5605371,2.1003567,,,,OSM,,DISTRICTE 1,"c. de Castellar del Vallès, 222",
 841,c. del Papa Pius XI,116,"Clínica accidentes de tráfico, Sabadell",clinic,equipament,41.5535059,2.1027843,,,,OSM,,DISTRICTE 1,"c. del Papa Pius XI, 116",
 1184,c. de Gràcia,78 bis,Clínica Radiografía,clinic,equipament,41.5490955,2.105812,,,,OSM,,DISTRICTE 1,"c. de Gràcia, 78 bis",
-780,pg. de la Plaça Major,48,Abant Joiers,jewelry,comerç,41.5477928,2.1089337,,,"Mo-Su 09:45-13:30,17:00-20:30",OSM,,DISTRICTE 1,"pg. de la Plaça Major, 48",
 1512,c. de Calderón,169,Bar Restaurant Olimpic,bar,equipament,41.5461936,2.0999136,,,,OSM,,DISTRICTE 1,"c. de Calderón, 169",
 1359,c. del Doctor Puig,4,La Sandvitxeria SBD,restaurant,equipament,41.5485421,2.1093996,https://www.lasandvitxeria.cat/,+34 937271398,Tu-Su 13:00-16:00; Tu-Su 20:00-23:30,OSM,,DISTRICTE 1,"c. del Doctor Puig, 4",
 1233,av. de Francesc Macià,46,McDonald's,fast_food,equipament,41.5534853,2.0982693,https://mcdonalds.es,+34 937239601,"Mo-Fr 08:00-22:00; Sa,Su 00:00-01:00,08:00-22:00",OSM,,DISTRICTE 1,"av. de Francesc Macià, 46",
@@ -1119,7 +1087,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 657,c. de la Salut,53,Sabway,electronics,comerç,41.5505591,2.1097593,http://sabway.es,+34937250757,"Mo-Fr 10:00-14:00, 17:00-20:00; Sa 11:00-14:00",OSM,,DISTRICTE 1,"c. de la Salut, 53",
 767,rda. de Ponent,183,Fancy Disseny,toys,comerç,41.5491956,2.0982796,https://www.juguetesfancy.com/,+34 937275979,Mo-Sa 16:30-20:30,OSM,,DISTRICTE 1,"rda. de Ponent, 183",
 1584,c. de Batllevell,115,Policia Nacional,police,equipament,41.5573018,2.1078187,,,,OSM,,DISTRICTE 1,"c. de Batllevell, 115",
-1427,c. de Colom,36,Ferreteria Feu,hardware,comerç,41.5464719,2.1041761,,,,OSM,,DISTRICTE 1,"c. de Colom, 36",
 1456,pl. de Catalunya,1,Banco Sabadell,bank,equipament,41.5498118,2.0990316,,,,OSM,,DISTRICTE 1,"pl. de Catalunya, 1",
 450,c. de Zurbano,3 baix-B,Centre Radiològic SBD,doctors,equipament,41.540815,2.1111115,http://www.crsbd.info,+34 937450324,"Mo, We 08:30-13:00,15:30-19:00; Tu, Th 08:30-13:00,15:30-20:00; Fr 08:30-13:00,15:30-17:00",OSM,,DISTRICTE 1,"c. de Zurbano, 3 baix-B",
 617,c. de Sant Joan,23-31,ARATOP BCN,company,oficina,41.5475945,2.1096939,http://www.aratopbcn.es,+34 646913446,,OSM,,DISTRICTE 1,"c. de Sant Joan, 23-31",
@@ -1228,7 +1195,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 1587,ctra. de Barcelona,558,"Farmàcia Brustenga Fortuny, Marta",pharmacy,equipament,41.5278502,2.1179897,,+34937104435,,OSM,,DISTRICTE 1,"ctra. de Barcelona, 558",
 1417,c. del Comte Jofre,30,Can Capablanca,restaurant,equipament,41.5433567,2.1011793,https://restaurantcancapablanca.cat/,+34 937 26 81 46,Tu-Sa 17:00-01:00,OSM,,DISTRICTE 1,"c. del Comte Jofre, 30",
 1589,c. de Baltarga,5,Casa Paco,bar,equipament,41.5714384,2.0815997,,,,OSM,,DISTRICTE 1,"c. de Baltarga, 5",
-1233,av. de Francesc Macià,58,El Corte Inglés,department_store,comerç,41.5544915,2.0979942,,,Mo-Sa 09:30-22:00,OSM,,DISTRICTE 1,"av. de Francesc Macià, 58",
 1502,av. de Can Bordoll,55,Com-Cal,trade,comerç,41.5435529,2.1301502,https://com-cal.com/,,,OSM,,DISTRICTE 1,"av. de Can Bordoll, 55",
 1359,c. del Doctor Puig,5,Sabway,department_store,comerç,41.5486241,2.1092596,https://sabway.es/,+34930185635,"Mo-Fr 10:00-14:00, 17:00-20:00; Sa 10:00-14:00",OSM,,DISTRICTE 1,"c. del Doctor Puig, 5",
 966,via de Massagué,62,Massagué 62 - La Piazza,restaurant,equipament,41.5514598,2.1068172,https://massague62.com/,+34937251687,Mo-Su 13:00-17:00; We-Sa 20:00-0:00,OSM,,DISTRICTE 1,"via de Massagué, 62",
@@ -1282,7 +1248,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 927,ctra. de Molins de Rei,101,Escola Teresa Claramunt,school,equipament,41.5399706,2.1003977,,+34 937263188,,OSM,,DISTRICTE 1,"ctra. de Molins de Rei, 101",
 469,c. de Viladomat,118,Institut Pau Vila,school,equipament,41.5393091,2.1015488,https://agora.xtec.cat/iespauvila/,+34937104112,,OSM,,DISTRICTE 1,"c. de Viladomat, 118",
 1456,pl. de Catalunya,17,Youme,restaurant,equipament,41.5493012,2.0982748,https://www.youmebcn.com/,+34 936 27 20 00,,OSM,,DISTRICTE 1,"pl. de Catalunya, 17",
-780,pg. de la Plaça Major,1,Óptica Andorrana,optician,comerç,41.546913,2.1085349,https://www.optica-andorrana.com/,+34937250485,Mo-Fr 09:45-13:30; Sa 10:00-14:00; Mo-Sa 17:00-20:30,OSM,,DISTRICTE 1,"pg. de la Plaça Major, 1",
 452,rda. de Zamenhof,147,Km 0,cafe,equipament,41.550333,2.0998391,,+34937272971,,OSM,,DISTRICTE 1,"rda. de Zamenhof, 147",
 1268,c. dels Filadors,28,Restaurant Viena Filadors,restaurant,equipament,41.5537021,2.098933,,,Su-Th 08:00-24:00; Fr-Sa 08:00-01:00,OSM,,DISTRICTE 1,"c. dels Filadors, 28",
 1006,c. de Manso,37,Llar d'Infants El Cavallet - Sabadell,kindergarten,equipament,41.5381701,2.1041345,,,Mo-Fr 07:00-19:30,OSM,,DISTRICTE 1,"c. de Manso, 37",
@@ -1406,7 +1371,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,,,Asepeyo,,Activitats de medicina especialitzada,41.5447489,2.1002579,,,,OSM_2026,,1,,
 ,,,C.A.P. Sant Fèlix,,Activitats de medicina especialitzada,41.5325822,2.1139605,,,,OSM_2026,,1,,
 ,,,Banco Santander,,Banca,41.5474066,2.1090661,,,,OSM_2026,,1,,
-,,,Banco Santander,,Banca,41.5431919,2.1105014,,,,OSM_2026,,1,,
 ,rda. de Zamenhof,21,Urban Sabadell,,Allotjament en hotels i allotjaments similars,41.5502,2.1001,,,,WebSearch_2026,,1,"rda. de Zamenhof, 21",
 ,pg. de Joan XXIII,5,Urban Sabadell 2,,Allotjament en hotels i allotjaments similars,41.5476,2.0971,,,,WebSearch_2026,,1,"pg. de Joan XXIII, 5",
 ,pg. de la Plaça Major,6,SIXT,,Lloguer de vehicles de motor,41.5477,2.1083,,,,WebSearch_2026,,1,"pg. de la Plaça Major, 6",
@@ -1481,46 +1445,18 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,Carrer de l'Advocat Cirera,12,Casa Fuster Original,restaurant,Restaurants i establiments de menjars,41.5459,2.1076,,,,TripAdvisor,,1,Carrer de l'Advocat Cirera 12,
 ,rda. de Zamenhof,149,Tintoreria Zamenhof,laundry,Serveis Personals,41.5505577,2.1006159,,,,OSM,,1,rda. de Zamenhof 149,
 ,,,Pastisseria Armengol,bakery,Alimentació,41.5557328,2.1014817,,,,OSM,,1,,
-,Escola Industrial,6-8,Masclans Cistelleria,gift,Llar i Decoració,41.5478071,2.1064844,,,,OSM,,1,Escola Industrial 6-8,
-,Ronda Zamenhof,,Supercor,convenience,Alimentació,41.5517009,2.1046494,,,,OSM,,1,Ronda Zamenhof,
-,Carretera de Barcelona,19-21,Vèrtic,sports,Esport i Oci,41.5429022,2.1036736,,,,OSM,,1,Carretera de Barcelona 19-21,
-,Carrer d'Alemanya,29,La Pastisseria,bakery,Alimentació,41.5423161,2.1097932,,,,OSM,,1,Carrer d'Alemanya 29,
 ,,,El fornet d'en Rossend,bakery,Alimentació,41.5441384,2.110096,,,,OSM,,1,,
 ,,,Fastuska,wine,Alimentació,41.5430694,2.1095581,,,,OSM,,1,,
 ,Rambla,46,Tezenis,clothes,Moda i Complements,41.5449378,2.1097071,,937484900,,OSM,,1,Rambla 46,
-,Carrer de Sant Francesc,15,Impaktes Visuals,gift,Llar i Decoració,41.5510524,2.107647,,,,OSM,,1,Carrer de Sant Francesc 15,
-,Via Aurèlia,2,Tintoreria World Ecologic Sec,laundry,Serveis Personals,41.5552272,2.0952705,,,,OSM,,1,Via Aurèlia 2,
 ,,,BiciEscapa,bicycle,Ciclisme,41.5422945,2.1048311,,,,OSM,,1,,
-,Passeig de la Plaça Major,48,Abant Joiers,jewelry,Moda i Complements,41.5477928,2.1089337,,,,OSM,,1,Passeig de la Plaça Major 48,
-,Avinguda de Francesc Macià,46-50,Zara,clothes,Moda i Complements,41.5528269,2.0985119,,,,OSM,,1,Avinguda de Francesc Macià 46-50,
-,Avinguda de Francesc Macià,30,H&M,clothes,Moda i Complements,41.5521209,2.0983984,,,,OSM,,1,Avinguda de Francesc Macià 30,
-,Sol i Padrís,97,PCsWOW,computer,Electrònica i Tecnologia,41.5366393,2.1194407,,,,OSM,,1,Sol i Padrís 97,
 ,,,Turris,bakery,Alimentació,41.5417258,2.1116283,,,,OSM,,1,,
-,Carrer de la Salut,53,Sabway,electronics,Electrònica i Tecnologia,41.5505591,2.1097593,,,,OSM,,1,Carrer de la Salut 53,
-,Ronda de Ponent,183,Fancy Disseny,toys,Cultura i Paperia,41.5491956,2.0982796,,,,OSM,,1,Ronda de Ponent 183,
-,Carrer de Colom,36,Ferreteria Feu,hardware,Ferreteria,41.5464719,2.1041761,,,,OSM,,1,Carrer de Colom 36,
-,Carrer de Colom,46,Cal Blau Sabadell,supermarket,Alimentació,41.5463029,2.1037066,,,,OSM,,1,Carrer de Colom 46,
 ,,,Cash Converters,pawnbroker,Segona Mà,41.531907,2.1144033,,,,OSM,,1,,
 ,,,L'Intercanvi,pawnbroker,Segona Mà,41.5317163,2.1145374,,,,OSM,,1,,
 ,,,Plataforma Cárnica,butcher,Alimentació,41.5324371,2.116069,,,,OSM,,1,,
 ,,,Licobarna,alcohol,Alimentació,41.5318548,2.1175496,,,,OSM,,1,,
-,Passeig de la Plaça Major,51-55,Natura,gift,Llar i Decoració,41.5479919,2.1084656,,,,OSM,,1,Passeig de la Plaça Major 51-55,
-,Passeig de la Plaça Major,41,Lotería N. 1 de Sabadell,lottery,Cultura i Paperia,41.5477211,2.1084408,,,,OSM,,1,Passeig de la Plaça Major 41,
-,Carrer de la Rosa,2,1800 Botiga Dolça,confectionery,Alimentació,41.5474904,2.1083914,,,,OSM,,1,Carrer de la Rosa 2,
-,Carrer de la Rosa,7,Blot,gift,Llar i Decoració,41.5472752,2.1082405,,,,OSM,,1,Carrer de la Rosa 7,
-,Passeig de la Plaça Major,21,Calzedonia,clothes,Moda i Complements,41.547354,2.1085619,,,,OSM,,1,Passeig de la Plaça Major 21,
-,Passeig de la Plaça Major,9,Casas,shoes,Moda i Complements,41.5471408,2.1085376,,,,OSM,,1,Passeig de la Plaça Major 9,
-,Carrer de Gràcia,2,DepilStore,beauty,Moda i Complements,41.547234,2.107687,,,,OSM,,1,Carrer de Gràcia 2,
 ,,,Opan,bakery,Alimentació,41.5463595,2.11538,,,,OSM,,1,,
 ,,,Tandy,supermarket,Alimentació,41.5509191,2.1263218,,,,OSM,,1,,
-,Ronda de Zamenhof,153,Dia,supermarket,Alimentació,41.55025,2.0994723,,,,OSM,,1,Ronda de Zamenhof 153,
-,Ronda de Zamenhof,107-117,BonÀrea,supermarket,Alimentació,41.5508009,2.1017476,,,,OSM,,1,Ronda de Zamenhof 107-117,
-,Carrer de Sant Antoni,20,La Llar del Llibre,books,Cultura i Paperia,41.5482098,2.1076778,,,,OSM,,1,Carrer de Sant Antoni 20,
-,Carrer de Sant Vicenç,80,Sorli Discau,supermarket,Alimentació,41.5517155,2.1012664,,,,OSM,,1,Carrer de Sant Vicenç 80,
-,Carrer de Sant Antoni,5,Cafés PONT,coffee,Alimentació,41.5483227,2.1080186,,,,OSM,,1,Carrer de Sant Antoni 5,
 ,Carrer de l'Illa,56,Drapaires Emaús,clothes,Moda i Complements,41.5487799,2.1139789,,,,OSM,,1,Carrer de l'Illa 56,
-,Carrer de la Indústria,34,Sorli Discau,supermarket,Alimentació,41.5473691,2.1134845,,,,OSM,,1,Carrer de la Indústria 34,
-,Carrer de Sant Antoni,27,Ho fem a Mida,furniture,Llar i Decoració,41.5479815,2.1074228,,,,OSM,,1,Carrer de Sant Antoni 27,
 ,,,Fruiteria i Verdures,supermarket,Alimentació,41.5327248,2.1194351,,,,OSM,,1,,
 ,,,Escola F.P. Nuria Vilella,hairdresser,Moda i Complements,41.5323373,2.1181343,,,,OSM,,1,,
 ,,,Basar Xinés,variety_store,Llar i Decoració,41.5357244,2.1191669,,,,OSM,,1,,
@@ -1535,13 +1471,11 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,,,Andreu Comas,seafood,Alimentació,41.5415184,2.1110189,,,,OSM,,1,,
 ,,,Telecor,mobile_phone,Electrònica i Tecnologia,41.5419942,2.1114829,,,,OSM,,1,,
 ,,,moniberic,butcher,Alimentació,41.5419922,2.1109894,,,,OSM,,1,,
-,,,Fotoprix,photo,Cultura i Paperia,41.5422913,2.1108821,,,,OSM,,1,,
 ,,,Casa Interior,variety_store,Llar i Decoració,41.5424579,2.1107775,,,,OSM,,1,,
 ,,,Troc.com Sabadell,second_hand,Segona Mà,41.5356404,2.0976422,,,,OSM,,1,,
 ,,,OKSofás Sabadell,furniture,Llar i Decoració,41.5357669,2.0970682,,,,OSM,,1,,
 ,,,Michelin (Blaublanc),car_repair,Taller Vehicles,41.5359958,2.0972077,,,,OSM,,1,,
 ,,,Endeka Sports,sports,Esport i Oci,41.5503599,2.0960319,,,,OSM,,1,,
-,Ronda de Ponent,172,Atelier Descans,furniture,Llar i Decoració,41.5492238,2.0987259,,,,OSM,,1,Ronda de Ponent 172,
 ,,,Cars & Cars,car,Vehicles,41.5450223,2.1001893,,,,OSM,,1,,
 ,,,Skoda,car,Vehicles,41.5459116,2.0992774,,,,OSM,,1,,
 ,,,Sofás Valencia Sabadell,furniture,Llar i Decoració,41.5474051,2.0994544,,,,OSM,,1,,
@@ -1552,66 +1486,32 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,,,Sfera,clothes,Moda i Complements,41.5447617,2.1101432,,,,OSM,,1,,
 ,,,Bershka,clothes,Moda i Complements,41.5449078,2.1101292,,,,OSM,,1,,
 ,,,Milar,electronics,Electrònica i Tecnologia,41.5431436,2.1109012,,,,OSM,,1,,
-,Carrer de Borrell,35,M & S Perruquers,hairdresser,Moda i Complements,41.5412461,2.1147164,,,,OSM,,1,Carrer de Borrell 35,
 ,,,Supermercat Pròxim,supermarket,Alimentació,41.550205,2.1047432,,,,OSM,,1,,
-,Carrer de Cervantes,2,Centros H2O,beauty,Moda i Complements,41.5417794,2.1109701,,,,OSM,,1,Carrer de Cervantes 2,
 ,,,Peugeot,car,Vehicles,41.5450899,2.0967074,,,,OSM,,1,,
-,Avinguda de Francesc Macià,58,El Corte Inglés,department_store,Llar i Decoració,41.5544915,2.0979942,,,,OSM,,1,Avinguda de Francesc Macià 58,
-,Carrer Doctor Puig,5,Sabway,department_store,Llar i Decoració,41.5486241,2.1092596,,,,OSM,,1,Carrer Doctor Puig 5,
-,Carrer Sant Jaume,8,Librerío de la Plata,books,Cultura i Paperia,41.5462874,2.1049149,,,,OSM,,1,Carrer Sant Jaume 8,
 ,,,Oysho,clothes,Moda i Complements,41.5440106,2.1105304,,,,OSM,,1,,
 ,,,Crack,variety_store,Llar i Decoració,41.5438694,2.1105982,,,,OSM,,1,,
-,Carrer del Riu Ripoll,28,Qui t'ho fa? Camper (Camperització Furgonetes),car_repair,Taller Vehicles,41.5433357,2.1261512,,,,OSM,,1,Carrer del Riu Ripoll 28,
-,Plaça de Sant Roc,5,Carreras,bakery,Alimentació,41.5465149,2.1078733,,,,OSM,,1,Plaça de Sant Roc 5,
-,Carrer de Torras i Bages,9,Cyclosim,bicycle,Ciclisme,41.5457318,2.1048555,,,,OSM,,1,Carrer de Torras i Bages 9,
-,Carrer de Calderón,16,Re-Read Sabadell Low Cost,books,Cultura i Paperia,41.5483272,2.1068805,,,,OSM,,1,Carrer de Calderón 16,
-,Carrer de Torras i Bages,,Biopompas,cosmetics,Moda i Complements,41.5458543,2.104822,,,,OSM,,1,Carrer de Torras i Bages,
-,Carrer de Pi i Margall,36,Reina Picara,erotic,Adults,41.5550604,2.1008727,,,,OSM,,1,Carrer de Pi i Margall 36,
-,Carrer de Torras i Bages,19,Vuket,florist,Llar i Decoració,41.5459302,2.1047952,,,,OSM,,1,Carrer de Torras i Bages 19,
-,Ronda de Zamenhof,90-92,Patamic,pet,Animals de Companyia,41.5509027,2.1010421,,,,OSM,,1,Ronda de Zamenhof 90-92,
-,Carrer de les Tres Creus,86-88,Abacus Cooperativa,books,Cultura i Paperia,41.5458545,2.1128369,,,,OSM,,1,Carrer de les Tres Creus 86-88,
-,Carrer de les Tres Creus,65-73,Llibreria Tècnica,books,Cultura i Paperia,41.5464232,2.1118531,,,,OSM,,1,Carrer de les Tres Creus 65-73,
-,Carrer de la Rosa,20,Llibreria Macondo,books,Cultura i Paperia,41.5472615,2.1080755,,,,OSM,,1,Carrer de la Rosa 20,
-,Passeig de Tirso de Molina,34,Canius,pet,Animals de Companyia,41.5331306,2.1189119,,,,OSM,,1,Passeig de Tirso de Molina 34,
 ,,,Lexus Sabadell,car_repair,Taller Vehicles,41.5315815,2.1036303,,,,OSM,,1,,
-,Rambla d'Ibèria,191,Ippon Motor Vallès,car_repair,Taller Vehicles,41.5370613,2.0964769,,,,OSM,,1,Rambla d'Ibèria 191,
 ,,,Zona Bici Trial,outdoor,Esport i Oci,41.5512928,2.0954364,,,,OSM,,1,,
 ,Carrer de l'escola Pía,112,INBLAK Micropigmentación Capilar,beauty,Moda i Complements,41.5481757,2.1005365,,,,OSM,,1,Carrer de l'escola Pía 112,
 ,,,Autiràpid Feliu,car_repair,Taller Vehicles,41.5442135,2.101049,,,,OSM,,1,,
 ,c. de Corominas,19-21,Morera Zoo,pet,Animals de Companyia,41.5470721,2.1045529,http://www.morerazoo.com,937256335,,OSM,,1,c. de Corominas 19-21,
 ,,,Amna Supermercat,grocery,Alimentació,41.5454669,2.1049496,,,,OSM,,1,,
-,Carrer de Sant Ferran,229,Recanvis Gaudí,car_parts,Recanvis Vehicle,41.5357603,2.0998104,,,,OSM,,1,Carrer de Sant Ferran 229,
 ,,,Pneumàtics Parc Catalunya,car_repair,Taller Vehicles,41.555103,2.0947463,,,,OSM,,1,,
 ,,,North Tattoo,tattoo,Moda i Complements,41.5495571,2.0980514,,,,OSM,,1,,
 ,,,Visionlab,optician,Òptica,41.5535969,2.0985035,,,,OSM,,1,,
 ,,,Llongueras,hairdresser,Moda i Complements,41.5557943,2.0970992,,,,OSM,,1,,
 ,,,Consum,supermarket,Alimentació,41.5473261,2.1048455,,,,OSM,,1,,
-,Passeig de la Plaça Major,1,Óptica Andorrana,optician,Òptica,41.546913,2.1085349,,,,OSM,,1,Passeig de la Plaça Major 1,
-,Carrer de Fiveller,50,Fruites i Verdures Rosario,greengrocer,Alimentació,41.5390841,2.1039361,,,,OSM,,1,Carrer de Fiveller 50,
-,Carrer de Calderón,33,Set & Set Home,interior_decoration,Llar i Decoració,41.547881,2.1056101,,,,OSM,,1,Carrer de Calderón 33,
-,Carrer d'Alfons Sala,151,Casa Nova,houseware,Llar i Decoració,41.5463526,2.1165654,,,,OSM,,1,Carrer d'Alfons Sala 151,
-,Carrer d'Alfons Sala,147,Condis express,convenience,Alimentació,41.5466452,2.1164128,,,,OSM,,1,Carrer d'Alfons Sala 147,
-,Carrer Puig i Cadafalch,1,Bocados de Placer Celeste,butcher,Alimentació,41.5379612,2.1081393,,,,OSM,,1,Carrer Puig i Cadafalch 1,
-,Carretera de Terrassa,165,Recambios del Camión,car_parts,Recanvis Vehicle,41.5448304,2.0981357,,,,OSM,,1,Carretera de Terrassa 165,
 ,La Rambla,91,Decathlon,sports,Esport i Oci,41.5438058,2.1105789,,,,OSM,,1,La Rambla 91,
 ,,,BMW,car,Vehicles,41.5467905,2.0994655,,,,OSM,,1,,
-,Carrer de Gràcia,30,Buo Buo,tea,Alimentació,41.5477489,2.1071858,,,,OSM,,1,Carrer de Gràcia 30,
-,Passeig de la Plaça Major,12,Yessi Bubble Tea,tea,Alimentació,41.5471974,2.1090191,,,,OSM,,1,Passeig de la Plaça Major 12,
-,Carrer de Gràcia,28 B,Cannabity Sabadell,cannabis,Cannabis Club,41.5485638,2.10644,,,,OSM,,1,Carrer de Gràcia 28 B,
 ,La Rambla,73,UGT Sabadell,union,Administració i Serveis,41.5442745,2.1103585,,,,OSM,,1,La Rambla 73,
 ,Carrer de l'Escola Industrial,9,Jefatura local de tràfic,government,Administració i Serveis,41.5477224,2.1065861,,,,OSM,,1,Carrer de l'Escola Industrial 9,
 ,,,Solucions Geogràfiques,company,Administració i Serveis,41.546065,2.1173065,,,,OSM,,1,,
 ,,,Escola Oficial d'Idiomes,language_school,Educació,41.5531897,2.1121094,,,,OSM,,1,,
 ,,,Escola Samuntada,school,Educació,41.5554096,2.1135151,,,,OSM,,1,,
-,Avinguda de Francesc Macià,34,Jutjats de Sabadell,courthouse,Cultura i Oci,41.5524894,2.0985345,,,,OSM,,1,Avinguda de Francesc Macià 34,
 ,,,Teatre l'Estruch,theatre,Cultura i Oci,41.5540379,2.1000076,,,,OSM,,1,,
 ,,,Teatre Sant Vicenç,theatre,Cultura i Oci,41.5552859,2.1031585,,,,OSM,,1,,
 ,,,Teatre Principal,theatre,Cultura i Oci,41.5455472,2.1081143,,,,OSM,,1,,
 ,Avinguda de l'11 de Setembre,67,Mediterranea Services,it,Serveis Professionals,41.5530756,2.1047791,,,,OSM,,1,Avinguda de l'11 de Setembre 67,
-,Carrer de Sant Joan,23-31,ARATOP BCN,company,Administració i Serveis,41.5475945,2.1096939,,,,OSM,,1,Carrer de Sant Joan 23-31,
-,Plaça Vallès,3,UEC Sabadell de la Fundació MAIN,school,Educació,41.5457524,2.1026529,,,,OSM,,1,Plaça Vallès 3,
-,Rambla d'Ibèria,97,Iglesia Evangélica Centro Familiar Cristiano Sabadell,place_of_worship,Cultura i Oci,41.5409948,2.0984155,,,,OSM,,1,Rambla d'Ibèria 97,
-,Carrer de la Rosa,22,Autoescola l'Asfalt,driving_school,Educació,41.5472344,2.1080363,,,,OSM,,1,Carrer de la Rosa 22,
 ,Carrer de Sant Joan,35,Alliance Française de Sabadell,language_school,Educació,41.5475012,2.1098,,,,OSM,,1,Carrer de Sant Joan 35,
 ,,,Agència Tributària,government,Administració i Serveis,41.5444286,2.1161627,,,,OSM,,1,,
 ,,,donpiso,estate_agent,Serveis Financers,41.5404684,2.1117914,,,,OSM,,1,,
@@ -1623,20 +1523,10 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,,,OTG Sabadell Centre,government,Administració i Serveis,41.5462416,2.1113921,,,,OSM,,1,,
 ,,,OTG Sabadell Sardà,government,Administració i Serveis,41.535106,2.113354,,,,OSM,,1,,
 ,,,Antic Mercat de Sant Joan,community_centre,Cultura i Oci,41.5421348,2.1148155,,,,OSM,,1,,
-,Carrer d'Àngel Guimerà,25,Farrés Junyent Assessors,lawyer,Serveis Professionals,41.5446264,2.1082833,,,,OSM,,1,Carrer d'Àngel Guimerà 25,
-,Avinguda de Francesc Macià,38,Contenidos Click,company,Administració i Serveis,41.552789,2.0984058,,,,OSM,,1,Avinguda de Francesc Macià 38,
-,Carrer de les Valls,10,Diari de Sabadell,newspaper,Administració i Serveis,41.5490949,2.1078488,,,,OSM,,1,Carrer de les Valls 10,
 ,,,Help Sabadell,school,Educació,41.5464788,2.1034078,,,,OSM,,1,,
-,Carrer de Sol i Padrís,2B,Exabase Systems,consulting,Serveis Professionals,41.5410624,2.1167536,,,,OSM,,1,Carrer de Sol i Padrís 2B,
-,Carrer dels Calders,32,Centre de Formació Cal Molins,school,Educació,41.5342991,2.1133652,,,,OSM,,1,Carrer dels Calders 32,
 ,,,Teatre La Faràndula,theatre,Cultura i Oci,41.5464662,2.1108535,,,,OSM,,1,,
-,Carretera de Molins de Rei,101,Escola Teresa Claramunt,school,Educació,41.5399706,2.1003977,,,,OSM,,1,Carretera de Molins de Rei 101,
-,Carrer de Viladomat,118,Institut Pau Vila,school,Educació,41.5393091,2.1015488,,,,OSM,,1,Carrer de Viladomat 118,
 ,,,Sabadell Atenció Ciutadana (Despatx Lluch),government,Administració i Serveis,41.5470129,2.1104896,,,,OSM,,1,,
 ,La Rambla,69,Casal Pere Quart,community_centre,Cultura i Oci,41.5443855,2.1103091,,,,OSM,,1,La Rambla 69,
-,Carrer del Papa Pius XI,130,Associació Catalana d'Esperanto,association,Cultura i Oci,41.554058,2.1019797,,,,OSM,,1,Carrer del Papa Pius XI 130,
-,Carrer de la Salut,19,Meditempus ETT,employment_agency,Administració i Serveis,41.5499225,2.1089291,,,,OSM,,1,Carrer de la Salut 19,
-,Carrer de les Valls,10,Trevisiol Abogados,lawyer,Serveis Professionals,41.5491774,2.1078979,,,,OSM,,1,Carrer de les Valls 10,
 ,Carrer de Sant Pau,2,Notaria Javier Micó Giner,notary,Serveis Professionals,41.5460,2.1068,,937255766,,notariosen.com,,1,Carrer de Sant Pau 2,
 ,Carrer de Sant Pau,2,Notaria María Lara Domínguez Martínez,notary,Serveis Professionals,41.5460,2.1068,,937155514,,notariosen.com,,1,Carrer de Sant Pau 2,
 ,Carrer de la República,18,Notaria Montserrat Prieto Santos,notary,Serveis Professionals,41.5449,2.1106,,937457800,,notariosen.com,,1,Carrer de la República 18,
@@ -1654,8 +1544,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,Carrer de Duran i Sors,4,Fiscal Gain Consulting,gestoría,Serveis Professionals,41.5458,2.1071,,,,gestorias.es,,1,Carrer de Duran i Sors 4,
 ,Carrer de Duran i Sors,4,Hernandez Assessors,gestoría,Serveis Professionals,41.5458,2.1071,,,,gestorias.es,,1,Carrer de Duran i Sors 4,
 ,Carrer de Sant Pere,15,Orientagrup Abogados,gestoría,Serveis Professionals,41.5479,2.1097,,,,gestorias.es,,1,Carrer de Sant Pere 15,
-,Carrer de la Font,6,Velilla Assessors,gestoría,Serveis Professionals,41.5469,2.1056,,,,gestorias.es,,1,Carrer de la Font 6,
-,Carrer d'Alemanya,37,Gestoría Piqué,gestoría,Serveis Professionals,41.5423,2.1098,,,,gestorias.es,,1,Carrer d'Alemanya 37,
 ,Plaça de Marquilles,3,Llonch Codina Associats,gestoría,Serveis Professionals,41.5461,2.1057,,,,gestorias.es,,1,Plaça de Marquilles 3,
 ,Carrer de Sant Pau,77,Maeso Consultors i Advocats,gestoría,Serveis Professionals,41.5464,2.1068,,,,gestorias.es,,1,Carrer de Sant Pau 77,
 ,Carrer de Montserrat,22,Agper Economistes i Advocats,gestoría,Serveis Professionals,41.5467,2.1068,,,,gestorias.es,,1,Carrer de Montserrat 22,
@@ -1834,9 +1722,7 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,c. de la Salut,11,Bar La Llar,BAR/PUB,Restauració,41.5422,2.10946,,937251315,,WebSearch_2026,,1,c. de la Salut 11,
 ,Carrer de Gràcia,72,ZIVING ORTODONCIA,Clínica dental,Salut dental,41.54910980,2.10599060,,937155840,,dentistaentuciudad_2026,,1,Carrer de Gràcia 72,
 ,Carrer de Coromines,114,CLÍNICA DENTAL DR. XAVIER PUJOL,Clínica dental,Salut dental,41.55084880,2.10260940,,937276389,,dentistaentuciudad_2026,,1,Carrer de Coromines 114,
-,Carretera de Barcelona,121,MON DE SOMRIURES,Clínica dental,Salut dental,41.54085520,2.10577020,,937264987,,dentistaentuciudad_2026,,1,Carretera de Barcelona 121,
 ,Carrer de Jovellanos,36,CARLOS PLA GOMEZ,Clínica dental,Salut dental,41.54847840,2.10520500,,937259978,,dentistaentuciudad_2026,,1,Carrer de Jovellanos 36,
-,Carrer de Calderón,38,CENTRE DENTAL SABADELL,Clínica dental,Salut dental,41.54819430,2.10614970,,937268238,,dentistaentuciudad_2026,,1,Carrer de Calderón 38,
 ,Ronda de Zamenhof,3,CLINICA DENTAL DR. IVAN DIAZ BARRERA,Clínica dental,Salut dental,41.55206950,2.10620630,,937258888,,dentistaentuciudad_2026,,1,Ronda de Zamenhof 3,
 ,Carrer del Doctor Puig,33,PROPISET 03,Clínica dental,Salut dental,41.54950680,2.10897170,,937255782,,dentistaentuciudad_2026,,1,Carrer del Doctor Puig 33,
 ,Ronda de Zamenhof,96,Funnydent Sabadell,Clínica dental,Salut dental,41.55079050,2.10114480,,917373785,,dentistaentuciudad_2026,,1,Ronda de Zamenhof 96,
@@ -2004,47 +1890,10 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,Plaça de l'Alcalde Marcet,6,JOLVI'S KIM,Comerç,Subministres perruqueria,41.551573,2.106805,jolvis.com,937266640,,qdq.com_2026,,1,Plaça de l'Alcalde Marcet 6,
 ,La Rambla,135,"MIQUEL SOLANA, M.",Comerç,Perfumeria,41.542318,2.11109,,937255924,,qdq.com_2026,,1,La Rambla 135,
 ,Carrer de Sant Oleguer,,"LAKSHMI MADE WITH JOY, S.L.",Comerç,Subministres perruqueria,41.541586,2.112537,lakshmi.es,937270678,,qdq.com_2026,,1,Carrer de Sant Oleguer,
-,Carrer de Gràcia,56,JOIERIA CATALANA,Comerç,Joieria,41.548505,2.106399,,937253582,,qdq.com_2026,,1,Carrer de Gràcia 56,
-,La Rambla,60,JOYERIA J. SENSERRICH,Comerç,Joieria,41.544566,2.109876,,937261686,,qdq.com_2026,,1,La Rambla 60,
-,Carrer de les Tres Creus,1,JOIERIA FAYOS,Comerç,Joieria,41.546773,2.109939,,937251988,,qdq.com_2026,,1,Carrer de les Tres Creus 1,
-,Carrer de les Tres Creus,1,"FAYOS CASELLAS, F.",Servei,Joieria,41.546773,2.109939,,,,qdq.com_2026,,1,Carrer de les Tres Creus 1,
-,Carrer de Valls,15,TOUS,Comerç,Joieria,41.548741,2.107627,,937480292,,qdq.com_2026,,1,Carrer de Valls 15,
-,La Rambla,213,OPTICA GUFFO,Comerç,Òptica,41.540553,2.111945,,937267029,,qdq.com_2026,,1,La Rambla 213,
-,Passeig de Manresa,24,MULTIÓPTICAS PORTA,Comerç,Òptica,41.548706,2.108272,,937259364,,qdq.com_2026,,1,Passeig de Manresa 24,
-,Passeig de Manresa,41,LUXOR,Comerç,Joieria,41.549064,2.107972,,937256574,,qdq.com_2026,,1,Passeig de Manresa 41,
-,Plaça del Mercat,242-243,"MESTRE PUIG, M.",Comerç,Joieria,41.547363,2.104982,,937272968,,qdq.com_2026,,1,Plaça del Mercat 242-243,
-,Carrer de l'Escola Industrial,32,CAYELLAS JOIERS,Comerç,Joieria,41.547383,2.105961,,937255915,,qdq.com_2026,,1,Carrer de l'Escola Industrial 32,
-,Carrer de Cervantes,34,URKUNDE,Comerç,Electricitat,41.541418,2.109625,,937205119,,qdq.com_2026,,1,Carrer de Cervantes 34,
-,Plaça del Gas,5,JORDI LARA PUERTO,Comerç,Joieria,41.54549,2.106455,,937255354,,qdq.com_2026,,1,Plaça del Gas 5,
-,Via Massagué,36,MARRAL,Comerç,Joieria,41.550408,2.10743,,937251145,,qdq.com_2026,,1,Via Massagué 36,
-,Passeig de la Plaça Major,15,ABANT JOIERS,Comerç,Joieria,41.547183,2.108803,,937266392,,qdq.com_2026,,1,Passeig de la Plaça Major 15,
-,Carrer de l'Escola Industrial,13,OPTICA MARTIN,Comerç,Òptica,41.547743,2.106533,,937259342,,qdq.com_2026,,1,Carrer de l'Escola Industrial 13,
-,Carrer de Corominas,15,VISTA ÓPTICA,Comerç,Òptica,41.547038,2.104435,http://www.vistaoptica.com,937273752,,qdq.com_2026,,1,Carrer de Corominas 15,
-,Carrer de Capmany,75,JOSE CAYELLAS JUNQUE,Comerç,Joieria,41.5511862,2.1060552,,937169551,,qdq.com_2026,,1,Carrer de Capmany 75,
-,Carrer de Sant Cugat,22,ÒPTICA SAMARANCH,Comerç,Òptica,41.545659,2.105192,,937277014,,qdq.com_2026,,1,Carrer de Sant Cugat 22,
 ,Via Massagué,50,RELLOTGES PÚBLICS & CONTROL,Comerç,Rellotgeria,41.55116,2.106926,,937251596,,qdq.com_2026,,1,Via Massagué 50,
-,Passeig de la Plaça Major,70,PAPELERÍA FIGUEROLA,Comerç,Papereria,41.548187,2.108656,,937260544,,qdq.com_2026,,1,Passeig de la Plaça Major 70,
-,Carrer de Gràcia,22,CALZADOS TORRAS,Comerç,Calçats,41.547529,2.10731,,937253984,,qdq.com_2026,,1,Carrer de Gràcia 22,
-,Carrer de Gràcia,34,MARLOS,Comerç,Calçats,41.54786,2.106998,,937274915,,qdq.com_2026,,1,Carrer de Gràcia 34,
-,Carrer de la Rosa,18,PAPERERIA FAYOS,Comerç,Papereria,41.54728,2.108063,,937256180,,qdq.com_2026,,1,Carrer de la Rosa 18,
-,Carrer de la Font,37-39,CALÇATS MOIX,Comerç,Calçats,41.546315,2.105679,,937257770,,qdq.com_2026,,1,Carrer de la Font 37-39,
-,Carrer de Sant Antoni,32,SABATERIA ALPAS,Comerç,Calçats,41.547995,2.107272,,937257907,,qdq.com_2026,,1,Carrer de Sant Antoni 32,
-,Plaça de les Marquilles,2,FLORISTERIA BOSCH,Comerç,Floristeria,41.546109,2.105692,,937260735,,qdq.com_2026,,1,Plaça de les Marquilles 2,
-,Carrer de Garcilaso,15,PALOU PAPELES TEXTILES,Comerç,Papereria,41.55045,2.105973,,937251375,,qdq.com_2026,,1,Carrer de Garcilaso 15,
-,Carrer de Calderón,90,FLORA OTIN LASIERRA,Comerç,Papereria,41.547187,2.102858,,937262593,,qdq.com_2026,,1,Carrer de Calderón 90,
-,Carrer de la Salut,62,CARALT,Comerç,Floristeria,41.550755,2.110186,,937450506,,qdq.com_2026,,1,Carrer de la Salut 62,
-,Carrer de Borriana,25,CARLOTA SEGALÀ,Comerç,Floristeria,41.547488,2.109208,,937278267,,qdq.com_2026,,1,Carrer de Borriana 25,
-,Carrer de la Palanca,7,GOMBAU,Comerç,Papereria,41.548277,2.109074,,937258780,,qdq.com_2026,,1,Carrer de la Palanca 7,
-,Carrer de la Indústria,18,ABACUS,Comerç,Papereria,41.547125,2.111143,,937270164,,qdq.com_2026,,1,Carrer de la Indústria 18,
-,Passeig de la Plaça Major,70,"FIGUEROLA, J.",Comerç,Papereria,41.548187,2.108656,,937260255,,qdq.com_2026,,1,Passeig de la Plaça Major 70,
-,Carrer de la Lluna,49,LA BOTA D'OR,Comerç,Sabateria-Reparació,41.550027,2.109246,http://www.botador.com,672025001,,qdq.com_2026,,1,Carrer de la Lluna 49,
 ,Rambla,33,DIMA,Comerç,Sabateria,41.545212,2.109694,,937256125,,qdq.com_2026,,1,Rambla 33,
-,Carrer de la Font,37,CALÇATS MOIX,Comerç,Sabateria,41.546315,2.105679,,937257770,,qdq.com_2026,,1,Carrer de la Font 37,
 ,Rambla,175,"ACIN ACIN, A.",Comerç,Sabateria,41.541368,2.111547,,937273397,,qdq.com_2026,,1,Rambla 175,
 ,Rambla,175,DESTINO,Comerç,Sabateria,41.541368,2.111547,,678236667,,qdq.com_2026,,1,Rambla 175,
-,Carrer de Via Massagué,36,"RIBES ESTEVE, A.",Comerç,Perfumeria,41.550408,2.10743,,937251180,,qdq.com_2026,,1,Carrer de Via Massagué 36,
-,Rambla,135,"MIQUEL SOLANA, M.",Comerç,Perfumeria,41.542318,2.11109,,937255924,,qdq.com_2026,,1,Rambla 135,
-,Plaça Alcalde Marcet,6,JOLVI'S KIM,Comerç,Subministraments Perruqueria,41.551573,2.106805,http://www.jolvis.com,937266640,,qdq.com_2026,,1,Plaça Alcalde Marcet 6,
 ,Passeig Plaça Major,65,MERCERIA LA MODA,Merceria,Teixits i Merceria,41.548213,2.108441,,937256123,,qdq_2026,,1,Passeig Plaça Major 65,
 ,Passeig Plaça Major,66,CASA TRAVERIA,Merceria,Teixits i Merceria,41.548151,2.108728,,937250576,,qdq_2026,,1,Passeig Plaça Major 66,
 ,Calle Pasteral,13,"ROMERO MURILLO, C.",Merceria,Teixits i Merceria,41.548003,2.127913,,937258161,,qdq_2026,,1,Calle Pasteral 13,
@@ -2197,8 +2046,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,Calle Estrella,211-217,PSICOSENS,Psicòleg,Psicologia i Salut Mental,41.550246,2.101381,http://lauramedinapsicologia.webs.tl,648017262,,qdq_2026,,1,Calle Estrella 211-217,
 ,Ronda Zamenhof,23,TINTA TONER 3D,Informàtica consumibles,Informàtica i Electrònica,41.551667,2.104834,,937279000,,qdq_2026,,1,Ronda Zamenhof 23,
 ,Calle Planes,35,BECOTRANSPORT Y LOGÍSTICA,Transport de mercaderies,Transport i Logística,41.543648,2.108089,,937156136,,qdq_2026,,1,Calle Planes 35,
-,Calderón,90,FLORA OTIN LASIERRA,Papereria,Comerç i serveis,41.547187,2.102858,,937262593,,qdq_2026,,1,Calderón 90,
-,Industria,18,ABACUS,Papereria i llibreria,Comerç i serveis,41.547125,2.111143,,937270164,,qdq_2026,,1,Industria 18,
 ,San Cugat,42,PAULMANN ILUMINACION S.L.U.,Il·luminació i làmpades,Comerç i serveis,41.545389,2.104847,http://www.paulmann.de,937279533,,qdq_2026,,1,San Cugat 42,
 ,Ronda Ponent,160,SBD ILUMINACION,Il·luminació i làmpades,Comerç i serveis,41.548658,2.09865,http://www.sbdiluminacion.com,937254565,,qdq_2026,,1,Ronda Ponent 160,
 ,Escola Pia,98,JOMJOC S.L.,Instal·lacions elèctriques,Serveis tècnics,41.548359,2.101182,,653901592,,qdq_2026,,1,Escola Pia 98,
@@ -2237,7 +2084,6 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,Carrer del Jardí,11,ARESA,Rehabilitació d'Edificis,Construcció i Reformes,41.545178,2.110539,www.aresa2002.com,937071748,,qdq_2026,,1,Carrer del Jardí 11,
 ,Carrer de Montserrat,9,VISARQUITECTURA,Arquitectura i Urbanisme,Arquitectura,41.543059,2.109392,www.visarquitectura.com,605323074,,qdq_2026,,1,Carrer de Montserrat 9,
 ,Carrer de Turull,59,"PROFESSIONALS ASSOCIATS, S.C.P.",Arquitectura i Urbanisme,Arquitectura,41.543446,2.114488,,937450653,,qdq_2026,,1,Carrer de Turull 59,
-,Carrer de Montserrat,22,H. ARQUITECTES,Arquitecte,Arquitectura,41.543139,2.10932,,937250048,,qdq_2026,,1,Carrer de Montserrat 22,
 ,Carrer de Jovellanos,86,CONSTRUCCIONS BERNAL,Construcció,Construcció,41.550105,2.104267,,937450651,,qdq_2026,,1,Carrer de Jovellanos 86,
 ,Carrer del Convent,48,CONSTRUCCIONES S. GUERRERO S.L.,Construcció,Construcció,41.55094,2.108431,,937266900,,qdq_2026,,1,Carrer del Convent 48,
 ,Passeig de Manresa,1,"SANCHEZ RAMIRO, A.",Aparellador,Arquitectura,41.548267,2.108381,,937278121,,qdq_2026,,1,Passeig de Manresa 1,
@@ -2252,31 +2098,18 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,Carrer d'Alfons XIII,42,ADMON DE FINCAS M. GÓMEZ,Administrador de Finques,Administració Finques,41.546022,2.111327,,937255979,,qdq_2026,,1,Carrer d'Alfons XIII 42,
 ,Carrer de Sant Llorenç,58,A.GUIX. SOTERAS SUCC.,Administrador de Finques,Administració Finques,41.547066,2.1119086,,937451315,,qdq_2026,,1,Carrer de Sant Llorenç 58,
 ,Carrer de la Concepció,25,"CODINA PONT, J.",Administrador de Finques,Administració Finques,41.546654,2.113067,http://www.admcodina.com,937260345,,qdq_2026,,1,Carrer de la Concepció 25,
-,Plaça de Sant Roc,22,COTTET ÒPTICS,Òptica,Òptica,41.545953,2.108259,http://www.cottet.es,937466192,,qdq_2026,,1,Plaça de Sant Roc 22,
-,Carrer de Jovellanos,6,IDIOMES SABADELL,Acadèmia d'Idiomes,Formació,41.547642,2.10559,https://www.cursosdeidiomassabadell.com,937272127,,qdq_2026,,1,Carrer de Jovellanos 6,
 ,Carrer Horta Novella,69,"VIADE I JULIA, J.",Podòleg,Salut,41.54399,2.104697,,937259404,,qdq_2026,,1,Carrer Horta Novella 69,
 ,Carrer de Colom,50,"BELLVER FORES, J.",Podòleg,Salut,41.546139,2.103149,,937267679,,qdq_2026,,1,Carrer de Colom 50,
-,Rambla,5,GENERAL ÓPTICA,Òptica,Òptica,41.546018,2.10925,http://www.generaloptica.es,937255555,,qdq_2026,,1,Rambla 5,
 ,Carrer de l'Escola Pia,98,"CARRICAS NOGUERA, M.J.",Podòleg,Salut,41.548359,2.101182,,937264416,,qdq_2026,,1,Carrer de l'Escola Pia 98,
 ,Carrer de Sant Pau,159,REMEI MOIX,Podòleg,Salut,41.540152,2.108962,,937450692,,qdq_2026,,1,Carrer de Sant Pau 159,
 ,Carrer de Casanovas i Bosch,46,CENTRE MEDICINA CORRECTIVA,Fisioterapia,Salut,41.546944,2.114618,http://www.cmcsl.org,937257199,,qdq_2026,,1,Carrer de Casanovas i Bosch 46,
 ,Carrer del Riego,62,"CANO GARRIGA, A.",Podòleg,Salut,41.543793,2.113329,,937251306,,qdq_2026,,1,Carrer del Riego 62,
 ,Carrer de la Font,6,CENTRE DE REHABILITACIÓ VINCEÇ BORDAS I CUSCÓ,Fisioterapia,Salut,41.547041,2.105748,,937258500,,qdq_2026,,1,Carrer de la Font 6,
-,Carrer de Gràcia,48,PERRUQUERIA ANNA BUILS,Perruqueria,Bellesa,41.548335,2.106555,,937269016,,qdq_2026,,1,Carrer de Gràcia 48,
 ,Carretera de Barcelona,37,PERRUQUERIA ROMY,Perruqueria,Bellesa,41.542365,2.104035,,937261428,,qdq_2026,,1,Carretera de Barcelona 37,
 ,Carrer de l'Estrella,167,"RODRIGUEZ CREUS, T.",Fisioterapia,Salut,41.549122,2.10186,,937459587,,qdq_2026,,1,Carrer de l'Estrella 167,
 ,Carrer de Josep Renom,42,SALUESPORT,Fisioterapia,Salut,41.550686,2.103417,http://www.saluesport.com,693817487,,qdq_2026,,1,Carrer de Josep Renom 42,
-,Carrer de Santa Ana,7,MORENO PELUQUEROS,Perruqueria,Bellesa,41.548239,2.107844,,935808030,,qdq_2026,,1,Carrer de Santa Ana 7,
-,Carrer de la Rosa,26,RAFFEL PAGES,Perruqueria,Bellesa,41.547181,2.1079674,http://www.raffelpagesfrancescmacia.com,937686840,,qdq_2026,,1,Carrer de la Rosa 26,
-,Carrer de la Rosa,1,URREA BELLEZA,Perruqueria,Bellesa,41.547469,2.10854,,937269816,,qdq_2026,,1,Carrer de la Rosa 1,
-,Carrer de Calderón,62,BELEN ESCUDE,Perruqueria,Bellesa,41.547874,2.1051,http://www.belenescude.es,937252579,,qdq_2026,,1,Carrer de Calderón 62,
 ,Carrer de Sant Cugat,118,PELUQUERIA ANGUERA,Perruqueria,Bellesa,41.54361,2.103063,,653754003,,qdq_2026,,1,Carrer de Sant Cugat 118,
-,Carrer de Sant Quirze,25,ADUHO,Perruqueria,Bellesa,41.546488,2.106944,,937265358,,qdq_2026,,1,Carrer de Sant Quirze 25,
-,Carrer de Colom,16,NATURAL,Perruqueria,Bellesa,41.54668,2.104508,,937478212,,qdq_2026,,1,Carrer de Colom 16,
 ,Carrer de l'Estrella,80,FERRAN PERRUQUERS,Perruqueria,Bellesa,41.546462,2.103446,,937275931,,qdq_2026,,1,Carrer de l'Estrella 80,
-,Carrer de Mestre Rius,7,MONTSE ESTILISTES,Perruqueria,Bellesa,41.547533,2.109244,,937273836,,qdq_2026,,1,Carrer de Mestre Rius 7,
-,Carrer de Sant Quirze,25,ENRIC,Perruqueria,Bellesa,41.546488,2.106944,,937266600,,qdq_2026,,1,Carrer de Sant Quirze 25,
-,Carrer de l'Advocat Cirera,13,D'TALLS PERRUQUERS,Perruqueria,Bellesa,41.545843,2.107448,,937254101,,qdq_2026,,1,Carrer de l'Advocat Cirera 13,
 ,Carrer de Sant Joan,45,"PENTINATS, S.L.",Perruqueria,Bellesa,41.547086,2.109795,,937250540,,qdq_2026,,1,Carrer de Sant Joan 45,
 ,Ronda Zamenhof,133,"CURRIUS BUCHACA, J.",Perruqueria,Bellesa,41.550699,2.100934,,937257415,,qdq_2026,,1,Ronda Zamenhof 133,
 ,Carrer de la Roca,61-65,"DAVIRA PERRUQUERS, S.L.",Perruqueria,Bellesa,41.552176,2.099686,,937244310,,qdq_2026,,1,Carrer de la Roca 61-65,
@@ -2302,75 +2135,36 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,Carrer de Garcilaso,1,CLINICA GARCILASO,Clínica dental,Salut,41.550721,2.106951,,937278171,,qdq_2026,,1,Carrer de Garcilaso 1,
 ,Carrer de Jovellanos,36,CLINICA DENTAL DR. CARLOS PLA,Clínica dental,Salut,41.54843,2.105169,,937259978,,qdq_2026,,1,Carrer de Jovellanos 36,
 ,Carrer de Tres Creus,154,GIRALT CLINIC,Clínica dental,Salut,41.546155,2.114729,http://www.giraltclinic.com,937466330,,qdq_2026,,1,Carrer de Tres Creus 154,
-,Carrer de la Font,6-10,CENTRE DE REHABILITACIÓ VINCEÇ BORDAS I CUSCÓ,Fisioterapia,Salut,41.547041,2.105748,,937258500,,qdq_2026,,1,Carrer de la Font 6-10,
-,Rambla,41,RIBAS OPTICS,Òptica,Salut,41.544997,2.109791,,937259967,,qdq_2026,,1,Rambla 41,
-,Carrer de Casanovas i Bosch,46-50,CENTRE MEDICINA CORRECTIVA,Fisioterapia,Salut,41.546944,2.114618,http://www.cmcsl.org,937257199,,qdq_2026,,1,Carrer de Casanovas i Bosch 46-50,
-,Rambla,5-7,GENERAL ÓPTICA,Òptica,Salut,41.546018,2.10925,http://www.generaloptica.es,937255555,,qdq_2026,,1,Rambla 5-7,
 ,Carrer de la Salut,141,COL·LECTIU DE FISIOTERAPEUTES DE SABADELL,Fisioterapia,Salut,41.552256,2.111804,,937278125,,qdq_2026,,1,Carrer de la Salut 141,
 ,Carrer de Zurbano,,"HERNÁNDEZ GONZÁLEZ, J.",Psicologia,Salut,41.539952,2.107614,http://www.jeronihernandezcoaching.com,937118342,,qdq_2026,,1,Carrer de Zurbano,
-,Carrer de l'Estrella,211-217,PSICOSENS,Psicologia,Salut,41.550246,2.101381,,648017262,,qdq_2026,,1,Carrer de l'Estrella 211-217,
-,Carrer de Josep Renom,42,CENTRE PSICOPEDAGÒGIC DE LA ROSA,Psicologia,Salut,41.550734,2.103442,http://www.cpdelarosa.com,937250798,,qdq_2026,,1,Carrer de Josep Renom 42,
-,Carrer de Sant Oleguer,77,HOSPITAL VETERINARI DE SABADELL,Veterinari,Salut,41.541588,2.112537,https://www.hospitalveterinariosabadell.com,937271125,,qdq_2026,,1,Carrer de Sant Oleguer 77,
 ,Carrer del Sol,179,DOLORS RAMÍREZ PSICOLOGIA,Psicologia,Salut,41.540165,2.110788,,669098721,,qdq_2026,,1,Carrer del Sol 179,
-,Carrer de Vallès,95,TERAPIA NEURAL. SABADELL,Psicologia,Salut,41.548643,2.099905,http://www.terapianeural.com,937278068,,qdq_2026,,1,Carrer de Vallès 95,
-,Carrer de Puigcerdà,2,CENTRE DE GINER DE PSICOLOGIA,Psicologia,Salut,41.545378,2.101175,http://www.cginer.es,931001877,,qdq_2026,,1,Carrer de Puigcerdà 2,
-,Carrer de Valls,28,"BONED PLANELLS, A.",Psicologia,Salut,41.548425,2.107056,http://anaboned.wix.com/psicologa,651732357,,qdq_2026,,1,Carrer de Valls 28,
 ,Rambla,172,"ARTIGAS PALLARES, J.",Psicologia,Salut,41.541637,2.111296,,937276154,,qdq_2026,,1,Rambla 172,
 ,Carrer de les Planes,2,SIS CENTRE PSICOLOGIA,Psicologia,Salut,41.544046,2.109926,http://www.centresis.com,661567998,,qdq_2026,,1,Carrer de les Planes 2,
-,Carrer de Valls,28,GAP,Psicologia,Salut,41.548425,2.107056,http://www.gap-sabadell.com,649112199,,qdq_2026,,1,Carrer de Valls 28,
-,Carrer de l'Escola Industrial,,PSIQUE CENTRO DE PSICOLOGIA,Psicologia,Salut,41.547869,2.106688,,667715303,,qdq_2026,,1,Carrer de l'Escola Industrial,
-,Carrer de Vallès,77,CERCA PSICOLOGIA ONLINE,Psicologia,Salut,41.5481202,2.1001915,https://cercapsicologiaonline.com/,613613488,,qdq_2026,,1,Carrer de Vallès 77,
 ,Carrer de l'Estrella,128,ABORA,Psicologia,Salut,41.547573,2.102833,http://www.abora.info,937254672,,qdq_2026,,1,Carrer de l'Estrella 128,
-,Carrer de Vallès,42,VEIE SABADELL,Psicologia,Salut,41.5471106,2.100904,,660011094,,qdq_2026,,1,Carrer de Vallès 42,
 ,Carrer de Lacy,62,"VENTURA PALLAROLS, C.",Psicologia,Salut,41.544383,2.112312,,937478401,,qdq_2026,,1,Carrer de Lacy 62,
 ,Carrer de Blasco de Garay,25,GABINET PSICOLOGIC JARDI,Psicologia,Salut,41.545026,2.115055,,937256703,,qdq_2026,,1,Carrer de Blasco de Garay 25,
 ,Carrer de Blasco de Garay,84,SERENA DEL PINO PSICOLOGIA,Psicologia,Salut,41.5424886,2.1161253,,626946198,,qdq_2026,,1,Carrer de Blasco de Garay 84,
 ,Carrer de Sant Oleguer,,GABINET D'ASSESSORAMENT CLINIC I PSICOPEDAGOGIC GAMA,Psicologia,Salut,41.540761,2.112803,http://www.gamasabadell.com,937259913,,qdq_2026,,1,Carrer de Sant Oleguer,
 ,Passeig de Manresa,20,PSICOLOGIA CLINICA CENTRE,Psicologia,Salut,41.548634,2.108308,http://www.psicologiaclinicasabadell.es,937276549,,qdq_2026,,1,Passeig de Manresa 20,
 ,Carrer de Sant Joan,4,PSICOESPAI,Psicologia,Salut,41.548188,2.109337,http://www.psicoespai.es,653023718,,qdq_2026,,1,Carrer de Sant Joan 4,
-,Carrer de Colom,22,KAREBA VIATGES,Agència de viatges,Turisme,41.546617,2.104377,http://www.karebaviatges.com,937156659,,qdq_2026,,1,Carrer de Colom 22,
-,Carrer de Gràcia,98,ATLÀNTIDA VIATGES,Agència de viatges,Turisme,41.549668,2.105355,,937156973,,qdq_2026,,1,Carrer de Gràcia 98,
 ,Carrer de Sant Pau,2,"DOMÍNGUEZ MARTÍNEZ, M.L.",Notaria,Serveis Jurídics,41.545845,2.108021,,937155514,,qdq_2026,,1,Carrer de Sant Pau 2,
-,Carrer de Sant Antoni,12,DAINA,Agència de viatges,Turisme,41.548265,2.107713,http://www.grupoeuropa.com,937478080,,qdq_2026,,1,Carrer de Sant Antoni 12,
-,Plaça de Sant Roc,22,CARLSON WAGONLIT TRAVEL,Agència de viatges,Turisme,41.545953,2.108259,http://www.cwt.es,937265377,,qdq_2026,,1,Plaça de Sant Roc 22,
-,Plaça del Gas,,VOYAGER VIATGES A MIDA,Agència de viatges,Turisme,41.5455,2.10641,http://www.voyager-viatges.com,937451830,,qdq_2026,,1,Plaça del Gas,
-,Carrer de Sant Cugat,16,IMR VIATGES,Agència de viatges,Turisme,41.545785,2.105347,http://www.imrviatges.com,933808330,,qdq_2026,,1,Carrer de Sant Cugat 16,
-,Carrer de Sant Jaume,25,VIATGES GHEISA,Agència de viatges,Turisme,41.546214,2.104748,http://www.gheisa.es,937264188,,qdq_2026,,1,Carrer de Sant Jaume 25,
-,Carrer de l'Estrella,163 bis,SBD TRAVEL SERVICE,Agència de viatges,Turisme,41.548746,2.102064,http://www.sbdtravel.com,937451505,,qdq_2026,,1,Carrer de l'Estrella 163 bis,
 ,Carrer de Sant Antoni Maria Claret,1,"RUIZ DE BUSTILLO PONT, E.",Notaria,Serveis Jurídics,41.546417,2.109418,http://www.notariado.org,937258477,,qdq_2026,,1,Carrer de Sant Antoni Maria Claret 1,
 ,Carrer d'Alfons XIII,,"BOSCH BOADA, J.",Notaria,Serveis Jurídics,41.54558,2.10992,,937480430,,qdq_2026,,1,Carrer d'Alfons XIII,
 ,Avinguda de Francesc Macià,60,"GOMEZ MARTINEZ, J.",Notaria,Serveis Jurídics,41.554692,2.097862,,937238080,,qdq_2026,,1,Avinguda de Francesc Macià 60,
 ,Carrer de Narcís Giralt,57,NOTARIA DE JAVIER MICÓ,Notaria,Serveis Jurídics,41.544874,2.111152,https://notariajaviermico.com/,937255766,,qdq_2026,,1,Carrer de Narcís Giralt 57,
-,Carrer de la Rambla,5,GENERAL ÓPTICA,Òptica,Salut i Benestar,41.546018,2.10925,http://www.generaloptica.es,937255555,,qdq_2026,,1,Carrer de la Rambla 5,
 ,Carrer de la Rambla,213,OPTICA GUFFO,Òptica,Salut i Benestar,41.540553,2.111945,,937267029,,qdq_2026,,1,Carrer de la Rambla 213,
-,Carrer de la Rambla,41,RIBAS OPTICS,Òptica,Salut i Benestar,41.544997,2.109791,,937259967,,qdq_2026,,1,Carrer de la Rambla 41,
-,Carrer Josep Renom,42,SALUESPORT,Fisioterapia,Salut i Benestar,41.550686,2.103417,http://www.saluesport.com,693817487,,qdq_2026,,1,Carrer Josep Renom 42,
-,Carrer Font,6-10,CENTRE DE REHABILITACIÓ VINCEÇ BORDAS I CUSCÓ,Fisioterapia,Salut i Benestar,41.547041,2.105748,,937258500,,qdq_2026,,1,Carrer Font 6-10,
-,Carrer Estrella,167,"RODRIGUEZ CREUS, T.",Fisioterapia,Salut i Benestar,41.549122,2.10186,,937459587,,qdq_2026,,1,Carrer Estrella 167,
-,Carrer Casanovas i Bosch,46-50,CENTRE MEDICINA CORRECTIVA,Fisioterapia,Salut i Benestar,41.546944,2.114618,http://www.cmcsl.org,937257199,,qdq_2026,,1,Carrer Casanovas i Bosch 46-50,
 ,Carrer Salut,141,COL.LECTIU DE FISIOTERAPEUTES DE SABADELL,Fisioterapia,Salut i Benestar,41.552256,2.111804,,937278125,,qdq_2026,,1,Carrer Salut 141,
 ,Carrer Calderón,38-42,CENTRE DENTAL SABADELL,Clínica Dental,Salut i Benestar,41.548145,2.106173,http://www.centredentalsabadell.com,937268238,,qdq_2026,,1,Carrer Calderón 38-42,
-,Carrer Garcilaso,1,CLINICA GARCILASO,Clínica Dental,Salut i Benestar,41.550721,2.106951,,937278171,,qdq_2026,,1,Carrer Garcilaso 1,
-,Carrer Torre,28-34,CLÍNICA DENTAL VITAL DENT SABADELL II,Clínica Dental,Salut i Benestar,41.543205,2.123549,http://www.vitaldent.com,937155808,,qdq_2026,,1,Carrer Torre 28-34,
 ,Carrer Gràcia,103,CLÍNICA ORTODONCIA DRA. MARRERO,Clínica Dental,Salut i Benestar,41.548647,2.105956,http://dramarrero.com/onsomc.html,937257562,,qdq_2026,,1,Carrer Gràcia 103,
 ,Carrer Latorre,54,"PEJOAN PAGES, C.",Dentista,Salut i Benestar,41.539089,2.110995,,937259200,,qdq_2026,,1,Carrer Latorre 54,
 ,Carrer Rambla,,OCTAVI ASSESSORS,Gestoria,Serveis Professionals,41.541512,2.111487,,937274926,,qdq_2026,,1,Carrer Rambla,
-,Carrer Corominas,35,ZIVING,Clínica Dental,Salut i Benestar,41.54743,2.10427,https://ziving.com/,649810439,,qdq_2026,,1,Carrer Corominas 35,
-,Plaça Sant Jaume,3-2,DALMASES,Gestoria,Serveis Professionals,41.546537,2.104735,,937253583,,qdq_2026,,1,Plaça Sant Jaume 3-2,
 ,Carrer Garcilaso,143,GESTORÍA ROS ASSOCIATS,Gestoria,Serveis Professionals,41.548949,2.100702,,937264242,,qdq_2026,,1,Carrer Garcilaso 143,
 ,Carretera Barcelona,121,MON DE SOMRIURES,Dentista,Salut i Benestar,41.541264,2.105138,http://www.mondesomriures.com,937277995,,qdq_2026,,1,Carretera Barcelona 121,
-,Carrer Zurbano,1,QUER ECONOMISTES S.C.P.,Gestora de Comunitats,Serveis Professionals,41.540973,2.111406,,628776252,,qdq_2026,,1,Carrer Zurbano 1,
-,Plaça Sant Roc,21,"SOLDEVILA ASSOCIATS, S.L.",Gestoria,Serveis Professionals,41.546105,2.10796,,937259153,,qdq_2026,,1,Plaça Sant Roc 21,
-,Carrer Avellaneda,26,"MERCADER MOLINA, S.",Gestoria,Serveis Professionals,41.543832,2.106465,,937450618,,qdq_2026,,1,Carrer Avellaneda 26,
-,Carrer Alemanya,,GESTORÍA PIQUÉ,Gestoria,Serveis Professionals,41.542296,2.109383,http://www.pique.cat,937276486,,qdq_2026,,1,Carrer Alemanya,
-,Carrer Ferran Casablancas,100,"LLEVAT ESCODA, A.",Gestoria,Serveis Professionals,41.541815,2.106735,,937278365,,qdq_2026,,1,Carrer Ferran Casablancas 100,
 ,Carrer Latorre,36,GESTORIA BORONAT,Gestoria,Serveis Professionals,41.5393494,2.1115515,https://www.gestoriaboronat.com/,937110718,,qdq_2026,,1,Carrer Latorre 36,
 ,Carrer Valls,28,"ASSESSORIA JOAQUIM RIBAS ASSOCIATS, S.L.",Assessoria,Serveis Professionals,41.548424,2.107056,,937260199,,qdq_2026,,1,Carrer Valls 28,
 ,Ronda Zamenhof,3,"GILBERTE CONSULTING, S.L.",Assessoria Fiscal,Serveis Professionals,41.551993,2.106027,,937261277,,qdq_2026,,1,Ronda Zamenhof 3,
-,Carrer Jovellanos,6-8,IDIOMES SABADELL,Academia Idiomes,Formació,41.547642,2.10559,https://www.cursosdeidiomassabadell.com,937272127,,qdq_2026,,1,Carrer Jovellanos 6-8,
 ,Plaça Vallès,s/n,XALEST - ESCOLA TALLER,Educació Especial,Formació,41.545842,2.102565,,937260152,,qdq_2026,,1,Plaça Vallès s/n,
 ,Carrer Estrella,124-126,AULA DE NATURA,Academia Formació Professional,Formació,41.5475557,2.1031135,,937276954,,qdq_2026,,1,Carrer Estrella 124-126,
-,Carrer Pare Sallarés,85-87,ESCOLA GENERAL DE CATALUNYA DE SALUT I BELLESA,Academia Perruqueria i Estètica,Formació,41.547959,2.102986,http://www.escolagraldecatalunya.com,937259280,,qdq_2026,,1,Carrer Pare Sallarés 85-87,
 ,Carrer Garcilaso,111,5 PASSES,Academia Estudis Diversos,Formació,41.549202,2.101597,http://www.5passes.com,937272808,,qdq_2026,,1,Carrer Garcilaso 111,
 ,Carrer Garcilaso,100,ORGATECNOS,Academia Estudis Diversos,Formació,41.549663,2.10286,http://www.orgatecnos.com,937253516,,qdq_2026,,1,Carrer Garcilaso 100,
 ,Carrer Cervantes,67,XALOC,Educació Especial,Formació,41.541129,2.108958,,937258395,,qdq_2026,,1,Carrer Cervantes 67,
@@ -2383,60 +2177,28 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,Carrer Calderón,56,INSTITUTO DE ENSEÑANZA SECUNDARIA ESCOLA INDUSTRIAL,Institut Secundària,Educació,41.5479084,2.1042983,http://www.escolaindustrial.org,937258744,,qdq_2026,,1,Carrer Calderón 56,
 ,Carrer del Sol,167,L'ESCOLA,Academia Estudis Diversos,Formació,41.5457977,2.1045283,http://www.lescola.es,677834998,,qdq_2026,,1,Carrer del Sol 167,
 ,Carrer Latorre,36-46,FIATC ASSEGURANCES,Assegurances,Assegurances,41.539261,2.111567,http://www.fiatc.es,937272326,,qdq_2026,,1,Carrer Latorre 36-46,
-,Carrer Sant Cugat,46,"SABADELL S P G ASSOCIATS, S.L.",Assegurances,Assegurances,41.545281,2.104716,http://www.zurichspain.com,937255432,,qdq_2026,,1,Carrer Sant Cugat 46,
-,Plaça Sant Roc,22,COTTET ÒPTICS,Òptica,Salut,41.545953,2.108259,http://www.cottet.es,937466192,,qdq_2026,,1,Plaça Sant Roc 22,
-,Carrer Duran i Sors,2-4,DKV TREVIASA,Assegurances Salut,Assegurances,41.540355,2.111718,http://www.dkv.es,937457107,,qdq_2026,,1,Carrer Duran i Sors 2-4,
-,Carrer Escola Industrial,13,OPTICA MARTIN,Òptica,Salut,41.547743,2.106533,,937259342,,qdq_2026,,1,Carrer Escola Industrial 13,
-,Carrer Sant Cugat,22,ÒPTICA SAMARANCH,Òptica,Salut,41.545659,2.105192,,937277014,,qdq_2026,,1,Carrer Sant Cugat 22,
 ,Rambla,172-174,"VEAR & CO, S.L.",Correduria Assegurances,Assegurances,41.541637,2.111296,http://www.sumi.es/vear,937277585,,qdq_2026,,1,Rambla 172-174,
-,Carrer Corominas,15,VISTA ÓPTICA,Òptica,Salut,41.547038,2.104435,http://www.vistaoptica.com,937273752,,qdq_2026,,1,Carrer Corominas 15,
-,Carrer Les Planes,2,SIS CENTRE PSICOLOGIA,Psicologia,Salut,41.544046,2.109926,http://www.centresis.com,661567998,,qdq_2026,,1,Carrer Les Planes 2,
 ,Carrer Gràcia,48,ADESLAS,Assegurances Salut,Assegurances,41.548335,2.106555,,937486104,,qdq_2026,,1,Carrer Gràcia 48,
 ,Carrer Calderón,44-48,GENERALI,Assegurances,Assegurances,41.5481093,2.1058915,http://www.generali.es,937484386,,qdq_2026,,1,Carrer Calderón 44-48,
-,Carrer Sol,179,DOLORS RAMÍREZ PSICOLOGIA,Psicologia,Salut,41.540165,2.110788,,669098721,,qdq_2026,,1,Carrer Sol 179,
 ,Carrer Gràcia,99-101,ASSISTÈNCIA SANITARIA COL·LEGIAL,Assegurances Salut,Assegurances,41.54871,2.106087,http://www.asc.es,937261733,,qdq_2026,,1,Carrer Gràcia 99-101,
 ,Les Valls,28,ETERNA SEGUROS,Assegurances,Assegurances,41.548425,2.107056,,937279295,,qdq_2026,,1,Les Valls 28,
 ,Carrer Àngel Guimerà,9,SANITAS,Assegurances Salut,Assegurances,41.544734,2.108825,,937480733,,qdq_2026,,1,Carrer Àngel Guimerà 9,
 ,Rambla Zamenhof,127,RACC,Assegurances Vehicles,Assegurances,41.548605,2.107329,,937457681,,qdq_2026,,1,Rambla Zamenhof 127,
-,Carrer Estrella,211-217,PSICOSENS,Psicologia,Salut,41.550246,2.101381,http://lauramedinapsicologia.webs.tl,648017262,,qdq_2026,,1,Carrer Estrella 211-217,
-,Carrer Vallès,95,TERAPIA NEURAL. SABADELL,Psicologia,Salut,41.548643,2.099905,http://www.terapianeural.com,937278068,,qdq_2026,,1,Carrer Vallès 95,
-,Carrer Puigcerdà,2,CENTRE DE GINER DE PSICOLOGIA,Psicologia,Salut,41.545378,2.101175,http://www.cginer.es,931001877,,qdq_2026,,1,Carrer Puigcerdà 2,
 ,Carrer Gràcia,,"MORERA CASABLANCAS, M.",Correduria Assegurances,Assegurances,41.54744,2.107394,http://www.mcasablancas.com,937278109,,qdq_2026,,1,Carrer Gràcia,
-,Carrer Josep Renom,42,CENTRE PSICOPEDAGOGIC DE LA ROSA,Psicopedagogia,Educació,41.550734,2.103442,http://www.cpdelarosa.com,937250798,,qdq_2026,,1,Carrer Josep Renom 42,
-,Carrer Estrella,128,ABORA,Psicologia,Salut,41.547573,2.102833,http://www.abora.info,937254672,,qdq_2026,,1,Carrer Estrella 128,
-,Carrer Escola Industrial,,PSIQUE CENTRO DE PSICOLOGIA,Psicologia,Salut,41.547869,2.106688,,667715303,,qdq_2026,,1,Carrer Escola Industrial,
-,Carrer Valls,28,"BONED PLANELLS, A.",Psicologia,Salut,41.548425,2.107056,http://anaboned.wix.com/psicologa,651732357,,qdq_2026,,1,Carrer Valls 28,
-,Carrer Valls,28,GAP,Psicologia,Salut,41.548425,2.107056,http://www.gap-sabadell.com,649112199,,qdq_2026,,1,Carrer Valls 28,
-,Carrer Zurbano,,"HERNÁNDEZ GONZÁLEZ, J.",Psicologia,Salut,41.539952,2.107614,http://www.jeronihernandezcoaching.com,937118342,,qdq_2026,,1,Carrer Zurbano,
 ,Carrer Advocat Cirera,8,ORIOL PUJADAS D'OSSO AGENT D'ASSEGURANCES VINCULAT,Assegurances,Assegurances,41.545979,2.107793,http://www.oriolpujadas.com,937256900,,qdq_2026,,1,Carrer Advocat Cirera 8,
-,Carrer Sol,15,"WIN ZULE, S.L.",Assegurances,Assegurances,41.54564,2.108857,,937258724,,qdq_2026,,1,Carrer Sol 15,
 ,Carrer Àngel Guimerà,25,VITRADOC,Prevenció Riscos Laborals,Serveis Empresarials,41.544643,2.108145,http://www.vitradoc.com,935950707,,qdq_2026,,1,Carrer Àngel Guimerà 25,
 ,Carrer Zurbano,14 bis,"UTESÀ CAMÍ, J.",Correduria Assegurances,Assegurances,41.540701,2.110034,,937264044,,qdq_2026,,1,Carrer Zurbano 14 bis,
-,Carrer Duran i Sors,42,INFOSERVEIS,Serveis Informàtics,Tecnologia,41.539767,2.109536,http://www.inforserveis.cat,937252065,,qdq_2026,,1,Carrer Duran i Sors 42,
 ,Carrer Marquès de Comillas,41-45,"SEGUMAR I BROKERS CORREDURIA DE SEGUROS, S.L.",Correduria Assegurances,Assegurances,41.540596,2.115406,http://www.segumarweb.com,937256800,,qdq_2026,,1,Carrer Marquès de Comillas 41-45,
 ,Carrer Sant Cugat,49,TEPSIS SBD S.L.,Serveis Informàtics,Tecnologia,41.54503,2.104586,,937480573,,qdq_2026,,1,Carrer Sant Cugat 49,
-,Carrer Montserrat,3-5,"4 INFORMATICA, S.C.P.",Serveis Informàtics,Tecnologia,41.543204,2.110156,http://www.4inf.com,937270893,,qdq_2026,,1,Carrer Montserrat 3-5,
-,Carrer Planes,39,DTNET SD,Serveis Informàtics,Tecnologia,41.543593,2.107755,,933808440,,qdq_2026,,1,Carrer Planes 39,
 ,Plaça Sant Jaume,3,TECHNI - WEB SABADELL SIQUARS,Serveis Informàtics,Tecnologia,41.546537,2.104735,,937273261,,qdq_2026,,1,Plaça Sant Jaume 3,
 ,Carrer Horta Novella,91-93,"DAUDER, S.L.",Correduria Assegurances,Assegurances,41.543594,2.104162,,937256677,,qdq_2026,,1,Carrer Horta Novella 91-93,
 ,Carrer Josep Renom,44,AMBIT DE GESTIO INFORMATIC S.L,Serveis Informàtics,Tecnologia,41.550623,2.103227,,937156272,,qdq_2026,,1,Carrer Josep Renom 44,
-,Carrer Sant Oleguer,77,BRESCO ALARI CORREDURÍA DE SEGUROS,Correduria Assegurances,Assegurances,41.541586,2.112537,,937270086,,qdq_2026,,1,Carrer Sant Oleguer 77,
-,Carrer Ronda Zamenhof,153,Ecomputer,Serveis Informàtics,Tecnologia,41.5503074,2.0996998,http://www.ecomputer.es,934618961,,qdq_2026,,1,Carrer Ronda Zamenhof 153,
-,Carrer Rambla,143,CANO Y NOGUE AGENCIA DE ASEGURANZA,Assegurances,Assegurances,41.54213,2.111186,,937459340,,qdq_2026,,1,Carrer Rambla 143,
-,Carrer Rambla,81,"MAESO & SABATES, S.L.",Correduria Assegurances,Assegurances,41.54289,2.110924,http://www.maesogestiadvocats.com,937252353,,qdq_2026,,1,Carrer Rambla 81,
-,Carrer Sant Llorenç,10,CVS TOT ORDINADORS,Serveis Informàtics,Tecnologia,41.547987,2.111594,http://www.cvs.es/,937478468,,qdq_2026,,1,Carrer Sant Llorenç 10,
-,Carrer Illa,56,FISTEC,Serveis Informàtics,Tecnologia,41.548763,2.113883,,647104932,,qdq_2026,,1,Carrer Illa 56,
 ,Ronda Zamenhof,15,TISA,Immobiliària,Immobiliàries,41.551839,2.105466,http://www.inmotisa.com,937480808,,qdq_2026,,1,Ronda Zamenhof 15,
 ,Carrer Sant Quirze,15,FINSA PUNT IMMOBILIARI DE SABADELL,Immobiliària,Immobiliàries,41.546569,2.107242,,937264455,,qdq_2026,,1,Carrer Sant Quirze 15,
-,Carrer Sol,1,"CEMBRANO ZALDÍVAR, J.",Notaria,Notaries,41.545999,2.108736,,937262244,,qdq_2026,,1,Carrer Sol 1,
 ,Carrer Capmany,108,ATENA HABITAT,Immobiliària,Immobiliàries,41.5513226,2.106109,,937203910,,qdq_2026,,1,Carrer Capmany 108,
 ,Carrer Sant Cugat,3-5,"NOVA FINCA, S.L.",Immobiliària,Immobiliàries,41.545983,2.10574,http://www.novafinca.es,937277246,,qdq_2026,,1,Carrer Sant Cugat 3-5,
-,Carrer Sant Pau,2,"DOMÍNGUEZ MARTÍNEZ, M.L.",Notaria,Notaries,41.545845,2.108021,,937155514,,qdq_2026,,1,Carrer Sant Pau 2,
 ,Carrer Torras i Bages,6,CAF VALLÈS,Administracio de finques,Immobiliàries,41.545766,2.104953,,937263638,,qdq_2026,,1,Carrer Torras i Bages 6,
 ,Carrer Font,16,"ARRENDAMENTS L.C., S.C.P.",Administracio de finques,Immobiliàries,41.546835,2.105641,,937155457,,qdq_2026,,1,Carrer Font 16,
-,Carrer Alemanya,1,GESTORÍA PIQUE,Gestoria,Gestories,41.542296,2.109383,http://www.pique.cat,937276486,,qdq_2026,,1,Carrer Alemanya 1,
-,Carrer Advocat Cirera,,ADMINISTRACIO AXIS,Administracio de finques,Immobiliàries,41.545979,2.107793,,937254433,,qdq_2026,,1,Carrer Advocat Cirera,
-,Carrer Pau Clarís,18,FINQUES HS CALVET,Administracio de finques,Immobiliàries,41.541279,2.10355,http://www.hscalvet.com,935446063,,qdq_2026,,1,Carrer Pau Clarís 18,
 ,Plaça Joan Oliu,6,NOVACASA SABADELL SL.,Immobiliària,Immobiliàries,41.54475,2.1075,,937276743,,qdq_2026,,1,Plaça Joan Oliu 6,
 ,Carrer Jovellanos,28,FINCAT,Immobiliària,Immobiliàries,41.5483337,2.1052992,,937165658,,qdq_2026,,1,Carrer Jovellanos 28,
 ,Carrer Sant Pau,21,FINCAS CASTILLO,Immobiliària,Immobiliàries,41.545262,2.108178,http://www.fincascastillo.cjb.net,937267233,,qdq_2026,,1,Carrer Sant Pau 21,
@@ -2451,12 +2213,3 @@ CODVIA,NOMVIA,NUMERO,NOM_ACTIVITAT,TIPUS,CATEGORIA,LAT,LNG,WEBSITE,TELEFON,HORAR
 ,Carrer Rosa,3-5,"FERRAN SAMPERE, X.",Immobiliària,Immobiliàries,41.547442,2.108504,,937276056,,qdq_2026,,1,Carrer Rosa 3-5,
 ,Carrer Sol,6,CENTRE CIUTAT PROMOCIÓN AMIDA,Immobiliària,Immobiliàries,41.545945,2.108629,http://www.centreciutat.com,937270681,,qdq_2026,,1,Carrer Sol 6,
 ,Carrer Escola Pia,,CAN FERRE,Immobiliària,Immobiliàries,41.549299,2.104438,,937278901,,qdq_2026,,1,Carrer Escola Pia,
-,Carrer Zurbano,1,"YOLDI GARRIGA, P.",Administracio de finques,Immobiliàries,41.540973,2.111406,,937272910,,qdq_2026,,1,Carrer Zurbano 1,
-,Carrer Valls,15,TOUS,Joieria,Joieries,41.548741,2.107627,,937480292,,qdq_2026,,1,Carrer Valls 15,
-,Escola Industrial,32,CAYELLAS JOIERS,Joyeria,Comerç - Joieria,41.547383,2.105961,,937255915,,qdq_2026,,1,Escola Industrial 32,
-,Gràcia,56,JOIERIA CATALANA,Joyeria,Comerç - Joieria,41.548505,2.106399,,937253582,,qdq_2026,,1,Gràcia 56,
-,Font,22,XERCAVINS JOIERS,Joyeria,Comerç - Joieria,41.5467,2.105582,,937255524,,qdq_2026,,1,Font 22,
-,Plaça Mercat,242-243,"MESTRE PUIG, M.",Joyeria,Comerç - Joieria,41.547363,2.104982,,937272968,,qdq_2026,,1,Plaça Mercat 242-243,
-,Capmany,75 BAJO,JOSE CAYELLAS JUNQUE,Joyeria,Comerç - Joieria,41.5511862,2.1060552,,937169551,,qdq_2026,,1,Capmany 75 BAJO,
-,Plaça Gas,5 BAJO-BIS,JORDI LARA PUERTO,Joyeria,Comerç - Joieria,41.54549,2.106455,,937255354,,qdq_2026,,1,Plaça Gas 5 BAJO-BIS,
-,Rambla,60,JOYERIA J. SENSERRICH,Joyeria,Comerç - Joieria,41.544566,2.109876,,937261686,,qdq_2026,,1,Rambla 60,
