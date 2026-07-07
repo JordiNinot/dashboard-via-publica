@@ -36,8 +36,21 @@ function escapeXml(str) {
 }
 
 function twimlResponse(message) {
-  const text = message.length > 1490 ? message.substring(0, 1487) + '...' : message;
-  const twiml = `<?xml version="1.0" encoding="UTF-8"?><Response><Message>${escapeXml(text)}</Message></Response>`;
+  const MAX = 4000;
+  const parts = [];
+  let remaining = message.trim();
+  while (remaining.length > MAX) {
+    // Try to split at a paragraph break or newline near the limit
+    let cutAt = remaining.lastIndexOf('\n\n', MAX);
+    if (cutAt < MAX * 0.6) cutAt = remaining.lastIndexOf('\n', MAX);
+    if (cutAt < MAX * 0.6) cutAt = MAX;
+    parts.push(remaining.substring(0, cutAt).trim());
+    remaining = remaining.substring(cutAt).trim();
+  }
+  if (remaining) parts.push(remaining);
+
+  const messages = parts.map(p => `<Message>${escapeXml(p)}</Message>`).join('');
+  const twiml = `<?xml version="1.0" encoding="UTF-8"?><Response>${messages}</Response>`;
   return new Response(twiml, {
     status: 200,
     headers: { 'Content-Type': 'text/xml; charset=utf-8' }
@@ -123,6 +136,9 @@ export default async function handler(req) {
     // Fase 1: classificar intencio
     const phase1Prompt = SYSTEM_PROMPT + '\n\nMissatge de l\'usuari: ' + body;
     const phase1Response = await callGemini(phase1Prompt, 400);
+    
+    // If this is a normal response (no JSON action), allow more tokens
+    // by re-calling with higher limit if response seems truncated
 
     // Intentar parsejar com a JSON d'accio
     let parsed = null;
