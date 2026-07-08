@@ -1,5 +1,5 @@
 // Código.gs — Trasto Petit Gmail Bot
-// Llegeix correus amb TRASTO: → Gemini API → respon
+// Llegeix correus amb assumpte que comenci per "Trasto Petit" → Gemini API → respon
 // Suporta modificació de fitxers HTML/CSS/JS via GitHub API
 // Memòria de conversa via fils de Gmail (thread = conversa)
 
@@ -36,11 +36,11 @@ function checkEmails() {
     return;
   }
 
-  var threads = GmailApp.search('is:unread subject:TRASTO: newer_than:1d');
-  Logger.log('Fils amb TRASTO:: ' + threads.length);
+  var threads = GmailApp.search('is:unread subject:"Trasto Petit" newer_than:1d');
+  Logger.log('Fils amb "Trasto Petit": ' + threads.length);
 
   if (threads.length === 0) {
-    Logger.log('Cap email nou amb TRASTO:');
+    Logger.log('Cap email nou amb "Trasto Petit" a l\'assumpte.');
     return;
   }
 
