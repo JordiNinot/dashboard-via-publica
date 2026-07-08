@@ -1,5 +1,5 @@
 // whatsapp.mjs — Trasto Petit WhatsApp Bot
-// Twilio webhook → Gemini API → TwiML response
+// Twilio webhook → Gemini API → Twilio REST API response
 // Suporta modificació de fitxers HTML/CSS/JS via GitHub API
 // Memòria de conversa per usuari via Netlify Blobs
 
@@ -134,19 +134,20 @@ async function commitGithubFile(filename, content, sha, token) {
   return await res.json();
 }
 
-// ── TwiML ────────────────────────────────────────────────────────────────────
+// ── Twilio REST API ──────────────────────────────────────────────────────────
 
-function escapeXml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
-}
+async function sendWhatsApp(to, message) {
+  const accountSid = process.env.TWILIO_ACCOUNT_SID;
+  const authToken = process.env.TWILIO_AUTH_TOKEN;
+  const from = process.env.TWILIO_FROM;
 
-function twimlResponse(message) {
-  const MAX = 4000;
+  if (!accountSid || !authToken || !from) {
+    console.error('[trasto-wa] Twilio credentials not configured');
+    return;
+  }
+
+  // Partir missatges llargs en trossos de 1500 chars
+  const MAX = 1500;
   const parts = [];
   let remaining = message.trim();
   while (remaining.length > MAX) {
@@ -158,9 +159,28 @@ function twimlResponse(message) {
   }
   if (remaining) parts.push(remaining);
 
-  const messages = parts.map(p => `<Message>${escapeXml(p)}</Message>`).join('');
+  for (const part of parts) {
+    const res = await fetch(
+      `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Basic ' + btoa(accountSid + ':' + authToken),
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({ From: from, To: to, Body: part }).toString()
+      }
+    );
+    if (!res.ok) {
+      const err = await res.text();
+      console.error(`[trasto-wa] Twilio send error ${res.status}: ${err.substring(0, 200)}`);
+    }
+  }
+}
+
+function emptyTwiml() {
   return new Response(
-    `<?xml version="1.0" encoding="UTF-8"?><Response>${messages}</Response>`,
+    '<?xml version="1.0" encoding="UTF-8"?><Response/>',
     { status: 200, headers: { 'Content-Type': 'text/xml; charset=utf-8' } }
   );
 }
@@ -181,14 +201,16 @@ export default async function handler(req) {
     console.log(`[trasto-wa] From: ${from} | "${body.substring(0, 80)}"`);
 
     if (!body.trim()) {
-      return twimlResponse('Hola! Soc el Trasto Petit. Escriu-me el que necessites i t\'ajudare!');
+      await sendWhatsApp(from, 'Hola! Soc el Trasto Petit. Escriu-me el que necessites i t\'ajudare!');
+      return emptyTwiml();
     }
 
     // Comanda de reset de memòria
     const bodyUpper = body.trim().toUpperCase();
     if (bodyUpper === 'RESET' || bodyUpper === 'OBLIDAR' || bodyUpper === 'NOVA CONVERSA') {
       await clearHistory(from);
-      return twimlResponse('✅ Memòria esborrada. Comencem de nou!');
+      await sendWhatsApp(from, '✅ Memòria esborrada. Comencem de nou!');
+      return emptyTwiml();
     }
 
     // Carregar historial de conversa
@@ -216,15 +238,16 @@ export default async function handler(req) {
         { role: 'model', parts: [{ text: fullResponse }] }
       ];
       await saveHistory(from, newHistory);
-
-      return twimlResponse(fullResponse);
+      await sendWhatsApp(from, fullResponse);
+      return emptyTwiml();
     }
 
     // Acció: modificar fitxer
     if (parsed?.action === 'modify' && parsed?.file && parsed?.instruction) {
       const githubToken = process.env.GITHUB_TOKEN;
       if (!githubToken) {
-        return twimlResponse('Error: GITHUB_TOKEN no configurada. Demana al Jordi que l\'afegeixi a Netlify.');
+        await sendWhatsApp(from, 'Error: GITHUB_TOKEN no configurada. Demana al Jordi que l\'afegeixi a Netlify.');
+        return emptyTwiml();
       }
 
       const filename = parsed.file;
@@ -232,7 +255,8 @@ export default async function handler(req) {
       const allowedFiles = ['index.html', 'app.html', 'visor_terrasses_ds.html', 'styles.css'];
 
       if (!allowedFiles.includes(filename)) {
-        return twimlResponse(`No tinc permisos per modificar "${filename}". Fitxers permesos: ${allowedFiles.join(', ')}.`);
+        await sendWhatsApp(from, `No tinc permisos per modificar "${filename}". Fitxers permesos: ${allowedFiles.join(', ')}.`);
+        return emptyTwiml();
       }
 
       console.log(`[trasto-wa] Modificant ${filename}: ${instruction.substring(0, 80)}`);
@@ -261,8 +285,8 @@ export default async function handler(req) {
         { role: 'model', parts: [{ text: successMsg }] }
       ];
       await saveHistory(from, newHistory);
-
-      return twimlResponse(successMsg);
+      await sendWhatsApp(from, successMsg);
+      return emptyTwiml();
     }
 
     // Fallback: resposta normal
@@ -273,11 +297,13 @@ export default async function handler(req) {
       { role: 'model', parts: [{ text: finalResponse }] }
     ];
     await saveHistory(from, newHistory);
-    return twimlResponse(finalResponse);
+    await sendWhatsApp(from, finalResponse);
+    return emptyTwiml();
 
   } catch (err) {
     console.error('[trasto-wa] Error:', err.message);
-    return twimlResponse(`Error: ${err.message.substring(0, 150)}. Prova-ho de nou.`);
+    await sendWhatsApp(from, `Error: ${err.message.substring(0, 150)}. Prova-ho de nou.`).catch(() => {});
+    return emptyTwiml();
   }
 }
 
