@@ -1,14 +1,17 @@
 // Código.gs — Trasto Petit Gmail Bot
 // Llegeix correus amb TRASTO: → Gemini API → respon
 // Suporta modificació de fitxers HTML/CSS/JS via GitHub API
+// Memòria de conversa via fils de Gmail (thread = conversa)
 
 var GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 var GITHUB_API = 'https://api.github.com/repos/JordiNinot/taulerarqui/contents';
 
 var SYSTEM_PROMPT = 'Ets el Trasto Petit, l\'assistent personal del Jordi Ninot de Sabadell (Catalunya).\n' +
   'Ajudes amb qualsevol tasca: cerques, fitxers, dades, CSVs, codi, redaccions, preguntes diverses.\n\n' +
+  'MEMÒRIA: Tens accés a tot el fil de correu (conversa anterior). Usa el context per donar respostes coherents i continuar el fil. Si l\'usuari fa referència a alguna cosa dita abans, recorda-ho.\n\n' +
   'FITXERS QUE POTS MODIFICAR al web de taulerarqui:\n' +
   '- index.html (pàgina principal)\n' +
+  '- app.html (aplicació)\n' +
   '- styles.css (estils globals)\n' +
   '- visor_terrasses_ds.html (visor terrasses)\n\n' +
   'NORMES:\n' +
@@ -48,12 +51,25 @@ function checkEmails() {
     var userText = lastMsg.getPlainBody().trim();
     var subject = lastMsg.getSubject();
 
-    Logger.log('Processant: ' + subject);
+    // Construir historial de conversa del fil (tots els missatges anteriors)
+    // Índex parell = usuari, índex imparell = bot
+    var conversationHistory = [];
+    for (var j = 0; j < messages.length - 1; j++) {
+      var role = (j % 2 === 0) ? 'user' : 'model';
+      var msgText = messages[j].getPlainBody().trim();
+      // Limitar longitud per no superar el context de Gemini
+      if (msgText.length > 3000) msgText = msgText.substring(0, 3000) + '...';
+      conversationHistory.push({
+        role: role,
+        parts: [{ text: msgText }]
+      });
+    }
+
+    Logger.log('Processant: ' + subject + ' | historial: ' + conversationHistory.length + ' missatges');
 
     try {
-      // Fase 1: classificar intencio
-      var phase1Prompt = SYSTEM_PROMPT + '\n\nMissatge de l\'usuari: ' + userText;
-      var phase1Response = callGemini(apiKey, phase1Prompt, 400);
+      // Fase 1: classificar intencio amb historial
+      var phase1Response = callGeminiWithHistory(apiKey, SYSTEM_PROMPT, conversationHistory, userText, 400);
 
       // Intentar parsejar com a JSON d'accio
       var parsed = null;
@@ -79,9 +95,9 @@ function checkEmails() {
           // Llegir fitxer actual de GitHub
           var fileData = getGithubFile(filename, githubToken);
 
-          // Fase 2: Gemini edita el fitxer
-          var phase2Prompt = EDITOR_PROMPT + '\n\nFITXER: ' + filename + '\nINSTRUCCIO: ' + instruction + '\n\nCONTINGUT ACTUAL:\n' + fileData.content;
-          var newContent = callGemini(apiKey, phase2Prompt, 8000);
+          // Fase 2: Gemini edita el fitxer (sense historial de conversa, és tasca directa)
+          var editorPromptFull = EDITOR_PROMPT + '\n\nFITXER: ' + filename + '\nINSTRUCCIO: ' + instruction + '\n\nCONTINGUT ACTUAL:\n' + fileData.content;
+          var newContent = callGeminiWithHistory(apiKey, EDITOR_PROMPT, [], editorPromptFull, 8000);
 
           // Netejar possible markdown de Gemini
           newContent = newContent.replace(/^```[\w]*\n?/, '').replace(/\n?```$/, '').trim();
@@ -110,10 +126,18 @@ function checkEmails() {
   }
 }
 
-function callGemini(apiKey, prompt, maxTokens) {
+function callGeminiWithHistory(apiKey, systemPrompt, history, userMessage, maxTokens) {
   maxTokens = maxTokens || 800;
+
+  var contents = [];
+  for (var i = 0; i < history.length; i++) {
+    contents.push(history[i]);
+  }
+  contents.push({ role: 'user', parts: [{ text: userMessage }] });
+
   var payload = {
-    contents: [{ role: 'user', parts: [{ text: prompt }] }],
+    system_instruction: { parts: [{ text: systemPrompt }] },
+    contents: contents,
     generationConfig: { temperature: 0.7, maxOutputTokens: maxTokens, topP: 0.9 }
   };
   var options = {
