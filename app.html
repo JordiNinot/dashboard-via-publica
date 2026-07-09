@@ -312,6 +312,26 @@
     #inv-total { color: var(--primary) !important; }
     #inv-formula { color: var(--accent-orange) !important; }
 
+    /* Validació visual d'adreça (igual que index.html) */
+    .form-control.addr-valid {
+      border-color: var(--primary) !important;
+      background: var(--primary-bg) !important;
+    }
+    .form-control.addr-invalid {
+      border-color: #c0392b !important;
+      background: #fdf5f5 !important;
+    }
+    .addr-status {
+      font-size: 12px;
+      margin-top: -10px;
+      margin-bottom: 12px;
+      padding: 3px 0;
+      min-height: 18px;
+    }
+    .addr-status.ok   { color: var(--primary); }
+    .addr-status.err  { color: #c0392b; }
+    .addr-status.hint { color: var(--text-muted); }
+
     /* Scrollbar DS */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
@@ -387,13 +407,14 @@
                 </div>
                 <div class="form-group">
                   <label for="calc-portal-number">Núm. portal</label>
-                  <input type="number" id="calc-portal-number" class="form-control" placeholder="Opcional" min="1">
+                  <input type="number" id="calc-portal-number" class="form-control" placeholder="—" min="1" disabled>
                   <span class="field-error hidden" id="portal-number-error"></span>
                 </div>
               </div>
 
               <div class="form-group">
-                <div class="street-feedback" id="street-feedback-box" style="margin-top: -8px; margin-bottom: 16px; display: flex; gap: 15px; font-size: 0.8rem; padding: 4px 8px; background-color: var(--bg-tertiary); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                <div id="addr-status" class="addr-status hint">Introdueix un carrer de Sabadell.</div>
+                <div class="street-feedback" id="street-feedback-box" style="display: flex; gap: 15px; font-size: 0.8rem; padding: 4px 8px; background-color: var(--bg-tertiary); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
                   <span style="color: var(--text-muted); font-weight: 500;">Categoria: <strong id="detected-category" style="color: var(--accent-blue); font-weight: 600;">-</strong></span>
                   <span style="color: var(--text-muted); font-weight: 500;">Coeficient: <strong id="detected-coef" style="color: var(--accent-orange); font-weight: 600;">-</strong></span>
                 </div>

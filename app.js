@@ -2576,51 +2576,85 @@ function initCalculator() {
   // Detecció en viu de la categoria en escriure el carrer i/o el número de portal
   const portalNumberError = document.getElementById("portal-number-error");
 
+  const addrStatusEl = document.getElementById("addr-status");
+  function setAddrStatus(msg, cls) {
+    if (!addrStatusEl) return;
+    addrStatusEl.textContent = msg;
+    addrStatusEl.className = "addr-status " + cls;
+  }
+
   function actualitzarValidacioPortal() {
-    // Validació contra el nucli: comprova que el número existeixi al carrer indicat
     const resultat = validarNumeroPortal(portalInput.value, streetInput.value);
     if (resultat.valid) {
       portalNumberError.textContent = "";
       portalNumberError.classList.add("hidden");
-      portalInput.classList.remove("input-invalid");
+      portalInput.classList.remove("input-invalid", "addr-invalid");
+      portalInput.classList.add("addr-valid");
     } else {
       portalNumberError.textContent = resultat.reason;
       portalNumberError.classList.remove("hidden");
-      portalInput.classList.add("input-invalid");
+      portalInput.classList.remove("addr-valid");
+      portalInput.classList.add("input-invalid", "addr-invalid");
     }
     return resultat.valid;
   }
 
   function actualitzarFeedbackCategoria() {
-    actualitzarValidacioPortal();
     const val = streetInput.value.trim();
+
     if (!val) {
+      streetInput.classList.remove("addr-valid", "addr-invalid");
+      portalInput.disabled = true;
+      portalInput.value = "";
+      portalInput.classList.remove("addr-valid", "addr-invalid");
       feedbackCategory.textContent = "-";
       feedbackCoef.textContent = "-";
+      setAddrStatus("Introdueix un carrer de Sabadell.", "hint");
       return;
     }
-    // Primer cerca al nucli (font oficial), fallback a baseCarrers (per trams detallats)
-    const trobatNucli = buscarCarrerNucli(val);
+
     const trobatBase  = buscarCarrer(val);
-    if (trobatBase) {
-      // baseCarrers té informació de trams → permet categoria exacta per número
-      const resolt = resoldreCategoriaPerNumero(trobatBase, portalInput.value.trim());
-      feedbackCategory.textContent = resolt.exacte
-        ? `Categoria ${resolt.cat} (per núm. ${portalInput.value.trim()})`
-        : `Categoria ${resolt.cat}`;
-      feedbackCoef.textContent = resolt.coef.toFixed(2);
-    } else if (trobatNucli) {
-      // Categoria del nucli (sense trams)
-      const coef = COEF_MAP[trobatNucli.cat] || 0.80;
-      feedbackCategory.textContent = `Categoria ${trobatNucli.cat}`;
-      feedbackCoef.textContent = coef.toFixed(2);
+    const trobatNucli = buscarCarrerNucli(val);
+
+    if (trobatBase || trobatNucli) {
+      streetInput.classList.add("addr-valid");
+      streetInput.classList.remove("addr-invalid");
+      portalInput.disabled = false;
+
+      const numNoms = trobatNucli ? trobatNucli.numeros.length : 0;
+      setAddrStatus(
+        `✓ Carrer trobat${numNoms ? " · " + numNoms + " números" : ""}. Introdueix el número de portal.`,
+        "ok"
+      );
+
+      if (trobatBase) {
+        const resolt = resoldreCategoriaPerNumero(trobatBase, portalInput.value.trim());
+        feedbackCategory.textContent = resolt.exacte
+          ? `Categoria ${resolt.cat} (núm. ${portalInput.value.trim()})`
+          : `Categoria ${resolt.cat}`;
+        feedbackCoef.textContent = resolt.coef.toFixed(2);
+      } else {
+        const coef = COEF_MAP[trobatNucli.cat] || 0.80;
+        feedbackCategory.textContent = `Categoria ${trobatNucli.cat}`;
+        feedbackCoef.textContent = coef.toFixed(2);
+      }
+
+      actualitzarValidacioPortal();
     } else {
-      feedbackCategory.textContent = "Categoria 5 (Defecte)";
-      feedbackCoef.textContent = "0.80";
+      streetInput.classList.add("addr-invalid");
+      streetInput.classList.remove("addr-valid");
+      portalInput.disabled = true;
+      portalInput.value = "";
+      portalInput.classList.remove("addr-valid", "addr-invalid");
+      feedbackCategory.textContent = "-";
+      feedbackCoef.textContent = "-";
+      setAddrStatus("Carrer no trobat al nucli de Sabadell.", "err");
     }
   }
-  streetInput.addEventListener("input", actualitzarFeedbackCategoria);
-  portalInput.addEventListener("input", actualitzarFeedbackCategoria);
+
+  streetInput.addEventListener("input",  actualitzarFeedbackCategoria);
+  streetInput.addEventListener("change", actualitzarFeedbackCategoria);
+  portalInput.addEventListener("input",  actualitzarFeedbackCategoria);
 
   // Canviar camps del formulari segons tipus d'ocupació
   calcType.addEventListener("change", () => {
