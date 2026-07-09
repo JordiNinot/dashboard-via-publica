@@ -2726,7 +2726,7 @@ function initCalculator() {
       diesCounter.textContent = "La data final ha de ser igual o posterior a la d'inici.";
       diesCounter.style.color = "var(--accent-orange)";
     } else {
-      diesCounter.textContent = `${dies} dia${dies === 1 ? "" : "s"} d'ocupació`;
+      diesCounter.textContent = `${dies} ${dies === 1 ? "dia" : "dies"} d'ocupació`;
       diesCounter.style.color = "var(--primary)";
       diesCounter.style.fontWeight = "600";
     }
