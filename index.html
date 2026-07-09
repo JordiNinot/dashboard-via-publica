@@ -656,25 +656,29 @@ header .sub {
 .toggle-switch input:disabled + .toggle-slider { opacity: 0.5; cursor: not-allowed; }
 .capa-tag { display: inline-block; font-size: 10px; font-weight: 600; background: var(--ink-100); color: var(--ink-400); border-radius: 8px; padding: 1px 5px; margin-left: 4px; vertical-align: middle; }
 
-/* Botó Gestionar capes al panel header */
+/* Botó Gestionar capes — versió gran, ocupa el cos del panell */
 .gestor-capes-btn {
-  margin-left: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 5px;
-  font-size: 11px;
-  font-weight: 600;
+  justify-content: center;
+  gap: 10px;
+  width: calc(100% - 32px);
+  flex: 1;
+  margin: 12px 16px 16px;
+  font-size: 14px;
+  font-weight: 700;
   color: var(--primary);
   background: var(--primary-bg);
-  border: 1px solid var(--primary-light);
-  border-radius: var(--r-2);
-  padding: 4px 10px;
+  border: 1.5px solid var(--primary-light);
+  border-radius: 12px;
   cursor: pointer;
-  white-space: nowrap;
   font-family: inherit;
-  transition: background .13s;
+  transition: background .13s, box-shadow .13s;
+  letter-spacing: .01em;
 }
-.gestor-capes-btn:hover { background: #dff0e5; }
+.gestor-capes-btn svg { width: 28px; height: 28px; }
+.gestor-capes-btn:hover { background: #dff0e5; box-shadow: 0 2px 8px rgba(47,117,72,.12); }
 /* Gestor modal overlay */
 #gestor-capes-modal {
   position: fixed;
@@ -934,7 +938,7 @@ header .sub {
       </div>
 
       <!-- Panell capes de dades -->
-      <div class="panel" style="flex:1;min-height:0;">
+      <div class="panel" style="flex:1;min-height:0;display:flex;flex-direction:column;">
         <div class="panel-header">
           <div class="panel-header-icon" style="background:var(--primary-bg)">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -944,65 +948,18 @@ header .sub {
             </svg>
           </div>
           <h2>Capes de Dades</h2>
-          <button class="gestor-capes-btn" onclick="obrirGestorCapes()" title="Gestionar totes les capes">
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-              <rect x="1" y="3" width="13" height="1.4" rx=".7" fill="currentColor"/>
-              <rect x="1" y="6.8" width="13" height="1.4" rx=".7" fill="currentColor"/>
-              <rect x="1" y="10.6" width="13" height="1.4" rx=".7" fill="currentColor"/>
-              <circle cx="4.5" cy="3.7" r="1.7" fill="white" stroke="currentColor" stroke-width="1.2"/>
-              <circle cx="10.5" cy="7.5" r="1.7" fill="white" stroke="currentColor" stroke-width="1.2"/>
-              <circle cx="6" cy="11.3" r="1.7" fill="white" stroke="currentColor" stroke-width="1.2"/>
-            </svg>
-            Gestionar
-          </button>
         </div>
-        <div class="capes-btns">
-          <!-- Via Pública (dades no disponibles) -->
-          <div class="capes-grup-sep">Via Pública</div>
-          <button class="capa-btn capa-btn-disabled" onclick="obrirCapaModal('terrasses')">
-            <span class="capa-btn-color" style="background:#e05c2e"></span>
-            <span class="capa-btn-nom">Terrasses</span>
-            <span class="capa-btn-badge">Aviat</span>
-          </button>
-          <button class="capa-btn capa-btn-disabled" onclick="obrirCapaModal('auxiliars')">
-            <span class="capa-btn-color" style="background:#e0a82e"></span>
-            <span class="capa-btn-nom">Auxiliars d'obra</span>
-            <span class="capa-btn-badge">Aviat</span>
-          </button>
-          <button class="capa-btn capa-btn-disabled" onclick="obrirCapaModal('talls')">
-            <span class="capa-btn-color" style="background:#c0392b"></span>
-            <span class="capa-btn-nom">Talls de carrer</span>
-            <span class="capa-btn-badge">Aviat</span>
-          </button>
-          <!-- Transport -->
-          <div class="capes-grup-sep">Transport</div>
-          <button class="capa-btn" id="capabtn-parades" onclick="obrirCapaModal('parades')">
-            <span class="capa-btn-color" style="background:#0e4a8a"></span>
-            <span class="capa-btn-nom">Parades de bus <span class="capa-btn-count" id="capa-parades-tag"></span></span>
-            <span class="capa-btn-onoff" id="capabtn-onoff-parades">OFF</span>
-          </button>
-          <!-- Botons per línia de bus (generats dinàmicament per JS) -->
-          <div id="bus-btns-container"></div>
-          <!-- Patrimoni -->
-          <div class="capes-grup-sep">Patrimoni</div>
-          <button class="capa-btn" id="capabtn-peps" onclick="obrirCapaModal('peps')">
-            <span class="capa-btn-color" style="background:#8B0000"></span>
-            <span class="capa-btn-nom">Béns protegits PEPS <span class="capa-btn-count">328</span></span>
-            <span class="capa-btn-onoff" id="capabtn-onoff-peps">OFF</span>
-          </button>
-          <!-- Urbanisme -->
-          <div class="capes-grup-sep">Urbanisme</div>
-          <button class="capa-btn" id="capabtn-srv" onclick="obrirCapaModal('srv')">
-            <span class="capa-btn-color" style="background:#b04000"></span>
-            <span class="capa-btn-nom">Servituds aeronàutiques</span>
-            <span class="capa-btn-onoff" id="capabtn-onoff-srv">OFF</span>
-          </button>
-          <button class="capa-btn" id="capabtn-activ" onclick="obrirCapaModal('activ')">
-            <span class="capa-btn-color" style="background:#7c3d8a"></span>
-            <span class="capa-btn-nom">Activitats (OSM) <span class="capa-btn-count">237</span></span>
-            <span class="capa-btn-onoff" id="capabtn-onoff-activ">OFF</span>
-          </button>
-        </div>
+        <button class="gestor-capes-btn" onclick="obrirGestorCapes()" title="Gestionar totes les capes">
+          <svg width="28" height="28" viewBox="0 0 15 15" fill="none">
+            <rect x="1" y="3" width="13" height="1.4" rx=".7" fill="currentColor"/>
+            <rect x="1" y="6.8" width="13" height="1.4" rx=".7" fill="currentColor"/>
+            <rect x="1" y="10.6" width="13" height="1.4" rx=".7" fill="currentColor"/>
+            <circle cx="4.5" cy="3.7" r="1.7" fill="white" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="10.5" cy="7.5" r="1.7" fill="white" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="6" cy="11.3" r="1.7" fill="white" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          Gestionar capes
+        </button>
       </div>
     </div>
 
