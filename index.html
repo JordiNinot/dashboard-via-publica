@@ -13,6 +13,7 @@
 <script src="data/terrasses_data.js"></script>
 <script src="data/activitats_geo.js"></script>
 <script src="data/bus_data.js"></script>
+<script src="peps_data.js"></script>
 <style>
 /* === Tokens Via Pública DS v2 === */
 :root {
@@ -982,6 +983,13 @@ header .sub {
           </button>
           <!-- Botons per línia de bus (generats dinàmicament per JS) -->
           <div id="bus-btns-container"></div>
+          <!-- Patrimoni -->
+          <div class="capes-grup-sep">Patrimoni</div>
+          <button class="capa-btn" id="capabtn-peps" onclick="obrirCapaModal('peps')">
+            <span class="capa-btn-color" style="background:#8B0000"></span>
+            <span class="capa-btn-nom">Béns protegits PEPS <span class="capa-btn-count">328</span></span>
+            <span class="capa-btn-onoff" id="capabtn-onoff-peps">OFF</span>
+          </button>
           <!-- Urbanisme -->
           <div class="capes-grup-sep">Urbanisme</div>
           <button class="capa-btn" id="capabtn-srv" onclick="obrirCapaModal('srv')">
@@ -1444,7 +1452,7 @@ header .sub {
   /* ===== CAPES DE DADES ===== */
 
   var LELL_PR = [41.52167, 2.10500];
-  var _layerSrv = null, _layerActiv = null, _layerBusParades = null;
+  var _layerSrv = null, _layerActiv = null, _layerBusParades = null, _layerPeps = null;
   var _layersBusLinia = {}; // r → L.layerGroup
   var _capaActiva = {};     // capaId → boolean
 
@@ -1460,6 +1468,51 @@ header .sub {
     if (btn) {
       if (actiu) btn.classList.add('capa-btn-activa'); else btn.classList.remove('capa-btn-activa');
     }
+  }
+
+  /* --- PEPS: Béns protegits --- */
+  var _pepsNivellDesc = {
+    '1': { label:'N.1 Integral', color:'#8B0000', desc:'Màxima protecció. Preservació total de tots els elements: estructura, façana, coberta i interior. Intervencions limitades a conservació i restauració estrictes.' },
+    '2': { label:'N.2 Conservació', color:'#C0392B', desc:'Protecció dels valors arquitectònics essencials. Es conserven façana, estructura i elements singulars. Admesa rehabilitació interior compatible amb els valors patrimonials.' },
+    '3': { label:'N.3 Parcial', color:'#E67E22', desc:'Protecció dels elements d\'interès. Es conserven façana i elements definitoris de l\'edifici. L\'interior pot modificar-se si no afecta els elements protegits.' },
+    '4': { label:'N.4 Ambiental', color:'#27AE60', desc:'Protecció de l\'entorn i l\'ambient urbà. L\'edifici contribueix al caràcter del lloc. Es controlen les modificacions per mantenir la coherència de l\'espai.' },
+    '5': { label:'N.5 Documental', color:'#7F8C8D', desc:'Protecció mínima amb valor testimonial. Es documenta l\'edifici abans de qualsevol intervenció. Pot demolir-se amb autorització i documentació prèvia exhaustiva.' }
+  };
+
+  function _activarPeps() {
+    if (_layerPeps) return;
+    if (typeof _PEPS_DATA === 'undefined') return;
+    _layerPeps = L.layerGroup();
+    _PEPS_DATA.features.forEach(function(f) {
+      var p = f.properties;
+      var nKey = p.nivell ? p.nivell.charAt(0) : '4';
+      var nd = _pepsNivellDesc[nKey] || _pepsNivellDesc['4'];
+      var marker = L.circleMarker([f.geometry.coordinates[1], f.geometry.coordinates[0]], {
+        radius: 7,
+        color: nd.color,
+        fillColor: nd.color,
+        fillOpacity: 0.75,
+        weight: 1.5
+      });
+      var html = '<div style="max-width:260px">'
+        + '<div style="font-weight:700;font-size:13px;margin-bottom:4px">' + (p.nom || '') + '</div>'
+        + (p.localitzacio ? '<div style="color:#555;font-size:12px;margin-bottom:6px">📍 ' + p.localitzacio + '</div>' : '')
+        + '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px">'
+        + '<span style="background:' + nd.color + ';color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">' + (p.nivell || '') + '</span>'
+        + '<span style="background:#eee;padding:2px 8px;border-radius:10px;font-size:11px;color:#333">' + (p.categoria || '') + '</span>'
+        + '</div>'
+        + '<div style="font-size:11px;color:#444;line-height:1.4">' + nd.desc + '</div>'
+        + '</div>';
+      marker.bindPopup(html, { maxWidth: 280 });
+      _layerPeps.addLayer(marker);
+    });
+    _layerPeps.addTo(map);
+    _capaActiva['peps'] = true; _actualitzarBotoEstat('peps');
+  }
+
+  function _desactivarPeps() {
+    if (_layerPeps) { _layerPeps.remove(); _layerPeps = null; }
+    _capaActiva['peps'] = false; _actualitzarBotoEstat('peps');
   }
 
   /* --- Servituds aeronàutiques --- */
@@ -1591,13 +1644,15 @@ header .sub {
 
   /* --- Activació / desactivació genèrica --- */
   function _activarCapa(capaId) {
-    if (capaId === 'srv') _activarSrv();
+    if (capaId === 'peps') _activarPeps();
+    else if (capaId === 'srv') _activarSrv();
     else if (capaId === 'activ') _activarActiv();
     else if (capaId === 'parades') _activarParades();
     else if (capaId.indexOf('bus-') === 0) _activarLiniaBus(capaId.slice(4));
   }
   function _desactivarCapa(capaId) {
-    if (capaId === 'srv') _desactivarSrv();
+    if (capaId === 'peps') _desactivarPeps();
+    else if (capaId === 'srv') _desactivarSrv();
     else if (capaId === 'activ') _desactivarActiv();
     else if (capaId === 'parades') _desactivarParades();
     else if (capaId.indexOf('bus-') === 0) _desactivarLiniaBus(capaId.slice(4));
@@ -1610,6 +1665,7 @@ header .sub {
       'auxiliars': { color:'#e0a82e', titol:"Auxiliars d'obra", desc:'Tanques, bastides i elevadors actius. Capa en preparació.' },
       'talls':     { color:'#c0392b', titol:'Talls de carrer', desc:'Restriccions temporals de circulació. Capa en preparació.' },
       'parades':   { color:'#0e4a8a', titol:'Parades de bus (TUS)', desc:'Punts de parada del transport urbà de Sabadell.' },
+      'peps':      { color:'#8B0000', titol:'Béns protegits PEPS', desc:'328 béns immobles protegits pel PEPS 2024. Colors: N.1 Integral (vermell fosc) → N.5 Documental (gris).' },
       'srv':       { color:'#b04000', titol:'Servituds aeronàutiques', desc:"Zones de protecció de l'aeroport LELL (RD 715/2023)." },
       'activ':     { color:'#7c3d8a', titol:'Activitats (OSM)', desc:'237 activitats econòmiques georeferenciades.' }
     };
@@ -1716,6 +1772,9 @@ header .sub {
       ]},
       { titol: 'Transport', capes: [
         { id:'parades', nom:'Parades de bus', color:'#0e4a8a' }
+      ]},
+      { titol: 'Patrimoni', capes: [
+        { id:'peps', nom:'Béns protegits PEPS', color:'#8B0000' }
       ]},
       { titol: 'Urbanisme', capes: [
         { id:'srv',   nom:'Servituds aeronàutiques', color:'#b04000' },
