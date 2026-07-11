@@ -2242,29 +2242,56 @@ function initCalculator() {
   }
 
   // Valida la incompatibilitat estiu/hivern a totes les línies de terrassa
+  // ================================================================
+  //  ENFORCE MODALITATS — regles de compatibilitat entre temporades
+  //  Conflictes:
+  //    anual            → exclou tot
+  //    estiu  ↔ hivern  (mútuament excloents)
+  //    estiu            → exclou cap_setmana_estiu  (ja inclosos)
+  //    hivern           → exclou cap_setmana_hivern (ja inclosos)
+  //    cap_setmana_estiu + cap_setmana_hivern → compatibles
+  //    cap duplicat de cap modalitat
+  // ================================================================
+  const _CONFLICTS = {
+    "anual":              ["estiu","hivern","cap_setmana_estiu","cap_setmana_hivern","eventual"],
+    "estiu":              ["anual","hivern","cap_setmana_estiu"],
+    "hivern":             ["anual","estiu","cap_setmana_hivern"],
+    "cap_setmana_estiu":  ["anual","estiu"],
+    "cap_setmana_hivern": ["anual","hivern"],
+    "eventual":           ["anual"]
+  };
+
   function enforceEstiuHivern() {
-    const allSelects = terrassaLinesContainer.querySelectorAll('.terrassa-line-modalitat');
-    const hasEstiu = Array.from(allSelects).some(s => s.value === 'estiu');
-    const hasHivern = Array.from(allSelects).some(s => s.value === 'hivern');
-    allSelects.forEach(function(sel) {
-      const optEstiu = sel.querySelector('option[value="estiu"]');
-      const optHivern = sel.querySelector('option[value="hivern"]');
-      if (optEstiu) optEstiu.disabled = hasHivern && sel.value !== 'estiu';
-      if (optHivern) optHivern.disabled = hasEstiu && sel.value !== 'hivern';
+    const allSelects = Array.from(terrassaLinesContainer.querySelectorAll(".terrassa-line-modalitat"));
+    const allValues  = allSelects.map(function(s){ return s.value; });
+
+    allSelects.forEach(function(sel, idx) {
+      const otherValues = allValues.filter(function(_, i){ return i !== idx; });
+      Array.from(sel.options).forEach(function(opt) {
+        const v = opt.value;
+        if (v === sel.value) { opt.disabled = false; return; } // mai deshabilitar la seleccionada
+        const isDuplicate   = otherValues.includes(v);
+        const hasConflict   = (_CONFLICTS[v] || []).some(function(c){ return otherValues.includes(c); });
+        opt.disabled = isDuplicate || hasConflict;
+      });
     });
-    // Missatge d'avís al contenidor
-    let warn = terrassaLinesContainer.querySelector('.terrassa-estiu-hivern-warn');
-    if ((hasEstiu && hasHivern)) {
-      if (!warn) {
-        warn = document.createElement('div');
-        warn.className = 'terrassa-estiu-hivern-warn';
-        warn.style.cssText = 'color:#ef4444;font-size:0.82rem;margin-top:4px;padding:4px 8px;background:rgba(239,68,68,.1);border-radius:4px;border:1px solid #ef4444';
-        warn.textContent = "⚠ No es pot combinar temporada d'estiu i d'hivern a la mateixa autorització.";
-        terrassaLinesContainer.appendChild(warn);
-      }
-    } else if (warn) {
-      warn.remove();
+
+    // Avís si no queden opcions disponibles per afegir
+    const allUsed = new Set(allValues);
+    const ALL_VALS = ["anual","estiu","hivern","cap_setmana_estiu","cap_setmana_hivern","eventual"];
+    const canAdd = ALL_VALS.some(function(v) {
+      if (allUsed.has(v)) return false;
+      return !(_CONFLICTS[v] || []).some(function(c){ return allUsed.has(c); });
+    });
+    if (btnAddTerrassaLine) {
+      btnAddTerrassaLine.disabled = !canAdd;
+      btnAddTerrassaLine.style.opacity = canAdd ? "" : "0.4";
+      btnAddTerrassaLine.title = canAdd ? "" : "No hi ha més modalitats compatibles";
     }
+
+    // Eliminar avís antic si existia
+    const oldWarn = terrassaLinesContainer.querySelector(".terrassa-estiu-hivern-warn");
+    if (oldWarn) oldWarn.remove();
   }
 
   /* El botó "Afegir modalitat" té onclick directe al HTML que crida window._terrassaAfegir.
