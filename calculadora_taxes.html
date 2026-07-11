@@ -655,6 +655,7 @@
                 <span id="ea-bracket-label" style="font-weight:600;color:var(--primary);"></span>
                 <span id="ea-tarifa-preview" style="font-weight:700;color:var(--accent-orange);"></span>
               </div>
+              <div id="ea-cat-info" style="display:none;margin-top:4px;font-size:11px;color:var(--text-muted);font-style:italic;"></div>
             </div>
 
             <!-- Tall de carrer (Sec. 6 OF4.5) -->
@@ -2175,22 +2176,37 @@ function initCalculator() {
     const fbEl = document.getElementById("ea-tarifa-feedback");
     const blEl = document.getElementById("ea-bracket-label");
     const pvEl = document.getElementById("ea-tarifa-preview");
+    const catEl= document.getElementById("ea-cat-info");
     if (dEl)  dEl.textContent  = dies > 0 ? dies+" dies" : "— dies";
     if (m2El) m2El.textContent = totalM2+" m²";
     if (totalM2 > 0 && fbEl) {
       fbEl.style.display = "";
       const bracket = eaGetBracket(totalM2);
       if (bracket.tarifa !== null) {
-        blEl.textContent = bracket.label+" (import fix):";
+        blEl.textContent = bracket.label+" (import fix, Sec. 1 OF4.5):";
         pvEl.textContent = bracket.tarifa.toLocaleString("ca-ES",{minimumFractionDigits:2})+" €";
+        if (catEl) catEl.style.display = "none";
       } else {
-        const catCode2 = document.getElementById("detected-category").textContent.replace("Categoria ","").split(" ")[0] || "5";
-        const rate = OF45_CAT_RATES[catCode2.replace("ª","").replace("a","").toUpperCase()] || 0.31;
-        const est  = totalM2 * (dies||1) * rate;
-        blEl.textContent = "Més de 15 m² — "+rate.toFixed(2)+" €/m²/dia ("+catCode2+"):";
-        pvEl.textContent = "≈ "+est.toLocaleString("ca-ES",{minimumFractionDigits:2})+" € ("+totalM2+" m² × "+(dies||"N")+" dies)";
+        // >15m²: necessita categoria del carrer
+        const detectedCatEl = document.getElementById("detected-category");
+        const catRaw = detectedCatEl ? detectedCatEl.textContent : "-";
+        const catCode2 = catRaw.replace("Categoria ","").split(" ")[0] || "5";
+        const catNorm = catCode2.replace("ª","").replace("a","").toUpperCase();
+        const rate = OF45_CAT_RATES[catNorm] || 0.31;
+        const est  = dies > 0 ? totalM2 * dies * rate : null;
+        blEl.textContent = "Més de 15 m² — "+rate.toFixed(2)+" €/m²/dia (cat. "+catNorm+", Sec. 1 OF4.5):";
+        pvEl.textContent = est !== null
+          ? est.toLocaleString("ca-ES",{minimumFractionDigits:2})+" € ("+totalM2+" m² × "+dies+" dies)"
+          : "— (introdueix les dates)";
+        if (catEl) {
+          catEl.style.display = "";
+          catEl.textContent = "Categoria aplicada: "+catNorm+(catRaw === "-" ? " (per defecte — introdueix el carrer)" : " ("+catRaw+")");
+        }
       }
-    } else if (fbEl) { fbEl.style.display = "none"; }
+    } else if (fbEl) {
+      fbEl.style.display = "none";
+      if (catEl) catEl.style.display = "none";
+    }
     // Actualitza resultat de cada fila
     document.querySelectorAll(".ea-mesura-row").forEach(function(row) {
       const a = parseFloat(row.querySelector(".ea-amplada").value)||0;
@@ -2214,7 +2230,7 @@ function initCalculator() {
       +'" min="0" step="0.01" style="flex:1;">'
       +'<span style="font-size:12px;font-weight:700;color:var(--primary);min-width:50px;" class="ea-m2-result">0 m²</span>'
       +'<button type="button" class="terrassa-line-remove" title="Eliminar mesura" '
-      +'onclick="this.closest('.ea-mesura-row').remove();eaActualitzar();">&times;</button>';
+      +'onclick="this.parentElement.remove();eaActualitzar();">&times;</button>';
     row.querySelectorAll("input").forEach(function(inp){
       inp.addEventListener("input", eaActualitzar);
     });
