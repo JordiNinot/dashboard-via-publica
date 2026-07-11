@@ -2673,15 +2673,12 @@ function initCalculator() {
       if (bracket.tarifa !== null) {
         total = bracket.tarifa;
         invTarifaBase.textContent = bracket.tarifa.toFixed(2)+" € (import fix "+bracket.label+", Sec. 1 OF4.5)";
-        formulaText = "Mesures: "+mesuresText+"
-Total: "+totalM2ea+" m² → "+bracket.label+"
-Import fix: "+bracket.tarifa.toFixed(2)+" € (OF 4.5, Sec. 1)";
+        formulaText = "Mesures: "+mesuresText+"\nTotal: "+totalM2ea+" m² → "+bracket.label+"\nImport fix: "+bracket.tarifa.toFixed(2)+" € (OF 4.5, Sec. 1)";
       } else {
         const catR = _EA_CAT_RATES[catCode] || 0.31;
         total = totalM2ea * dies2 * catR;
         invTarifaBase.textContent = catR.toFixed(2)+" € / m² / dia ("+catText+", >15 m²)";
-        formulaText = "Mesures: "+mesuresText+"
-Total: "+totalM2ea+" m² × "+dies2+" dies × "+catR.toFixed(2)+" €/m²/dia ("+catText+") = "+total.toLocaleString('ca-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+" €";
+        formulaText = "Mesures: "+mesuresText+"\nTotal: "+totalM2ea+" m² × "+dies2+" dies × "+catR.toFixed(2)+" €/m²/dia ("+catText+") = "+total.toLocaleString('ca-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+" €";
       }
     }
 
