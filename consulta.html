@@ -303,42 +303,6 @@
 
   <div class="workspace">
 
-    <!-- COL 1: Llista resultats guardats -->
-    <div class="repo-col">
-      <div class="col-header">
-        <div class="col-header-title">
-          <i data-lucide="bookmark"></i>
-          Resultats guardats
-        </div>
-        <div class="col-header-actions">
-          <button class="icon-btn" onclick="clearAll()" title="Esborrar tot">
-            <i data-lucide="trash-2"></i>
-          </button>
-        </div>
-      </div>
-      <div class="col-body" id="result-list">
-        <div class="repo-empty" id="repo-empty">
-          <i data-lucide="inbox"></i>
-          <p>Encara no hi ha resultats guardats.<br>Guarda les respostes del chat amb el botó <strong>Guardar</strong>.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- COL 2: Detall del resultat seleccionat -->
-    <div class="repo-col">
-      <div class="col-header">
-        <div class="col-header-title">
-          <i data-lucide="file-text"></i>
-          Detall
-        </div>
-      </div>
-      <div class="detail-empty" id="detail-empty">
-        <i data-lucide="mouse-pointer-click"></i>
-        <p>Selecciona un resultat de la llista per veure'l aquí.</p>
-      </div>
-      <div class="detail-content" id="detail-content"></div>
-    </div>
-
     <!-- COL 3: Chat Gemini -->
     <div class="chat-col">
       <div class="col-header">
@@ -374,6 +338,43 @@
         </div>
         <div class="input-hint">Enter per enviar · Shift+Enter per nova línia</div>
       </div>
+    </div>
+
+<!-- COL 1: Llista resultats guardats -->
+    <div class="repo-col">
+      <div class="col-header">
+        <div class="col-header-title">
+          <i data-lucide="bookmark"></i>
+          Resultats guardats
+        </div>
+        <div class="col-header-actions">
+          <button class="icon-btn" onclick="clearAll()" title="Esborrar tot">
+            <i data-lucide="trash-2"></i>
+          </button>
+        </div>
+      </div>
+      <div class="col-body" id="result-list">
+        <div class="repo-empty" id="repo-empty">
+          <i data-lucide="inbox"></i>
+          <p>Encara no hi ha resultats guardats.<br>Guarda les respostes del chat amb el botó <strong>Guardar</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    
+<!-- COL 2: Detall del resultat seleccionat -->
+    <div class="repo-col">
+      <div class="col-header">
+        <div class="col-header-title">
+          <i data-lucide="file-text"></i>
+          Detall
+        </div>
+      </div>
+      <div class="detail-empty" id="detail-empty">
+        <i data-lucide="mouse-pointer-click"></i>
+        <p>Selecciona un resultat de la llista per veure'l aquí.</p>
+      </div>
+      <div class="detail-content" id="detail-content"></div>
     </div>
 
   </div>
