@@ -2544,8 +2544,10 @@ TOTAL DRETS DE LIQUIDACIÓ: ${totalText}
     const dw = d.getDay();
     return dw === 6 || dw === 0;
   }
-  function _covM2Dia(d, linies) {
-    let total = 0;
+
+  // Retorna {m2, count} — m² total i quantes modalitats cobreixen el dia
+  function _covDiaInfo(d, linies) {
+    let m2 = 0, count = 0;
     const estiu = _covEsEstiu(d);
     const cs    = _covEsCapSetmana(d);
     const iso   = d.getFullYear() + '-'
@@ -2553,25 +2555,24 @@ TOTAL DRETS DE LIQUIDACIÓ: ${totalText}
                 + String(d.getDate()).padStart(2,'0');
     linies.forEach(function(l) {
       if (!l.m2) return;
+      var actiu = false;
       switch (l.mod) {
-        case 'anual':             total += l.m2; break;
-        case 'estiu':             if (estiu)           total += l.m2; break;
-        case 'hivern':            if (!estiu)          total += l.m2; break;
-        case 'cap_setmana_estiu': if (estiu  && cs)   total += l.m2; break;
-        case 'cap_setmana_hivern':if (!estiu && cs)   total += l.m2; break;
-        case 'eventual':
-          if (l.dies && l.dies.has(iso)) total += l.m2; break;
+        case 'anual':             actiu = true; break;
+        case 'estiu':             actiu = estiu; break;
+        case 'hivern':            actiu = !estiu; break;
+        case 'cap_setmana_estiu': actiu = estiu  && cs; break;
+        case 'cap_setmana_hivern':actiu = !estiu && cs; break;
+        case 'eventual':          actiu = !!(l.dies && l.dies.has(iso)); break;
       }
+      if (actiu) { m2 += l.m2; count++; }
     });
-    return total;
+    return { m2: m2, count: count };
   }
-  function _covColorClass(m2, max) {
-    if (m2 === 0 || max === 0) return 'inactive';
-    const r = m2 / max;
-    if (r <= 0.20) return 'active-1';
-    if (r <= 0.40) return 'active-2';
-    if (r <= 0.60) return 'active-3';
-    if (r <= 0.80) return 'active-4';
+  function _covColorClass(count) {
+    if (count === 0) return 'inactive';
+    if (count === 1) return 'active-2';
+    if (count === 2) return 'active-3';
+    if (count === 3) return 'active-4';
     return 'active-5';
   }
 
@@ -2601,13 +2602,13 @@ TOTAL DRETS DE LIQUIDACIÓ: ${totalText}
       };
     });
 
-    // Precalcular màxim
+    // Precalcular màxim m² (per al tooltip)
     let maxM2 = 0;
     for (let m = 0; m < 12; m++) {
       const nd = new Date(anyRef, m+1, 0).getDate();
       for (let d = 1; d <= nd; d++) {
-        const v = _covM2Dia(new Date(anyRef, m, d), linies);
-        if (v > maxM2) maxM2 = v;
+        const info = _covDiaInfo(new Date(anyRef, m, d), linies);
+        if (info.m2 > maxM2) maxM2 = info.m2;
       }
     }
 
@@ -2635,13 +2636,13 @@ TOTAL DRETS DE LIQUIDACIÓ: ${totalText}
         const iso = anyRef + '-'
                   + String(m+1).padStart(2,'0') + '-'
                   + String(d).padStart(2,'0');
-        const m2v = _covM2Dia(new Date(anyRef, m, d), linies);
-        if (m2v > 0) diesCoberts++;
-        const cls = _covColorClass(m2v, maxM2)
+        const info = _covDiaInfo(new Date(anyRef, m, d), linies);
+        if (info.m2 > 0) diesCoberts++;
+        const cls = _covColorClass(info.count)
                   + (iso === avuiISO ? ' today-mark' : '');
-        const m2txt = m2v > 0 ? m2v + 'm²' : '';
-        const tip = m2v > 0
-          ? d + '/' + (m+1) + ': ' + m2v + ' m²'
+        const m2txt = info.m2 > 0 ? info.m2 + 'm²' : '';
+        const tip = info.m2 > 0
+          ? d + '/' + (m+1) + ': ' + info.m2 + ' m² (' + info.count + ' modal.)'
           : d + '/' + (m+1);
         html += '<div class="cov-day ' + cls + '" title="' + tip + '">'
               + '<span class="cov-day-num">' + d + '</span>'
