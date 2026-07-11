@@ -9,10 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="data/nucli_data.js"></script>
-<script src="data/terrasses_data.js"></script>
-<script src="data/activitats_geo.js"></script>
-<script src="data/bus_data.js"></script>
 <script src="peps_data.js"></script>
 <style>
 /* === Tokens Via Pública DS v2 === */
@@ -853,8 +849,8 @@ header .sub {
   <div class="panel card-visor-panel">
     <div class="visor-hero-header">
       <span class="visor-hero-label">Via Pública · Sabadell</span>
-      <a class="visor-open-btn" href="visor_terrasses_ds.html" target="_blank">
-        Obrir el Visor
+      <a class="visor-open-btn" href="visor.html" target="_blank">
+        Visor
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
           <path d="M2.5 6h7M7 3.5l2.5 2.5L7 8.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -1091,6 +1087,28 @@ header .sub {
 </div>
 
 <script>
+  /* === CÀRREGA DE DADES (JSON, en paral·lel) === */
+  var _NUCLI_DATA, _GLOBAL_RATIO, _RATIO_SECCIONS, _BARRIS, _TERRASSES_DATA, _ACTIVITATS_GEO, _BUS_ROUTES;
+
+  var _dadesPromise = Promise.all([
+    fetch('data/nucli_detall.json').then(function(r){ return r.json(); }),
+    fetch('data/ratios_seccions.json').then(function(r){ return r.json(); }),
+    fetch('data/barris.json').then(function(r){ return r.json(); }),
+    fetch('data/terrasses.json').then(function(r){ return r.json(); }),
+    fetch('data/activitats.json').then(function(r){ return r.json(); }),
+    fetch('data/bus.json').then(function(r){ return r.json(); })
+  ]).then(function(results) {
+    _NUCLI_DATA = results[0].carrers;
+    _GLOBAL_RATIO = results[1].global_ratio;
+    _RATIO_SECCIONS = results[1].seccions;
+    _BARRIS = results[2].barris;
+    _TERRASSES_DATA = results[3].expedients;
+    _ACTIVITATS_GEO = results[4].activitats;
+    _BUS_ROUTES = results[5].linies;
+  }).catch(function(e) {
+    console.error('Error carregant dades JSON:', e);
+  });
+
   /* === MAPA OSM === */
   var map = L.map('map', { zoomControl: true, attributionControl: true })
              .setView([41.5431, 2.1097], 13);
@@ -1161,15 +1179,11 @@ header .sub {
     setStatus('Introdueix un carrer del nucli de Sabadell.', 'hint');
   }
 
-  // Carregar dades: inline (funciona en file://), o fetch com a fallback
-  if (typeof _NUCLI_DATA !== 'undefined') {
-    _bInicialitzar(_NUCLI_DATA);
-  } else {
-    fetch('data/nucli_index.json')
-      .then(function(r){ return r.json(); })
-      .then(function(data){ _bInicialitzar(data.carrers); })
-      .catch(function(){ setStatus('Error carregant el nucli de carrers.', 'err'); });
-  }
+  // Carregar dades (via _dadesPromise, definida a l'inici del script)
+  _dadesPromise.then(function() {
+    if (_NUCLI_DATA) _bInicialitzar(_NUCLI_DATA);
+    else setStatus('Error carregant el nucli de carrers.', 'err');
+  });
 
   function _aplicarCarrer(nom) {
     inputCarrer.classList.remove('valid','invalid');
@@ -1244,7 +1258,7 @@ header .sub {
     if (typeof _TERRASSES_DATA === 'undefined') return [];
     var cn = _normAddr(carrer), nn = _normAddr(numero);
     return _TERRASSES_DATA.filter(function(d) {
-      var addr = _normAddr(d['ADREÇA_ESTABLIMENT_NORM'] || '');
+      var addr = _normAddr(d['adr_establiment'] || '');
       // format: "carrer N numero"  →  extreure parts
       var parts = addr.split(' n ');
       if (parts.length < 2) return false;
@@ -1264,7 +1278,7 @@ header .sub {
     var terrasses = _buscarTerrasses(carrer, numero);
     var tabs = [{ id: 'adreca', label: 'Adreça' }];
     terrasses.forEach(function(t, i) {
-      tabs.push({ id: 'terrassa-' + i, label: 'Terrassa · ' + (t['NOM_ESTABLIMENT'] || 'Exp. ' + (i+1)) });
+      tabs.push({ id: 'terrassa-' + i, label: 'Terrassa · ' + (t['nom'] || 'Exp. ' + (i+1)) });
     });
 
     var tabsEl = document.getElementById('modal-tabs');
@@ -1360,17 +1374,17 @@ header .sub {
       var idx = parseInt(id.replace('terrassa-',''));
       var t = terrasses[idx];
       if (!t) { body.innerHTML = '<div class="sense-dades">Sense dades</div>'; return; }
-      var tipus = t['TIPUS ACTIVITAT  (Rest/Deg)'] === 'R' ? '<span class="fitxa-badge badge-r">Restaurant</span>' : '<span class="fitxa-badge badge-d">Degustació</span>';
+      var tipus = t['tipus'] === 'R' ? '<span class="fitxa-badge badge-r">Restaurant</span>' : '<span class="fitxa-badge badge-d">Degustació</span>';
       var html = '<div class="fitxa-grid">';
-      html += camp('Establiment', t['NOM_ESTABLIMENT']);
-      html += camp('Titular', t['TITULAR']);
-      html += camp('NIF/DNI', t['NIF-DNI']);
+      html += camp('Establiment', t['nom']);
+      html += camp('Titular', t['titular']);
+      html += camp('NIF/DNI', t['nif']);
       html += camp('Tipus activitat', tipus, true);
-      html += camp('Expedient OpenCertiAc', t['EXPEDIENT OPENCERTIAC']);
-      html += camp('Expedient SIE', t['EXPEDIENT SIE']);
-      html += camp('Assentament', t['ASSENTAMENT']);
-      html += camp('Nº llicència', t['Nº LLICÈNCIA ACTIVITATS']);
-      html += camp('Última transmissió', t['ÚLTIMA TRANSMISSIÓ']);
+      html += camp('Expedient OpenCertiAc', t['exp_ovp']);
+      html += camp('Expedient SIE', t['exp_sie']);
+      html += camp('Assentament', t['assentament']);
+      html += camp('Nº llicència', t['llicencia']);
+      html += camp('Última transmissió', t['transmissio']);
       html += '<div class="fitxa-sectio">Modalitats de terrassa</div>';
       html += camp('Anual', t['Anual'] ? t['Anual'] + ' m²' : null);
       html += camp('Estiu', t['Estiu'] ? t['Estiu'] + ' m²' : null);
@@ -1380,9 +1394,9 @@ header .sub {
       html += camp('C. Estiu', t['C_Estiu'] ? t['C_Estiu'] + ' m²' : null);
       html += camp('C. Hivern', t['C_Hivern'] ? t['C_Hivern'] + ' m²' : null);
       html += '<div class="fitxa-sectio">Aforament</div>';
-      html += camp('Aforament anual', t['Aforament anual']);
-      html += camp('Aforament temporada', t['Aforament Temporada']);
-      html += camp('Adreça terrassa', t['ADREÇA_TERRASSA_NORM']);
+      html += camp('af_anual', t['af_anual']);
+      html += camp('Aforament temporada', t['af_temporada']);
+      html += camp('Adreça terrassa', t['adr_terrassa']);
       html += '</div>';
       body.innerHTML = html;
     }
