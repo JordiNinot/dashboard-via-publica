@@ -2226,7 +2226,7 @@ function renderEaCalendar() {
   }
   const d1 = new Date(inici), d2 = new Date(fi);
   if (d2 < d1) { card.style.display = 'none'; return; }
-  card.style.display = '';
+  card.style.display = 'block';
 
   const MESOS = ['Gener','Febrer','Març','Abril','Maig','Juny',
                  'Juliol','Agost','Setembre','Octubre','Novembre','Desembre'];
@@ -3061,7 +3061,7 @@ TOTAL DRETS DE LIQUIDACIÓ: ${totalText}
     renderCoverageCalendar();
     // Calendari EA: visible sols per elements_auxiliars
     var eaCard = document.getElementById('ea-cal-card');
-    if (eaCard) eaCard.style.display = (type === 'elements_auxiliars') ? '' : 'none';
+    if (eaCard) eaCard.style.display = (type === 'elements_auxiliars') ? 'block' : 'none';
     if (type === 'elements_auxiliars') renderEaCalendar();
   };
   window._aplicarTipus = aplicarTipus;
