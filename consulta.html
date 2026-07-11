@@ -38,8 +38,7 @@
       flex-shrink: 0; background: var(--primary); color: white;
       height: 52px; padding: 0 20px;
       display: flex; align-items: center; gap: 12px;
-      border-bottom: 1px solid rgba(0,0,0,0.15);
-      box-shadow: var(--shadow-sm);
+      border-bottom: 1px solid rgba(0,0,0,0.15); box-shadow: var(--shadow-sm);
     }
     .back-link {
       display: flex; align-items: center; gap: 5px; color: rgba(255,255,255,0.82);
@@ -59,23 +58,16 @@
       color: white; padding: 2px 8px; border-radius: 10px; margin-left: 4px;
     }
 
-    /* ── Layout 3 columnes ── */
+    /* ── Layout ── */
     .workspace {
       flex: 1; display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 2fr;
       overflow: hidden;
     }
 
-    /* ── Columnes esquerra (repositori) ── */
-    .repo-col {
-      display: flex; flex-direction: column;
-      border-right: 1px solid var(--border-color);
-      overflow: hidden;
-    }
-    .repo-col:first-child { border-right: 1px solid var(--border-color); }
-
+    /* ── Col capçalera shared ── */
     .col-header {
-      flex-shrink: 0; padding: 14px 16px 12px;
+      flex-shrink: 0; padding: 12px 16px;
       border-bottom: 1px solid var(--border-color);
       background: var(--bg-primary);
       display: flex; align-items: center; justify-content: space-between;
@@ -85,7 +77,6 @@
       display: flex; align-items: center; gap: 7px;
     }
     .col-header-title svg { width: 15px; height: 15px; color: var(--primary); }
-    .col-header-actions { display: flex; gap: 6px; }
     .icon-btn {
       width: 28px; height: 28px; border-radius: var(--radius-sm);
       border: 1px solid var(--border-color); background: var(--bg-secondary);
@@ -95,98 +86,18 @@
     .icon-btn:hover { background: var(--bg-tertiary); color: var(--text-main); }
     .icon-btn svg { width: 13px; height: 13px; }
 
-    .col-body {
-      flex: 1; overflow-y: auto; padding: 12px;
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .col-body::-webkit-scrollbar { width: 4px; }
-    .col-body::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 2px; }
-
-    /* Cards de resultat */
-    .result-card {
-      background: var(--bg-primary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      cursor: pointer;
-      transition: border-color 150ms, box-shadow 150ms;
-    }
-    .result-card:hover { border-color: var(--primary-light); box-shadow: var(--shadow-sm); }
-    .result-card.selected { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary-light); }
-    .result-card-head {
-      padding: 10px 12px 8px;
-      display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;
-    }
-    .result-q {
-      font-size: 12px; font-weight: 600; color: var(--text-main);
-      line-height: 1.4; flex: 1;
-    }
-    .result-card-del {
-      flex-shrink: 0; width: 20px; height: 20px;
-      border: none; background: none; cursor: pointer;
-      color: var(--text-muted); border-radius: 3px;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 120ms, color 120ms;
-    }
-    .result-card-del:hover { background: #fee2e2; color: #dc2626; }
-    .result-card-del svg { width: 11px; height: 11px; }
-    .result-preview {
-      padding: 0 12px 10px;
-      font-size: 11px; color: var(--text-muted); line-height: 1.5;
-      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-    }
-    .result-meta {
-      padding: 6px 12px;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border-color);
-      font-size: 10px; color: var(--text-muted);
-      display: flex; align-items: center; gap: 6px;
-    }
-
-    /* Detail panel (col 2) */
-    .detail-empty {
-      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 24px; text-align: center; gap: 10px;
-    }
-    .detail-empty svg { width: 36px; height: 36px; color: var(--border-color); }
-    .detail-empty p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-    .detail-content {
-      flex: 1; overflow-y: auto; padding: 16px;
-      display: none; flex-direction: column; gap: 12px;
-    }
-    .detail-content::-webkit-scrollbar { width: 4px; }
-    .detail-content::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 2px; }
-    .detail-q-block {
-      background: var(--primary); color: white;
-      border-radius: var(--radius-md); padding: 12px 14px;
-      font-size: 13px; font-weight: 600; line-height: 1.5;
-    }
-    .detail-a-block {
-      background: var(--bg-primary); border: 1px solid var(--border-color);
-      border-radius: var(--radius-md); padding: 12px 14px;
-      font-size: 13px; line-height: 1.7; white-space: pre-wrap;
-    }
-    .detail-a-block strong { font-weight: 700; color: var(--primary); }
-    .detail-ts { font-size: 10px; color: var(--text-muted); text-align: right; margin-top: 4px; }
-
-    /* Estat buit repositori */
-    .repo-empty {
-      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 24px; text-align: center; gap: 8px; color: var(--text-muted);
-    }
-    .repo-empty svg { width: 32px; height: 32px; color: var(--border-color); margin-bottom: 4px; }
-    .repo-empty p { font-size: 12px; line-height: 1.5; }
-
-    /* ── Columna dreta (chat) ── */
+    /* ════════════════════════════════
+       COL 1 — CHAT
+    ════════════════════════════════ */
     .chat-col {
       display: flex; flex-direction: column;
-      background: var(--bg-secondary);
-      overflow: hidden;
+      border-right: 1px solid var(--border-color);
+      background: var(--bg-secondary); overflow: hidden;
     }
     .chat-messages {
       flex: 1; overflow-y: auto;
-      padding: 16px 14px 8px;
-      display: flex; flex-direction: column; gap: 12px;
+      padding: 14px 14px 8px;
+      display: flex; flex-direction: column; gap: 10px;
       scroll-behavior: smooth;
     }
     .chat-messages::-webkit-scrollbar { width: 4px; }
@@ -209,9 +120,7 @@
       box-shadow: var(--shadow-sm);
     }
     .msg.assistant .msg-bubble strong { font-weight: 700; color: var(--primary); }
-    .msg-actions {
-      display: flex; gap: 4px; margin-top: 4px;
-    }
+    .msg-actions { display: flex; gap: 4px; margin-top: 4px; }
     .msg-save-btn {
       font-family: var(--font-sans); font-size: 10px; font-weight: 500;
       padding: 3px 8px; border-radius: 10px;
@@ -221,7 +130,7 @@
     }
     .msg-save-btn:hover { background: var(--primary-light); }
     .msg-save-btn svg { width: 10px; height: 10px; }
-    .msg-save-btn.saved { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+    .msg-save-btn.saved { opacity: 0.6; cursor: default; }
     .msg-time { font-size: 10px; color: var(--text-muted); margin-top: 3px; padding: 0 3px; }
 
     .welcome-card {
@@ -240,7 +149,7 @@
       padding: 9px 12px; background: var(--bg-primary);
       border: 1px solid var(--border-color); border-radius: var(--radius-lg);
       border-bottom-left-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
-      align-self: flex-start;
+      align-self: flex-start; flex-shrink: 0; margin: 0 14px 4px;
     }
     .typing-dot {
       width: 6px; height: 6px; background: var(--text-muted); border-radius: 50%;
@@ -288,6 +197,88 @@
     #send-btn:disabled { background: var(--border-color); cursor: not-allowed; }
     #send-btn svg { width: 14px; height: 14px; }
     .input-hint { font-size: 10px; color: var(--text-muted); text-align: center; margin-top: 5px; }
+
+    /* ════════════════════════════════
+       COL 2 — PUNTS
+    ════════════════════════════════ */
+    .punts-col {
+      display: flex; flex-direction: column;
+      background: var(--bg-secondary); overflow: hidden;
+    }
+    .punts-body {
+      flex: 1; overflow-y: auto;
+      padding: 14px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .punts-body::-webkit-scrollbar { width: 5px; }
+    .punts-body::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 2px; }
+
+    /* Estat buit */
+    .punts-empty {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 32px; gap: 10px; color: var(--text-muted);
+    }
+    .punts-empty svg { width: 36px; height: 36px; color: var(--border-color); }
+    .punts-empty p { font-size: 13px; line-height: 1.6; }
+
+    /* Card de punt */
+    .punt-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .punt-card-body { padding: 14px 16px; }
+    .punt-q {
+      font-size: 12px; font-weight: 700; color: var(--primary);
+      margin-bottom: 8px; line-height: 1.4;
+    }
+    .punt-a {
+      font-size: 13px; color: var(--text-main); line-height: 1.7;
+      white-space: pre-wrap;
+    }
+    .punt-a strong { font-weight: 700; color: var(--primary); }
+    /* Mode edició */
+    .punt-edit-area {
+      display: none; width: 100%; font-family: var(--font-sans);
+      font-size: 13px; line-height: 1.7; color: var(--text-main);
+      border: 1.5px solid var(--primary); border-radius: var(--radius-sm);
+      padding: 8px 10px; resize: vertical; min-height: 80px;
+      background: var(--bg-primary); outline: none;
+    }
+    .punt-card-footer {
+      padding: 8px 12px;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .punt-ts { font-size: 10px; color: var(--text-muted); }
+    .punt-actions { display: flex; gap: 6px; }
+    .punt-btn {
+      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
+      padding: 4px 10px; border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color); background: var(--bg-primary);
+      cursor: pointer; display: flex; align-items: center; gap: 5px;
+      color: var(--text-muted); transition: background 120ms, color 120ms, border-color 120ms;
+    }
+    .punt-btn svg { width: 12px; height: 12px; }
+    .punt-btn:hover { background: var(--bg-tertiary); color: var(--text-main); }
+    .punt-btn.copy:hover { border-color: #a0bdd4; color: #2c5d8a; background: #d8e4f0; }
+    .punt-btn.edit-btn:hover { border-color: var(--primary-light); color: var(--primary); background: var(--primary-bg); }
+    .punt-btn.del:hover { border-color: #fca5a5; color: #dc2626; background: #fee2e2; }
+    .punt-btn.save-edit { border-color: var(--primary); color: var(--primary); background: var(--primary-bg); display: none; }
+    .punt-btn.save-edit:hover { background: var(--primary-light); }
+    .punt-btn.cancel-edit { display: none; }
+
+    /* Toast */
+    .toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: #111; color: white; font-size: 12px; font-weight: 500;
+      padding: 8px 16px; border-radius: 20px; opacity: 0;
+      transition: opacity 200ms, transform 200ms; pointer-events: none; z-index: 9999;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   </style>
 </head>
 <body>
@@ -303,7 +294,7 @@
 
   <div class="workspace">
 
-    <!-- COL 3: Chat Gemini -->
+    <!-- COL 1: Chat -->
     <div class="chat-col">
       <div class="col-header">
         <div class="col-header-title">
@@ -315,7 +306,7 @@
         <div class="welcome-card">
           <div class="wc-icon"><i data-lucide="sparkles" style="width:18px;height:18px;"></i></div>
           <h2>Copilot Via Pública</h2>
-          <p>Consulta normatives, taxes i criteris tècnics. Guarda les respostes al repositori.</p>
+          <p>Consulta normatives, taxes i criteris tècnics. Guarda les respostes com a Punts.</p>
         </div>
       </div>
       <div class="typing-indicator" id="typing-indicator">
@@ -340,44 +331,29 @@
       </div>
     </div>
 
-<!-- COL 1: Llista resultats guardats -->
-    <div class="repo-col">
+    <!-- COL 2: Punts -->
+    <div class="punts-col">
       <div class="col-header">
         <div class="col-header-title">
           <i data-lucide="bookmark"></i>
-          Resultats guardats
+          Punts
+          <span id="punts-count" style="font-size:11px;font-weight:500;color:var(--text-muted);margin-left:2px;"></span>
         </div>
-        <div class="col-header-actions">
-          <button class="icon-btn" onclick="clearAll()" title="Esborrar tot">
-            <i data-lucide="trash-2"></i>
-          </button>
-        </div>
+        <button class="icon-btn" onclick="clearAll()" title="Esborrar tots els punts">
+          <i data-lucide="trash-2"></i>
+        </button>
       </div>
-      <div class="col-body" id="result-list">
-        <div class="repo-empty" id="repo-empty">
-          <i data-lucide="inbox"></i>
-          <p>Encara no hi ha resultats guardats.<br>Guarda les respostes del chat amb el botó <strong>Guardar</strong>.</p>
-        </div>
-      </div>
-    </div>
-
-    
-<!-- COL 2: Detall del resultat seleccionat -->
-    <div class="repo-col">
-      <div class="col-header">
-        <div class="col-header-title">
-          <i data-lucide="file-text"></i>
-          Detall
+      <div class="punts-body" id="punts-body">
+        <div class="punts-empty" id="punts-empty">
+          <i data-lucide="bookmark-plus"></i>
+          <p>Encara no hi ha punts guardats.<br>Usa el botó <strong>Guardar</strong> a cada resposta del chat.</p>
         </div>
       </div>
-      <div class="detail-empty" id="detail-empty">
-        <i data-lucide="mouse-pointer-click"></i>
-        <p>Selecciona un resultat de la llista per veure'l aquí.</p>
-      </div>
-      <div class="detail-content" id="detail-content"></div>
     </div>
 
   </div>
+
+  <div class="toast" id="toast"></div>
 
   <script>
     lucide.createIcons();
@@ -385,14 +361,13 @@
     const API_URL = '/api/gemini';
     let messages = [];
     let isLoading = false;
-    let results = JSON.parse(localStorage.getItem('consulta_results') || '[]');
-    let selectedId = null;
+    let punts = JSON.parse(localStorage.getItem('consulta_punts') || '[]');
 
     const chatMessages = document.getElementById('chat-messages');
-    const typingEl    = document.getElementById('typing-indicator');
-    const suggestions = document.getElementById('suggestions');
-    const input       = document.getElementById('chat-input');
-    const sendBtn     = document.getElementById('send-btn');
+    const typingEl     = document.getElementById('typing-indicator');
+    const suggestions  = document.getElementById('suggestions');
+    const input        = document.getElementById('chat-input');
+    const sendBtn      = document.getElementById('send-btn');
 
     // ── Textarea auto-resize ──
     input.addEventListener('input', function() {
@@ -403,129 +378,189 @@
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
     });
 
-    function ts() {
-      return new Date().toLocaleString('ca-ES', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
+    // ── Toast ──
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(function(){ t.classList.remove('show'); }, 1800);
     }
 
-    // ── Repositori ──
-    function saveResults() {
-      localStorage.setItem('consulta_results', JSON.stringify(results));
-    }
-
-    function renderList() {
-      const list = document.getElementById('result-list');
-      const empty = document.getElementById('repo-empty');
-      if (results.length === 0) {
-        list.innerHTML = '';
-        list.appendChild(empty);
-        empty.style.display = 'flex';
-        return;
-      }
-      empty.style.display = 'none';
-      list.innerHTML = '';
-      results.slice().reverse().forEach(function(r) {
-        const card = document.createElement('div');
-        card.className = 'result-card' + (r.id === selectedId ? ' selected' : '');
-        card.dataset.id = r.id;
-        card.innerHTML =
-          '<div class="result-card-head">' +
-            '<div class="result-q">' + escHtml(r.q) + '</div>' +
-            '<button class="result-card-del" onclick="deleteResult(event,\'' + r.id + '\')" title="Eliminar">' +
-              '<i data-lucide="x"></i>' +
-            '</button>' +
-          '</div>' +
-          '<div class="result-preview">' + escHtml(r.a.replace(/\*\*/g,'')) + '</div>' +
-          '<div class="result-meta"><i data-lucide="clock" style="width:10px;height:10px;"></i>' + r.ts + '</div>';
-        card.addEventListener('click', function() { selectResult(r.id); });
-        list.appendChild(card);
-      });
-      lucide.createIcons();
-    }
-
-    function selectResult(id) {
-      selectedId = id;
-      const r = results.find(function(x){ return x.id === id; });
-      if (!r) return;
-      renderList();
-      const empty   = document.getElementById('detail-empty');
-      const content = document.getElementById('detail-content');
-      empty.style.display   = 'none';
-      content.style.display = 'flex';
-      content.innerHTML =
-        '<div class="detail-q-block">' + escHtml(r.q) + '</div>' +
-        '<div class="detail-a-block">' + formatText(r.a) + '</div>' +
-        '<div class="detail-ts">' + r.ts + '</div>';
-    }
-
-    function deleteResult(e, id) {
-      e.stopPropagation();
-      results = results.filter(function(r){ return r.id !== id; });
-      saveResults();
-      if (selectedId === id) {
-        selectedId = null;
-        document.getElementById('detail-empty').style.display   = 'flex';
-        document.getElementById('detail-content').style.display = 'none';
-      }
-      renderList();
-    }
-
-    function clearAll() {
-      if (!results.length) return;
-      if (!confirm('Esborrar tots els resultats guardats?')) return;
-      results = []; selectedId = null;
-      saveResults();
-      document.getElementById('detail-empty').style.display   = 'flex';
-      document.getElementById('detail-content').style.display = 'none';
-      renderList();
-    }
-
-    function saveResult(q, a) {
-      const id = Date.now().toString();
-      results.push({ id: id, q: q, a: a, ts: ts() });
-      saveResults();
-      renderList();
-      return id;
-    }
-
-    // ── Chat ──
+    // ── Utils ──
     function escHtml(s) {
-      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     }
     function formatText(s) {
       return escHtml(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
     }
+    function tsNow() {
+      return new Date().toLocaleString('ca-ES',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'});
+    }
 
+    // ── Persistència ──
+    function savePunts() {
+      localStorage.setItem('consulta_punts', JSON.stringify(punts));
+    }
+
+    // ── Renderitzar punts ──
+    function renderPunts() {
+      const body  = document.getElementById('punts-body');
+      const empty = document.getElementById('punts-empty');
+      const count = document.getElementById('punts-count');
+      count.textContent = punts.length ? '(' + punts.length + ')' : '';
+
+      if (punts.length === 0) {
+        body.innerHTML = '';
+        body.appendChild(empty);
+        empty.style.display = 'flex';
+        return;
+      }
+      empty.style.display = 'none';
+      body.innerHTML = '';
+
+      punts.slice().reverse().forEach(function(p) {
+        const card = document.createElement('div');
+        card.className = 'punt-card';
+        card.dataset.id = p.id;
+        card.innerHTML =
+          '<div class="punt-card-body">' +
+            '<div class="punt-q">' + escHtml(p.q) + '</div>' +
+            '<div class="punt-a" id="punt-a-' + p.id + '">' + formatText(p.a) + '</div>' +
+            '<textarea class="punt-edit-area" id="punt-edit-' + p.id + '">' + escHtml(p.a) + '</textarea>' +
+          '</div>' +
+          '<div class="punt-card-footer">' +
+            '<span class="punt-ts">' + p.ts + '</span>' +
+            '<div class="punt-actions">' +
+              '<button class="punt-btn copy" onclick="copyPunt(\'' + p.id + '\')" title="Copiar al portapapers">' +
+                '<i data-lucide="copy"></i> Copiar' +
+              '</button>' +
+              '<button class="punt-btn edit-btn" id="edit-btn-' + p.id + '" onclick="startEdit(\'' + p.id + '\')" title="Editar">' +
+                '<i data-lucide="pencil"></i> Editar' +
+              '</button>' +
+              '<button class="punt-btn save-edit" id="save-btn-' + p.id + '" onclick="saveEdit(\'' + p.id + '\')">' +
+                '<i data-lucide="check"></i> Guardar' +
+              '</button>' +
+              '<button class="punt-btn cancel-edit" id="cancel-btn-' + p.id + '" onclick="cancelEdit(\'' + p.id + '\')">' +
+                '<i data-lucide="x"></i> Cancel·lar' +
+              '</button>' +
+              '<button class="punt-btn del" onclick="deletePunt(\'' + p.id + '\')" title="Esborrar">' +
+                '<i data-lucide="trash-2"></i> Esborrar' +
+              '</button>' +
+            '</div>' +
+          '</div>';
+        body.appendChild(card);
+      });
+      lucide.createIcons();
+    }
+
+    // ── Accions punt ──
+    function copyPunt(id) {
+      const p = punts.find(function(x){ return x.id === id; });
+      if (!p) return;
+      const text = p.q + '\n\n' + p.a;
+      navigator.clipboard.writeText(text).then(function(){
+        showToast('Copiat al portapapers');
+      });
+    }
+
+    function startEdit(id) {
+      const aEl     = document.getElementById('punt-a-' + id);
+      const editEl  = document.getElementById('punt-edit-' + id);
+      const editBtn = document.getElementById('edit-btn-' + id);
+      const saveBtn = document.getElementById('save-btn-' + id);
+      const cancelBtn = document.getElementById('cancel-btn-' + id);
+      const p = punts.find(function(x){ return x.id === id; });
+      editEl.value = p.a;
+      aEl.style.display      = 'none';
+      editEl.style.display   = 'block';
+      editBtn.style.display  = 'none';
+      saveBtn.style.display  = 'flex';
+      cancelBtn.style.display = 'flex';
+      editEl.focus();
+    }
+
+    function saveEdit(id) {
+      const editEl = document.getElementById('punt-edit-' + id);
+      const aEl    = document.getElementById('punt-a-' + id);
+      const editBtn = document.getElementById('edit-btn-' + id);
+      const saveBtn = document.getElementById('save-btn-' + id);
+      const cancelBtn = document.getElementById('cancel-btn-' + id);
+      const p = punts.find(function(x){ return x.id === id; });
+      if (!p) return;
+      p.a = editEl.value;
+      savePunts();
+      aEl.innerHTML = formatText(p.a);
+      aEl.style.display      = 'block';
+      editEl.style.display   = 'none';
+      editBtn.style.display  = 'flex';
+      saveBtn.style.display  = 'none';
+      cancelBtn.style.display = 'none';
+      showToast('Punt actualitzat');
+    }
+
+    function cancelEdit(id) {
+      const editEl = document.getElementById('punt-edit-' + id);
+      const aEl    = document.getElementById('punt-a-' + id);
+      const editBtn = document.getElementById('edit-btn-' + id);
+      const saveBtn = document.getElementById('save-btn-' + id);
+      const cancelBtn = document.getElementById('cancel-btn-' + id);
+      aEl.style.display      = 'block';
+      editEl.style.display   = 'none';
+      editBtn.style.display  = 'flex';
+      saveBtn.style.display  = 'none';
+      cancelBtn.style.display = 'none';
+    }
+
+    function deletePunt(id) {
+      punts = punts.filter(function(p){ return p.id !== id; });
+      savePunts();
+      renderPunts();
+    }
+
+    function clearAll() {
+      if (!punts.length) return;
+      if (!confirm('Esborrar tots els punts?')) return;
+      punts = [];
+      savePunts();
+      renderPunts();
+    }
+
+    function addPunt(q, a) {
+      const id = Date.now().toString();
+      punts.push({ id: id, q: q, a: a, ts: tsNow() });
+      savePunts();
+      renderPunts();
+    }
+
+    // ── Chat ──
     function addMessage(role, text, q) {
       const div = document.createElement('div');
       div.className = 'msg ' + role;
-      const bubble = '<div class="msg-bubble">' + formatText(text) + '</div>';
-      let actions = '';
+      let inner = '<div class="msg-bubble">' + formatText(text) + '</div>';
       if (role === 'assistant') {
-        const bid = 'save-' + Date.now();
-        actions = '<div class="msg-actions">' +
+        const bid = 'sb-' + Date.now();
+        inner += '<div class="msg-actions">' +
           '<button class="msg-save-btn" id="' + bid + '" onclick="saveFromBtn(\'' + bid + '\',this)">' +
             '<i data-lucide="bookmark"></i> Guardar' +
           '</button></div>';
         div.dataset.q = q || '';
         div.dataset.a = text;
       }
-      const timeEl = '<div class="msg-time">' + new Date().toLocaleTimeString('ca-ES',{hour:'2-digit',minute:'2-digit'}) + '</div>';
-      div.innerHTML = bubble + actions + timeEl;
+      inner += '<div class="msg-time">' + new Date().toLocaleTimeString('ca-ES',{hour:'2-digit',minute:'2-digit'}) + '</div>';
+      div.innerHTML = inner;
       chatMessages.appendChild(div);
       chatMessages.scrollTop = chatMessages.scrollHeight;
       lucide.createIcons();
-      return div;
     }
 
     function saveFromBtn(bid, btn) {
       const msgEl = btn.closest('.msg');
-      const q = msgEl?.dataset.q || '';
-      const a = msgEl?.dataset.a || '';
-      saveResult(q, a);
+      addPunt(msgEl?.dataset.q || '', msgEl?.dataset.a || '');
       btn.classList.add('saved');
       btn.innerHTML = '<i data-lucide="check"></i> Guardat';
       btn.onclick = null;
       lucide.createIcons();
+      showToast('Punt guardat');
     }
 
     function showTyping(show) {
@@ -553,7 +588,7 @@
         const data = await res.json();
         showTyping(false);
         const reply = data.reply || data.error || 'Error desconegut.';
-        const msgEl = addMessage('assistant', reply, text);
+        addMessage('assistant', reply, text);
         messages.push({ role: 'assistant', content: reply });
       } catch(err) {
         showTyping(false);
@@ -563,7 +598,7 @@
     }
 
     // Init
-    renderList();
+    renderPunts();
   </script>
 </body>
 </html>
