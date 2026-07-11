@@ -3,47 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Taxes — Via Pública</title>
+  <title>Via Pública — Sabadell</title>
   <meta name="theme-color" content="#2f7548">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="styles.css">
   <style>
-    /* =============================================
-       DS THEME OVERRIDE — Via Pública DS v2
-    ============================================= */
     :root {
       --primary:       #2f7548;
       --primary-hover: #245c39;
-      --primary-press: #1c462c;
-      --primary-bg:    #eef6ef;
-      --primary-light: #d6e8d9;
       --bg-primary:    #faf8f3;
       --bg-secondary:  #f3efe5;
-      --bg-tertiary:   #ebe7db;
       --border-color:  #d6d0bf;
       --text-main:     #111110;
       --text-muted:    #5f5b50;
-      --accent-blue:        #2f7548;
-      --accent-blue-hover:  #245c39;
-      --accent-orange:      #b45309;
-      --accent-orange-hover:#92400e;
-      --accent-green:       #2f7548;
-      --accent-purple:      #6d28d9;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06);
-      --shadow-lg: 0 10px 24px rgba(0,0,0,0.14), 0 4px 8px rgba(0,0,0,0.06);
-      --glass-bg:     rgba(250,248,243,0.96);
-      --glass-border: rgba(47,117,72,0.18);
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 14px;
-      --font-sans: 'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, sans-serif;
-      --font-mono: 'IBM Plex Mono', Consolas, monospace;
+      --font-sans: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; overflow: hidden; }
     body {
@@ -54,23 +29,18 @@
       flex-direction: column;
     }
 
+    /* ── Header ── */
     .app-header {
       flex-shrink: 0;
       background: var(--primary);
       color: white;
       height: 52px;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--primary-hover);
-      box-shadow: var(--shadow-sm);
-      z-index: 100;
-    }
-    .app-header-left {
+      padding: 0 16px;
       display: flex;
       align-items: center;
       gap: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+      z-index: 100;
     }
     .back-link {
       display: flex;
@@ -85,37 +55,54 @@
       border: 1px solid rgba(255,255,255,0.25);
       background: rgba(255,255,255,0.10);
       transition: background 120ms;
+      white-space: nowrap;
     }
     .back-link:hover { background: rgba(255,255,255,0.22); color: white; }
-    .back-link svg { width: 13px; height: 13px; }
-    .header-divider {
-      width: 1px;
-      height: 20px;
-      background: rgba(255,255,255,0.25);
-    }
-    .app-title {
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-    .app-title span { opacity: 0.7; font-weight: 400; font-size: 13px; margin-left: 8px; }
-    .header-badge {
-      font-size: 11px;
-      font-weight: 500;
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.26);
-      color: white;
-      padding: 2px 8px;
-      border-radius: 10px;
-      margin-left: 10px;
-    }
+    .header-divider { width:1px; height:20px; background:rgba(255,255,255,0.25); flex-shrink:0; }
 
+    /* ── Tabs ── */
+    .app-tabs {
+      display: flex;
+      gap: 2px;
+      flex: 1;
+    }
+    .app-tab {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.72);
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: var(--font-sans);
+      transition: background 120ms, color 120ms;
+      white-space: nowrap;
+    }
+    .app-tab:hover { background: rgba(255,255,255,0.12); color: white; }
+    .app-tab.active {
+      background: rgba(255,255,255,0.20);
+      color: white;
+      font-weight: 600;
+    }
+    .app-tab svg { width:14px; height:14px; flex-shrink:0; }
+
+    /* ── Main content ── */
     .app-main {
       flex: 1;
       overflow: hidden;
-      display: flex;
+      position: relative;
     }
-    .app-main iframe {
+    .tab-panel {
+      position: absolute;
+      inset: 0;
+      display: none;
+    }
+    .tab-panel.active { display: flex; }
+    .tab-panel iframe {
       width: 100%;
       height: 100%;
       border: none;
@@ -124,26 +111,54 @@
 </head>
 <body>
   <header class="app-header">
-    <div class="app-header-left">
-      <a href="index.html" class="back-link">
-        <i data-lucide="chevron-left"></i>
-        Tornar
-      </a>
-      <div class="header-divider"></div>
-      <h1 class="app-title">Calculadora de Taxes <span>Via Pública</span></h1>
-      <span class="header-badge">v0.1.0</span>
-    </div>
-    <div class="app-header-right">
-      <!-- Future controls -->
-    </div>
+    <a href="index.html" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><path d="m15 18-6-6 6-6"/></svg>
+      Inici
+    </a>
+    <div class="header-divider"></div>
+    <nav class="app-tabs">
+      <button class="app-tab active" data-tab="calculadora" onclick="switchTab('calculadora')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="14"/><line x1="16" x2="16" y1="18" y2="18"/><line x1="8" x2="12" y1="14" y2="14"/><line x1="8" x2="12" y1="18" y2="18"/></svg>
+        Calculadora de Taxes
+      </button>
+      <button class="app-tab" data-tab="normativa" onclick="switchTab('normativa')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+        Normativa
+      </button>
+    </nav>
   </header>
 
   <main class="app-main">
-    <iframe src="calculadora_taxes.html" title="Calculadora de Taxes"></iframe>
+    <div class="tab-panel active" id="panel-calculadora">
+      <iframe src="calculadora_taxes.html" title="Calculadora de Taxes" id="iframe-calculadora"></iframe>
+    </div>
+    <div class="tab-panel" id="panel-normativa">
+      <iframe src="" title="Normativa" id="iframe-normativa"></iframe>
+    </div>
   </main>
 
   <script>
-    lucide.createIcons();
+    const TABS = ['calculadora', 'normativa'];
+
+    function switchTab(name) {
+      TABS.forEach(t => {
+        document.querySelector(`[data-tab="${t}"]`).classList.toggle('active', t === name);
+        document.getElementById(`panel-${t}`).classList.toggle('active', t === name);
+      });
+      // Lazy-load normativa iframe
+      if (name === 'normativa') {
+        const ifr = document.getElementById('iframe-normativa');
+        if (!ifr.src || ifr.src === window.location.href) {
+          ifr.src = 'normativa.html';
+        }
+      }
+      // Update hash without scroll
+      history.replaceState(null, '', '#tab-' + name);
+    }
+
+    // Read hash on load
+    const hash = location.hash.replace('#tab-', '');
+    if (TABS.includes(hash)) switchTab(hash);
   </script>
 </body>
 </html>
