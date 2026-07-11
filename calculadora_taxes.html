@@ -2225,6 +2225,24 @@ function initCalculator() {
     renderCalendari();
     actualitzarBotoDies();
 
+    // Ajustar valor per defecte si conflicte amb línies existents
+    (function() {
+      const ALL_VALS = ["anual","estiu","hivern","cap_setmana_estiu","cap_setmana_hivern","eventual"];
+      const takenVals = Array.from(
+        terrassaLinesContainer.querySelectorAll('.terrassa-line-modalitat')
+      ).filter(function(s){ return s !== selectMod; }).map(function(s){ return s.value; });
+      if (takenVals.includes(selectMod.value)) {
+        // Buscar primer valor disponible
+        const available = ALL_VALS.find(function(v) {
+          if (takenVals.includes(v)) return false;
+          return !(_CONFLICTS[v]||[]).some(function(c){ return takenVals.includes(c); });
+        });
+        if (available) selectMod.value = available;
+      }
+      enforceEstiuHivern();
+      actualitzarVisibilitatDies();
+    })();
+
     selectMod.addEventListener("change", () => {
       actualitzarVisibilitatDies();
       enforceEstiuHivern();
@@ -2300,7 +2318,14 @@ function initCalculator() {
     /* window._terrassaAfegir és cridat per onclick; aquí no fem res extra */
   });
 
-  // La primera línia de terrassa és HTML estàtic al contenidor; no cal pre-crear-la per JS
+  // La primera línia de terrassa és HTML estàtica — afegim listener de canvi
+  (function() {
+    var firstSel = terrassaLinesContainer.querySelector('.terrassa-line-modalitat');
+    if (firstSel) {
+      firstSel.addEventListener('change', function() { enforceEstiuHivern(); });
+    }
+    enforceEstiuHivern(); // estat inicial
+  })();
 
   // Lògica de càlcul analític de taxes
   function calcularTaxa() {
