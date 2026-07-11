@@ -271,6 +271,33 @@
     .punt-btn.save-edit:hover { background: var(--primary-light); }
     .punt-btn.cancel-edit { display: none; }
 
+    /* ── Nou punt manual ── */
+    .nou-punt-bar {
+      flex-shrink: 0; padding: 10px 14px;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-primary);
+    }
+    .nou-punt-row {
+      display: flex; gap: 7px; align-items: flex-end;
+      background: var(--bg-secondary); border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md); padding: 7px 7px 7px 12px;
+      transition: border-color 150ms;
+    }
+    .nou-punt-row:focus-within { border-color: var(--primary); }
+    #nou-punt-input {
+      flex: 1; font-family: var(--font-sans); font-size: 13px;
+      border: none; outline: none; background: transparent;
+      resize: none; min-height: 20px; max-height: 80px; line-height: 1.5; color: var(--text-main);
+    }
+    #nou-punt-input::placeholder { color: var(--text-muted); }
+    #nou-punt-btn {
+      flex-shrink: 0; width: 32px; height: 32px; border-radius: var(--radius-md);
+      border: none; background: var(--primary); color: white; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: background 120ms;
+    }
+    #nou-punt-btn:hover { background: var(--primary-hover); }
+    #nou-punt-btn svg { width: 14px; height: 14px; }
+
     /* Toast */
     .toast {
       position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px);
@@ -342,6 +369,14 @@
         <button class="icon-btn" onclick="clearAll()" title="Esborrar tots els punts">
           <i data-lucide="trash-2"></i>
         </button>
+      </div>
+      <div class="nou-punt-bar">
+        <div class="nou-punt-row">
+          <textarea id="nou-punt-input" rows="1" placeholder="Escriu un nou punt manualment..."></textarea>
+          <button id="nou-punt-btn" onclick="afegirPuntManual()" title="Afegir punt">
+            <i data-lucide="plus"></i>
+          </button>
+        </div>
       </div>
       <div class="punts-body" id="punts-body">
         <div class="punts-empty" id="punts-empty">
@@ -595,6 +630,28 @@
         addMessage('assistant', 'Error de connexió. Torna-ho a intentar.');
       }
       isLoading = false; sendBtn.disabled = false; input.focus();
+    }
+
+    // ── Punt manual ──
+    (function() {
+      var ta = document.getElementById('nou-punt-input');
+      ta.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 80) + 'px';
+      });
+      ta.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); afegirPuntManual(); }
+      });
+    })();
+
+    function afegirPuntManual() {
+      var ta = document.getElementById('nou-punt-input');
+      var text = ta.value.trim();
+      if (!text) return;
+      addPunt('', text);
+      ta.value = '';
+      ta.style.height = 'auto';
+      showToast('Punt afegit');
     }
 
     // Init
