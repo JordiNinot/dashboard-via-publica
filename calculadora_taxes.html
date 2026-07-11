@@ -467,7 +467,60 @@
       border-radius: var(--radius-md);
     }
     .terrassa-line-dies-btn:hover { background: var(--primary-light); }
-  </style>
+  
+    /* ---- CALENDARI DE COBERTURA ANUAL ---- */
+    .coverage-cal-card { display: none; }
+    .coverage-cal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding: 12px 16px 16px;
+    }
+    @media (max-width: 1100px) { .coverage-cal-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 750px)  { .coverage-cal-grid { grid-template-columns: repeat(2, 1fr); } }
+    .cov-month {
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-sm);
+      padding: 8px;
+      border: 1px solid var(--border-color);
+    }
+    .cov-month-title {
+      font-size: 11px; font-weight: 700; color: var(--primary);
+      text-align: center; margin-bottom: 5px;
+      text-transform: uppercase; letter-spacing: .06em;
+    }
+    .cov-month-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; }
+    .cov-wd {
+      font-size: 9px; font-weight: 700; color: var(--text-muted);
+      text-align: center; padding: 1px 0 3px;
+    }
+    .cov-day {
+      font-size: 9px; text-align: center; border-radius: 2px;
+      padding: 2px 1px; line-height: 1.3; cursor: default;
+      position: relative;
+    }
+    .cov-day-num { display: block; font-weight: 500; }
+    .cov-day-m2  { display: block; font-size: 7.5px; font-weight: 600; line-height: 1; }
+    .cov-day.empty { }
+    .cov-day.inactive { background: var(--bg-secondary); color: var(--text-muted); }
+    .cov-day.active-1 { background: #d1fae5; color: #065f46; }
+    .cov-day.active-2 { background: #6ee7b7; color: #064e3b; }
+    .cov-day.active-3 { background: #34d399; color: #064e3b; }
+    .cov-day.active-4 { background: #10b981; color: white; }
+    .cov-day.active-5 { background: #2f7548; color: white; }
+    .cov-day.today-mark { outline: 2px solid var(--primary); outline-offset: -1px; border-radius: 2px; }
+    .cov-legend {
+      display: flex; gap: 10px; align-items: center;
+      flex-wrap: wrap; font-size: 11px; color: var(--text-muted);
+      padding: 6px 16px 8px; border-bottom: 1px solid var(--border-color);
+    }
+    .cov-legend-item { display: flex; align-items: center; gap: 4px; }
+    .cov-legend-dot { width: 11px; height: 11px; border-radius: 2px; flex-shrink: 0; }
+    .cov-legend-stat {
+      margin-left: auto; font-size: 11px; color: var(--primary);
+      font-weight: 700; font-family: var(--font-mono);
+    }
+</style>
 </head>
 <body>
   <header class="app-header">
@@ -630,6 +683,23 @@
       </div>
     </div>
 
+    <!-- Calendari de cobertura anual de terrassa -->
+    <div class="card coverage-cal-card" id="coverage-cal-card">
+      <div class="card-header">
+        <h3>Cobertura de Terrassa — Any <span id="cov-any-label"></span></h3>
+        <p>M² autoritzats per dia segons les modalitats seleccionades</p>
+      </div>
+      <div class="cov-legend">
+        <span class="cov-legend-item"><span class="cov-legend-dot" style="background:var(--bg-secondary);border:1px solid var(--border-color);"></span>Cap activitat</span>
+        <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#d1fae5;"></span>Baix</span>
+        <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#6ee7b7;"></span>Mig-baix</span>
+        <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#34d399;"></span>Mig</span>
+        <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#10b981;"></span>Mig-alt</span>
+        <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#2f7548;"></span>Màxim</span>
+        <span class="cov-legend-stat" id="cov-stat"></span>
+      </div>
+      <div class="coverage-cal-grid" id="coverage-cal-grid"></div>
+    </div>
 
   </main>
 
@@ -2460,6 +2530,162 @@ TOTAL DRETS DE LIQUIDACIÓ: ${totalText}
 
   // Aplicar l'estat inicial i re-aplicar al 'load' (quan el navegador
   // ja ha restaurat els valors del formulari de la sessió anterior).
+
+  // ── CALENDARI DE COBERTURA ANUAL ──────────────────────────────────────────
+  // Definicions de temporades (Ordenança 4.5, Sabadell)
+  //   Estiu:  1 abril  (mes 3) → 31 octubre (mes 9)
+  //   Hivern: 1 novembre (mes 10) → 31 març (mes 2)  [tot lo que no és estiu]
+  //   Cap de setmana: Divendres(5) + Dissabte(6) + Diumenge(0) — Art. 7è.6
+  function _covEsEstiu(d) {
+    const m = d.getMonth();
+    return m >= 3 && m <= 9; // abril=3 … octubre=9
+  }
+  function _covEsCapSetmana(d) {
+    const dw = d.getDay();
+    return dw === 5 || dw === 6 || dw === 0;
+  }
+  function _covM2Dia(d, linies) {
+    let total = 0;
+    const estiu = _covEsEstiu(d);
+    const cs    = _covEsCapSetmana(d);
+    const iso   = d.getFullYear() + '-'
+                + String(d.getMonth()+1).padStart(2,'0') + '-'
+                + String(d.getDate()).padStart(2,'0');
+    linies.forEach(function(l) {
+      if (!l.m2) return;
+      switch (l.mod) {
+        case 'anual':             total += l.m2; break;
+        case 'estiu':             if (estiu)           total += l.m2; break;
+        case 'hivern':            if (!estiu)          total += l.m2; break;
+        case 'cap_setmana_estiu': if (estiu  && cs)   total += l.m2; break;
+        case 'cap_setmana_hivern':if (!estiu && cs)   total += l.m2; break;
+        case 'eventual':
+          if (l.dies && l.dies.has(iso)) total += l.m2; break;
+      }
+    });
+    return total;
+  }
+  function _covColorClass(m2, max) {
+    if (m2 === 0 || max === 0) return 'inactive';
+    const r = m2 / max;
+    if (r <= 0.20) return 'active-1';
+    if (r <= 0.40) return 'active-2';
+    if (r <= 0.60) return 'active-3';
+    if (r <= 0.80) return 'active-4';
+    return 'active-5';
+  }
+
+  function renderCoverageCalendar() {
+    const card = document.getElementById('coverage-cal-card');
+    const gridEl = document.getElementById('coverage-cal-grid');
+    const statEl = document.getElementById('cov-stat');
+    const anyLabel = document.getElementById('cov-any-label');
+    if (!card || !gridEl) return;
+
+    // Visible només per "terrassa"
+    const type = document.getElementById('calc-type').value;
+    if (type !== 'terrassa') { card.style.display = 'none'; return; }
+    card.style.display = '';
+
+    const anyRef = new Date().getFullYear();
+    if (anyLabel) anyLabel.textContent = anyRef;
+
+    // Recollir línies actuals
+    const linies = Array.from(
+      document.querySelectorAll('.terrassa-line-wrapper')
+    ).map(function(row) {
+      return {
+        mod: row.querySelector('.terrassa-line-modalitat').value,
+        m2:  parseFloat(row.querySelector('.terrassa-line-m2').value) || 0,
+        dies: row._diesEventuals || new Set()
+      };
+    });
+
+    // Precalcular màxim
+    let maxM2 = 0;
+    for (let m = 0; m < 12; m++) {
+      const nd = new Date(anyRef, m+1, 0).getDate();
+      for (let d = 1; d <= nd; d++) {
+        const v = _covM2Dia(new Date(anyRef, m, d), linies);
+        if (v > maxM2) maxM2 = v;
+      }
+    }
+
+    const avuiISO = (function() {
+      const n = new Date();
+      return n.getFullYear() + '-'
+           + String(n.getMonth()+1).padStart(2,'0') + '-'
+           + String(n.getDate()).padStart(2,'0');
+    })();
+
+    let diesCoberts = 0;
+    let html = '';
+    for (let m = 0; m < 12; m++) {
+      const nd  = new Date(anyRef, m+1, 0).getDate();
+      const inici = (new Date(anyRef, m, 1).getDay() + 6) % 7; // 0=Dll
+
+      html += '<div class="cov-month">';
+      html += '<div class="cov-month-title">' + MESOS_CA[m] + '</div>';
+      html += '<div class="cov-month-grid">';
+      ['Dl','Dt','Dc','Dj','Dv','Ds','Dg'].forEach(function(wd) {
+        html += '<div class="cov-wd">' + wd + '</div>';
+      });
+      for (let i = 0; i < inici; i++) html += '<div class="cov-day empty"></div>';
+      for (let d = 1; d <= nd; d++) {
+        const iso = anyRef + '-'
+                  + String(m+1).padStart(2,'0') + '-'
+                  + String(d).padStart(2,'0');
+        const m2v = _covM2Dia(new Date(anyRef, m, d), linies);
+        if (m2v > 0) diesCoberts++;
+        const cls = _covColorClass(m2v, maxM2)
+                  + (iso === avuiISO ? ' today-mark' : '');
+        const m2txt = m2v > 0 ? m2v + 'm²' : '';
+        const tip = m2v > 0
+          ? d + '/' + (m+1) + ': ' + m2v + ' m²'
+          : d + '/' + (m+1);
+        html += '<div class="cov-day ' + cls + '" title="' + tip + '">'
+              + '<span class="cov-day-num">' + d + '</span>'
+              + '<span class="cov-day-m2">'  + m2txt + '</span>'
+              + '</div>';
+      }
+      html += '</div></div>';
+    }
+    gridEl.innerHTML = html;
+    if (statEl) {
+      statEl.textContent = diesCoberts > 0
+        ? diesCoberts + ' dies · ' + maxM2 + ' m² màx/dia'
+        : '';
+    }
+  }
+
+  // Re-render en qualsevol canvi de les línies de terrassa o del tipus
+  function _covAttachListeners() {
+    document.querySelectorAll('.terrassa-line-modalitat,.terrassa-line-m2')
+      .forEach(function(el) {
+        el.addEventListener('change', renderCoverageCalendar);
+        el.addEventListener('input',  renderCoverageCalendar);
+      });
+  }
+  // Patch enforceEstiuHivern per disparar el calendari
+  var _origEnforce = enforceEstiuHivern;
+  enforceEstiuHivern = function() {
+    _origEnforce();
+    _covAttachListeners();
+    renderCoverageCalendar();
+  };
+  // Patch aplicarTipus per mostrar/amagar el calendari
+  var _origAplicar = aplicarTipus;
+  aplicarTipus = function(type) {
+    _origAplicar(type);
+    _covAttachListeners();
+    renderCoverageCalendar();
+  };
+  window._aplicarTipus = aplicarTipus;
+
+  // Render inicial
+  _covAttachListeners();
+  renderCoverageCalendar();
+
   aplicarTipus(calcType.value);
   window.addEventListener('load', () => aplicarTipus(calcType.value));
 }
