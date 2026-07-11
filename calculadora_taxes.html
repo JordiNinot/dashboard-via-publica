@@ -2585,7 +2585,7 @@ TOTAL DRETS DE LIQUIDACIÓ: ${totalText}
     // Visible només per "terrassa"
     const type = document.getElementById('calc-type').value;
     if (type !== 'terrassa') { card.style.display = 'none'; return; }
-    card.style.display = '';
+    card.style.display = 'block';
 
     const anyRef = new Date().getFullYear();
     if (anyLabel) anyLabel.textContent = anyRef;
