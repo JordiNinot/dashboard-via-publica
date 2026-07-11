@@ -349,14 +349,16 @@
     ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 2px; }
   </style>
 
-  /* ── Iframe mode: amaga capçalera ── */
+  <script>
+  /* Iframe mode: amaga capçalera */
   if (window.self !== window.top) {
     document.addEventListener('DOMContentLoaded', () => {
-      const hdr = document.querySelector('.norm-header');
-      if (hdr) hdr.style.display = 'none';
+      document.querySelectorAll('.app-header').forEach(el => el.style.display = 'none');
       document.body.style.paddingTop = '0';
+      document.body.style.height = '100vh';
     });
   }
+  </script>
 
 </head>
 <body>
