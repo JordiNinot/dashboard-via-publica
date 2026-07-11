@@ -530,8 +530,17 @@
     }
     @media (max-width: 1100px) { .ea-cal-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 750px)  { .ea-cal-grid { grid-template-columns: repeat(2, 1fr); } }
-    .ea-cal-day.ea-active { background: #bfdbfe; color: #1e3a5f; }
-    .ea-cal-day.ea-active-hi { background: #3b82f6; color: white; }
+    .ea-month { background: var(--bg-tertiary); border-radius: var(--radius-sm); padding: 10px; border: 1px solid var(--border-color); }
+    .ea-month-title { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .06em; }
+    .ea-month-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+    .ea-wd { font-size: 10px; font-weight: 700; color: var(--text-muted); text-align: center; padding: 2px 0 4px; }
+    .ea-day { font-size: 11px; text-align: center; border-radius: 3px; padding: 4px 2px; line-height: 1.4; cursor: default; min-height: 34px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .ea-day-num { display: block; font-weight: 500; }
+    .ea-day-m2  { display: block; font-size: 9px; font-weight: 700; line-height: 1.2; margin-top: 1px; }
+    .ea-day.ea-empty { }
+    .ea-day.ea-inactive { background: var(--bg-secondary); color: var(--text-muted); }
+    .ea-day.ea-occ { background: #dbeafe; color: #1e40af; }
+    .ea-day.ea-avui { outline: 2px solid var(--primary); outline-offset: -1px; border-radius: 3px; }
 </style>
 </head>
 <body>
@@ -2255,28 +2264,28 @@ function renderEaCalendar() {
     const diesMes = new Date(any, mes + 1, 0).getDate();
     const primerDia = (new Date(any, mes, 1).getDay() + 6) % 7; // dilluns=0
 
-    html += '<div class="cov-month">';
-    html += '<div class="cov-month-title">' + MESOS[mes] + ' ' + any + '</div>';
-    html += '<div class="cov-month-grid">';
-    DIES_SA.forEach(function(d){ html += '<div class="cov-wd">' + d + '</div>'; });
-    for (var i = 0; i < primerDia; i++) html += '<div class="cov-day empty"></div>';
+    html += '<div class="ea-month">';
+    html += '<div class="ea-month-title">' + MESOS[mes] + ' ' + any + '</div>';
+    html += '<div class="ea-month-grid">';
+    DIES_SA.forEach(function(d){ html += '<div class="ea-wd">' + d + '</div>'; });
+    for (var i = 0; i < primerDia; i++) html += '<div class="ea-day ea-empty"></div>';
 
     for (var dia = 1; dia <= diesMes; dia++) {
       const dDia = new Date(any, mes, dia);
       const isAvui = dDia.getTime() === avui.getTime();
       const inRang = dDia >= dInici && dDia <= dFi;
-      let cls = 'cov-day';
+      let cls = 'ea-day';
       let label = '';
       if (inRang) {
-        cls += ' ea-active';
-        label = '<span class="cov-day-m2">' + totalM2 + 'm²</span>';
+        cls += ' ea-occ';
+        label = '<span class="ea-day-m2">' + totalM2 + 'm²</span>';
       } else {
-        cls += ' inactive';
+        cls += ' ea-inactive';
       }
-      if (isAvui) cls += ' ea-today';
+      if (isAvui) cls += ' ea-avui';
       html += '<div class="' + cls + '" title="' + dia + '/' + (mes+1) + '/' + any
            + (inRang ? ' — ' + totalM2 + ' m²' : '') + '">'
-           + '<span class="cov-day-num">' + dia + '</span>' + label + '</div>';
+           + '<span class="ea-day-num">' + dia + '</span>' + label + '</div>';
     }
     html += '</div></div>';
     cur = new Date(any, mes + 1, 1);
