@@ -381,6 +381,120 @@
     }
     .cal-footer span { font-size: 13px; color: var(--text-muted); }
     .cal-footer strong { color: var(--primary); }
+
+    /* ---- CALENDARI EVENTUAL (terrassa) ---- */
+    .terrassa-calendar-panel {
+      margin-top: 10px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      max-width: 340px;
+    }
+    .terrassa-cal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .terrassa-cal-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .terrassa-cal-nav {
+      background: none;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      width: 28px; height: 28px;
+      cursor: pointer;
+      font-size: 16px;
+      color: var(--text-muted);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 100ms;
+    }
+    .terrassa-cal-nav:hover { background: var(--bg-tertiary); color: var(--text-main); }
+    .terrassa-cal-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      margin-bottom: 4px;
+    }
+    .terrassa-cal-weekdays span {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      padding: 3px 0;
+    }
+    .terrassa-cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+    }
+    .terrassa-cal-day {
+      text-align: center;
+      padding: 5px 2px;
+      font-size: 12px;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      background: none;
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      transition: background 80ms;
+      line-height: 1;
+    }
+    .terrassa-cal-day:hover:not(.buit) { background: var(--primary-bg); }
+    .terrassa-cal-day.buit { cursor: default; pointer-events: none; }
+    .terrassa-cal-day.seleccionat {
+      background: var(--primary) !important;
+      color: white !important;
+      font-weight: 700;
+    }
+    .terrassa-cal-day.festiu-estatal { border-color: #dc2626; color: #dc2626; }
+    .terrassa-cal-day.festiu-autonomic { border-color: #ea580c; color: #ea580c; }
+    .terrassa-cal-day.festiu-local { border-color: #b45309; color: #b45309; }
+
+    .terrassa-cal-legend {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 10px; padding-top: 8px;
+      border-top: 1px solid var(--border-color);
+    }
+    .terrassa-cal-legend-item {
+      display: flex; align-items: center; gap: 4px;
+      font-size: 10px; color: var(--text-muted);
+    }
+    .terrassa-cal-dot {
+      display: inline-block; width: 10px; height: 10px;
+      border-radius: 50%; border: 1.5px solid;
+      flex-shrink: 0;
+    }
+    .dot-estatal { border-color: #dc2626; background: transparent; }
+    .dot-autonomic { border-color: #ea580c; background: transparent; }
+    .dot-local { border-color: #b45309; background: transparent; }
+    .dot-selected { background: var(--primary); border-color: var(--primary); }
+
+    .terrassa-cal-footer {
+      margin-top: 8px;
+      font-size: 12px; font-weight: 600;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .terrassa-line-dies-btn {
+      flex: 1;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--primary);
+      background: var(--primary-bg);
+      border: 1.5px solid var(--primary-light) !important;
+      cursor: pointer;
+      border-radius: var(--radius-md);
+    }
+    .terrassa-line-dies-btn:hover { background: var(--primary-light); }
   </style>
 </head>
 <body>
