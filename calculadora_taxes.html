@@ -3102,13 +3102,27 @@ fetch('data/nucli_detall.json')
   function syncTipus() {
     var sel = document.getElementById('calc-type');
     if (!sel) return;
-    var isT = sel.value === 'terrassa';
+    /* Si initCalculator ja ha registrat _aplicarTipus, deleguem-hi */
+    if (typeof window._aplicarTipus === 'function') {
+      window._aplicarTipus(sel.value);
+      return;
+    }
+    /* Fallback si initCalculator no ha carregat encara: gestió manual de visibilitat */
+    var type = sel.value;
+    var isT  = type === 'terrassa';
+    var isEA = type === 'elements_auxiliars';
+    var isTC = type === 'tall_carrer';
+    var isSpecial = isT || isEA || isTC;
     var g1  = document.getElementById('group-param-1');
     var g2  = document.getElementById('group-param-2');
     var gT  = document.getElementById('group-terrassa-modalitat');
-    if (g1) g1.style.display  = isT ? 'none' : '';
-    if (g2) g2.style.display  = isT ? 'none' : '';
-    if (gT) gT.style.display  = isT ? ''     : 'none';
+    var gEA = document.getElementById('group-elements-auxiliars');
+    var gTC = document.getElementById('group-tall-carrer');
+    if (g1)  g1.style.display  = isSpecial ? 'none' : '';
+    if (g2)  g2.style.display  = isSpecial ? 'none' : '';
+    if (gT)  gT.style.display  = isT  ? '' : 'none';
+    if (gEA) gEA.style.display = isEA ? '' : 'none';
+    if (gTC) gTC.style.display = isTC ? '' : 'none';
   }
   var sel = document.getElementById('calc-type');
   if (sel) sel.addEventListener('change', syncTipus);
