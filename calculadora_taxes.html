@@ -2073,6 +2073,107 @@ function buscarCarrer(nomCarrer) {
   return null;
 }
 
+// 6b. ELEMENTS AUXILIARS — funcions globals (accessibles des d'onclick)
+
+const _EA_BRACKETS = [
+  { max: 4,        tarifa: 13.31,  label: "Fins 4 m²" },
+  { max: 6,        tarifa: 24.83,  label: "Fins 6 m²" },
+  { max: 8,        tarifa: 30.92,  label: "Fins 8 m²" },
+  { max: 10,       tarifa: 41.04,  label: "Fins 10 m²" },
+  { max: 15,       tarifa: 43.34,  label: "Fins 15 m²" },
+  { max: Infinity, tarifa: null,   label: "Més de 15 m²" }
+];
+const _EA_CAT_RATES = { "1A":0.48, "1B":0.42, "2":0.37, "3":0.31, "4":0.31, "5":0.31 };
+let _eaCounter = 0;
+
+function eaCalcDies() {
+  const inici = document.getElementById("ea-data-inici").value;
+  const fi    = document.getElementById("ea-data-fi").value;
+  if (!inici || !fi) return 0;
+  const d1 = new Date(inici), d2 = new Date(fi);
+  return d2 >= d1 ? Math.round((d2 - d1) / 86400000) + 1 : 0;
+}
+function eaCalcTotalM2() {
+  let total = 0;
+  document.querySelectorAll(".ea-mesura-row").forEach(function(row) {
+    const a = parseFloat(row.querySelector(".ea-amplada").value) || 0;
+    const l = parseFloat(row.querySelector(".ea-llargada").value) || 0;
+    total += a * l;
+  });
+  return Math.round(total * 100) / 100;
+}
+function eaGetBracket(m2) {
+  return _EA_BRACKETS.find(function(b) { return m2 <= b.max; }) || _EA_BRACKETS[5];
+}
+function eaActualitzar() {
+  const dies    = eaCalcDies();
+  const totalM2 = eaCalcTotalM2();
+  const dEl  = document.getElementById("ea-dies-calc");
+  const m2El = document.getElementById("ea-total-m2");
+  const fbEl = document.getElementById("ea-tarifa-feedback");
+  const blEl = document.getElementById("ea-bracket-label");
+  const pvEl = document.getElementById("ea-tarifa-preview");
+  const catEl= document.getElementById("ea-cat-info");
+  if (dEl)  dEl.textContent  = dies > 0 ? dies + " dies" : "— dies";
+  if (m2El) m2El.textContent = totalM2 + " m²";
+  // Actualitza el resultat de cada fila
+  document.querySelectorAll(".ea-mesura-row").forEach(function(row) {
+    const a  = parseFloat(row.querySelector(".ea-amplada").value) || 0;
+    const l  = parseFloat(row.querySelector(".ea-llargada").value) || 0;
+    const rEl = row.querySelector(".ea-m2-result");
+    if (rEl) rEl.textContent = (Math.round(a * l * 100) / 100) + " m²";
+  });
+  if (totalM2 > 0 && fbEl) {
+    fbEl.style.display = "";
+    const bracket = eaGetBracket(totalM2);
+    if (bracket.tarifa !== null) {
+      if (blEl) blEl.textContent = bracket.label + " (import fix, Sec. 1 OF4.5):";
+      if (pvEl) pvEl.textContent = bracket.tarifa.toLocaleString("ca-ES", { minimumFractionDigits: 2 }) + " €";
+      if (catEl) catEl.style.display = "none";
+    } else {
+      const detEl  = document.getElementById("detected-category");
+      const catRaw = detEl ? detEl.textContent : "-";
+      const catCode = catRaw.replace("Categoria ", "").split(" ")[0] || "5";
+      const catNorm = catCode.replace("ª", "").replace("a", "").toUpperCase();
+      const rate    = _EA_CAT_RATES[catNorm] || 0.31;
+      const est     = dies > 0 ? totalM2 * dies * rate : null;
+      if (blEl) blEl.textContent = "Més de 15 m² — " + rate.toFixed(2) + " €/m²/dia (cat. " + catNorm + ", Sec. 1 OF4.5):";
+      if (pvEl) pvEl.textContent = est !== null
+        ? est.toLocaleString("ca-ES", { minimumFractionDigits: 2 }) + " € (" + totalM2 + " m² × " + dies + " dies)"
+        : "— (introdueix les dates)";
+      if (catEl) {
+        catEl.style.display = "";
+        catEl.textContent   = "Categoria aplicada: " + catNorm +
+          (catRaw === "-" ? " (per defecte — introdueix el carrer)" : " (" + catRaw + ")");
+      }
+    }
+  } else if (fbEl) {
+    fbEl.style.display = "none";
+    if (catEl) catEl.style.display = "none";
+  }
+}
+function eaAfegirMesura(amplada, llargada) {
+  _eaCounter++;
+  const row = document.createElement("div");
+  row.className = "ea-mesura-row";
+  row.style.cssText = "display:flex;align-items:center;gap:8px;margin-bottom:6px;";
+  row.innerHTML =
+    '<input type="number" class="form-control ea-amplada" placeholder="Amplada (m)" ' +
+      'value="' + (amplada != null ? amplada : "") + '" min="0" step="0.01" style="flex:1;">' +
+    '<span style="color:var(--text-muted);font-weight:600;">×</span>' +
+    '<input type="number" class="form-control ea-llargada" placeholder="Llargada (m)" ' +
+      'value="' + (llargada != null ? llargada : "") + '" min="0" step="0.01" style="flex:1;">' +
+    '<span class="ea-m2-result" style="font-size:12px;font-weight:700;color:var(--primary);min-width:55px;">0 m²</span>' +
+    '<button type="button" class="terrassa-line-remove" title="Eliminar mesura" ' +
+      'onclick="this.parentElement.remove();eaActualitzar();">×</button>';
+  row.querySelectorAll("input").forEach(function(inp) {
+    inp.addEventListener("input", eaActualitzar);
+  });
+  var cont = document.getElementById("ea-mesures-container");
+  if (cont) cont.appendChild(row);
+  eaActualitzar();
+}
+
 // 6. CALCULADORA DE TAXES
 
 function initCalculator() {
@@ -2157,109 +2258,12 @@ function initCalculator() {
   const groupEA  = document.getElementById("group-elements-auxiliars");
   const groupTC  = document.getElementById("group-tall-carrer");
 
-  // ── Elements Auxiliars d'Obra: dates + mesures ──────────────────────────
-  const OF45_EA_BRACKETS = [
-    { max: 4,        tarifa: 13.31,  label: "Fins 4 m²" },
-    { max: 6,        tarifa: 24.83,  label: "Fins 6 m²" },
-    { max: 8,        tarifa: 30.92,  label: "Fins 8 m²" },
-    { max: 10,       tarifa: 41.04,  label: "Fins 10 m²" },
-    { max: 15,       tarifa: 43.34,  label: "Fins 15 m²" },
-    { max: Infinity, tarifa: null,   label: "Més de 15 m²" }
-  ];
-  const OF45_CAT_RATES = { "1A":0.48, "1B":0.42, "2":0.37, "3":0.31, "4":0.31, "5":0.31 };
-  let eaMesuresCounter = 0;
-
-  function eaCalcDies() {
-    const inici = document.getElementById("ea-data-inici").value;
-    const fi    = document.getElementById("ea-data-fi").value;
-    if (!inici || !fi) return 0;
-    const d1 = new Date(inici), d2 = new Date(fi);
-    return d2 >= d1 ? Math.round((d2-d1)/86400000)+1 : 0;
-  }
-  function eaCalcTotalM2() {
-    let total = 0;
-    document.querySelectorAll(".ea-mesura-row").forEach(function(row) {
-      const a = parseFloat(row.querySelector(".ea-amplada").value)||0;
-      const l = parseFloat(row.querySelector(".ea-llargada").value)||0;
-      total += a * l;
-    });
-    return Math.round(total*100)/100;
-  }
-  function eaGetBracket(m2) {
-    return OF45_EA_BRACKETS.find(function(b){ return m2 <= b.max; }) || OF45_EA_BRACKETS[5];
-  }
-  function eaActualitzar() {
-    const dies   = eaCalcDies();
-    const totalM2 = eaCalcTotalM2();
-    const dEl  = document.getElementById("ea-dies-calc");
-    const m2El = document.getElementById("ea-total-m2");
-    const fbEl = document.getElementById("ea-tarifa-feedback");
-    const blEl = document.getElementById("ea-bracket-label");
-    const pvEl = document.getElementById("ea-tarifa-preview");
-    const catEl= document.getElementById("ea-cat-info");
-    if (dEl)  dEl.textContent  = dies > 0 ? dies+" dies" : "— dies";
-    if (m2El) m2El.textContent = totalM2+" m²";
-    if (totalM2 > 0 && fbEl) {
-      fbEl.style.display = "";
-      const bracket = eaGetBracket(totalM2);
-      if (bracket.tarifa !== null) {
-        blEl.textContent = bracket.label+" (import fix, Sec. 1 OF4.5):";
-        pvEl.textContent = bracket.tarifa.toLocaleString("ca-ES",{minimumFractionDigits:2})+" €";
-        if (catEl) catEl.style.display = "none";
-      } else {
-        // >15m²: necessita categoria del carrer
-        const detectedCatEl = document.getElementById("detected-category");
-        const catRaw = detectedCatEl ? detectedCatEl.textContent : "-";
-        const catCode2 = catRaw.replace("Categoria ","").split(" ")[0] || "5";
-        const catNorm = catCode2.replace("ª","").replace("a","").toUpperCase();
-        const rate = OF45_CAT_RATES[catNorm] || 0.31;
-        const est  = dies > 0 ? totalM2 * dies * rate : null;
-        blEl.textContent = "Més de 15 m² — "+rate.toFixed(2)+" €/m²/dia (cat. "+catNorm+", Sec. 1 OF4.5):";
-        pvEl.textContent = est !== null
-          ? est.toLocaleString("ca-ES",{minimumFractionDigits:2})+" € ("+totalM2+" m² × "+dies+" dies)"
-          : "— (introdueix les dates)";
-        if (catEl) {
-          catEl.style.display = "";
-          catEl.textContent = "Categoria aplicada: "+catNorm+(catRaw === "-" ? " (per defecte — introdueix el carrer)" : " ("+catRaw+")");
-        }
-      }
-    } else if (fbEl) {
-      fbEl.style.display = "none";
-      if (catEl) catEl.style.display = "none";
-    }
-    // Actualitza resultat de cada fila
-    document.querySelectorAll(".ea-mesura-row").forEach(function(row) {
-      const a = parseFloat(row.querySelector(".ea-amplada").value)||0;
-      const l = parseFloat(row.querySelector(".ea-llargada").value)||0;
-      const rEl = row.querySelector(".ea-m2-result");
-      if (rEl) rEl.textContent = (Math.round(a*l*100)/100)+" m²";
-    });
-  }
-  function eaAfegirMesura(amplada, llargada) {
-    eaMesuresCounter++;
-    const id = "ea-mesura-"+eaMesuresCounter;
-    const row = document.createElement("div");
-    row.className = "ea-mesura-row";
-    row.dataset.id = id;
-    row.style.cssText = "display:flex;align-items:center;gap:8px;margin-bottom:6px;";
-    row.innerHTML =
-      '<input type="number" class="form-control ea-amplada" placeholder="Amplada (m)" value="'+(amplada||"")
-      +'" min="0" step="0.01" style="flex:1;">'
-      +'<span style="color:var(--text-muted);font-weight:600;">×</span>'
-      +'<input type="number" class="form-control ea-llargada" placeholder="Llargada (m)" value="'+(llargada||"")
-      +'" min="0" step="0.01" style="flex:1;">'
-      +'<span style="font-size:12px;font-weight:700;color:var(--primary);min-width:50px;" class="ea-m2-result">0 m²</span>'
-      +'<button type="button" class="terrassa-line-remove" title="Eliminar mesura" '
-      +'onclick="this.parentElement.remove();eaActualitzar();">&times;</button>';
-    row.querySelectorAll("input").forEach(function(inp){
-      inp.addEventListener("input", eaActualitzar);
-    });
-    document.getElementById("ea-mesures-container").appendChild(row);
-    eaActualitzar();
-  }
+  // ── Elements Auxiliars d'Obra: listeners (funcions globals a _EA_*) ────────
   document.getElementById("btn-add-ea-mesura").addEventListener("click", function(){ eaAfegirMesura(); });
   document.getElementById("ea-data-inici").addEventListener("change", eaActualitzar);
+  document.getElementById("ea-data-inici").addEventListener("input",  eaActualitzar);
   document.getElementById("ea-data-fi").addEventListener("change", eaActualitzar);
+  document.getElementById("ea-data-fi").addEventListener("input",  eaActualitzar);
 
   function aplicarTipus(type) {
     // Reset tots els grups especials
@@ -2673,7 +2677,7 @@ function initCalculator() {
 Total: "+totalM2ea+" m² → "+bracket.label+"
 Import fix: "+bracket.tarifa.toFixed(2)+" € (OF 4.5, Sec. 1)";
       } else {
-        const catR = OF45_CAT_RATES[catCode] || 0.31;
+        const catR = _EA_CAT_RATES[catCode] || 0.31;
         total = totalM2ea * dies2 * catR;
         invTarifaBase.textContent = catR.toFixed(2)+" € / m² / dia ("+catText+", >15 m²)";
         formulaText = "Mesures: "+mesuresText+"
