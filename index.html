@@ -1313,7 +1313,8 @@ header .sub {
       var nd       = (pRow && pRow.length > 4) ? pRow[4] : null;
       var activs   = (pRow && pRow.length > 5) ? pRow[5] : null;
 
-      var html = '<div class="fitxa-grid">';
+      var html = '<iframe width="100%" height="200" style="border:0; border-radius:8px; margin-bottom:12px; background:#f0f0f0;" src="https://maps.google.com/maps?q=' + encodeURIComponent(carrer + ', ' + numero + ', Sabadell, Spain') + '&t=m&z=17&output=embed" allowfullscreen></iframe>';
+      html += '<div class="fitxa-grid">';
       html += camp('Carrer', nucliC ? nucliC.nom : carrer);
       html += camp('Número', numero);
       if (pRow) {
